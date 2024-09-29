@@ -1,0 +1,5 @@
+export { default as ImageLogo } from './allbc.png'
+export { default as Facebook } from './facebook.png'
+export { default as Twiter } from './twiter.png'
+export { default as Linkedin } from './twit.png'
+export { default as Instagram } from './instagram.png'

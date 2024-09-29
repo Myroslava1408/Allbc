@@ -1,0 +1,123 @@
+.footer {
+  max-width: 1440px;
+  width: 100%;
+  background: rgba(42, 56, 66, 1);
+  margin: 0 auto;
+  height: 404px;
+  .footerWrap {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 24px;
+    height: 404px;
+    a {
+      width: 94px;
+      height: 54px;
+    }
+    .listGrid {
+      max-width: 800px;
+      width: 100%;
+      justify-content: space-between;
+      span {
+        font-family: Inter,sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19.6px;
+        text-align: left;
+      }
+      ul {
+        li {
+          a {
+            font-family: Inter,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 19.6px;
+            text-align: left;
+            color: rgba(216, 216, 216, 1);
+          }
+        }
+      }
+    }
+    .contacts {
+      max-width: 190px;
+      width: 100%;
+      .btnFoot {
+        height: 40px;
+        width: 40px;
+        position: relative;
+        border-radius: 6px;
+        background: white;
+        right: 31px;
+      }
+      .inputSearch {
+        border-radius: 6px;
+        max-width: 150px;
+        height: 40px;
+        width: 100%;
+        &::placeholder {
+          font-family: Inter,sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16.8px;
+          text-align: left;
+          color: rgba(174, 174, 174, 1);
+          position: relative;
+          left: 25px;
+        }
+      }
+      h5 {
+        font-family: Inter,sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22.4px;
+        text-align: left;
+        padding-top: 12px;
+      }
+      h6 {
+        font-family: Inter,sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19.6px;
+        text-align: left;
+        color: rgba(216, 216, 216, 1);
+        padding-top: 12px;
+      }
+    }
+    .copyright {
+      font-family: Inter,sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: rgba(216, 216, 216, 1);
+    }
+  }
+}
+
+@media (max-width:1024px) {
+  .footer {
+    height: auto;
+    .footerWrap {
+      padding: 40px;
+      .listGrid {
+        padding-top: 30px;
+      }
+      .contacts {
+        padding-top: 60px;
+      }
+    }
+  }
+}
+@media (max-width:450px) {
+  .footer {
+    height: auto;
+    .footerWrap {
+      height: auto;
+      .listGrid {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+  }
+}
