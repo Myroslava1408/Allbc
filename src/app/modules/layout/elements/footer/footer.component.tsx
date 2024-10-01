@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import Image from 'next/image'
-import {ImageLogo, Instagram} from '@/app/shared/images'
+import {ImageLogo, Instagram } from '@/app/shared/images'
 import { Facebook } from '@/app/shared/images'
 import { Twiter } from '@/app/shared/images'
 import { Linkedin } from '@/app/shared/images'
