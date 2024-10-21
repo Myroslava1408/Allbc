@@ -21,9 +21,10 @@ import {getDistrictsForRent, getDistrictsForSale} from "@/repositories/district-
 import {getStations} from "@/repositories/location.repository"
 import {getCities} from "@/repositories/location.repository"
 import {getAreas} from "@/repositories/location.repository"
+import  {getSettingsMain} from "@/repositories/settings.repository";
 
 const Page: () => Promise<JSX.Element> = async () => {
-    const settings = {};
+    const settings = getSettingsMain();
     const additionalServices = getAdditionalServices();
     const offerTypesForSale = getTypesForSale();
     const offerTypesForRent = getTypesForRent();
