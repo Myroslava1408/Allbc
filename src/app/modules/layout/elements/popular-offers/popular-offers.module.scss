@@ -1,0 +1,153 @@
+.offers {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 64px;
+  .blockRight {
+    max-width: 239px;
+    width: 100%;
+    position: relative;
+    .orderBtn {
+      width: 239px;
+      height: 40px;
+      border-radius: 6px;
+      background: rgba(160, 205, 105, 1);
+      font-family: Inter,sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 19.6px;
+      text-align: center;
+    }
+  }
+  .greenBtn {
+    width: 51px;
+    height: 25px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: rgba(160, 205, 105, 1);
+    color: white;
+    font-family: Inter,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.8px;
+    text-align: left;
+  }
+  .blueBtn {
+    width: 51px;
+    height: 25px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: rgba(5, 173, 229, 0.2);
+    font-family: Inter,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.8px;
+    text-align: left;
+  }
+  .pinkBtn {
+    width: 51px;
+    height: 25px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: rgba(198, 68, 159, 0.2);
+    font-family: Inter,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.8px;
+    text-align: left;
+  }
+  .newsItem {
+    max-width: 295px;
+    width: 100%;
+    height: 396px;
+    box-shadow: 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6)), var(--bg-img);
+      background-size: cover;
+      background-position: center;
+      filter: blur(3px);
+      z-index: -1;
+      border-radius: 6px;
+    }
+    .titH {
+      max-width: 190px;
+      width: 100%;
+    }
+    h4 {
+      position: relative;
+      z-index: 1;
+      font-family: Inter,sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 33.6px;
+      text-align: center;
+    }
+    .inputNews {
+      width: 271px;
+      height: 40px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 1);
+      &::placeholder {
+        font-family: Inter,sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16.8px;
+        text-align: left;
+        color: rgba(191, 191, 191, 1);
+        padding-left: 16px;
+        padding-top: 11.5px;
+      }
+    }
+    .subscribeBtn {
+      width: auto;
+      height: 40px;
+      border-radius: 6px;
+      background: rgba(160, 205, 105, 1);
+      font-family: Inter,sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 19.6px;
+      text-align: center;
+      color: white;
+    }
+    .designationBtn {
+      width: auto;
+      height: 40px;
+      border-radius: 6px;
+      background: rgba(84, 157, 203, 1);
+      padding: 10px 24px;
+      font-family: Inter,sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 19.6px;
+      text-align: center;
+    }
+
+  }
+}
+@media (max-width:1024px) {
+  .offers {
+    height: auto!important;
+    padding-top: 130px!important;
+    .blockRight {
+      height: auto!important;
+      width: inherit!important;
+      max-width: 100% !important;
+    }
+    .newsItem {
+      max-width: unset!important;
+    }
+    .blockParticipants {
+      margin: 0 auto;
+    }
+  }
+}

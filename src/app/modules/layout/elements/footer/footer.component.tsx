@@ -1,18 +1,22 @@
 import { FC, ReactNode } from 'react'
 import Image from 'next/image'
-import {ImageLogo, Instagram } from '@/app/shared/images'
-import { Facebook } from '@/app/shared/images'
-import { Twiter } from '@/app/shared/images'
-import { Linkedin } from '@/app/shared/images'
+import {ImageLogo} from '@/app/shared/images'
 import Link from 'next/link'
 
 import styles from './footer.module.scss'
+import OptionsComponent from "@/app/shared/components/options/options.component"
+import SocialsComponent from "@/app/shared/components/socials/socials.component"
 
 interface IFooterProps {
-    settings: ReactNode,
+    settings: ReactNode
+    aboutUsOptions: ReactNode
+    privacyPolicyOptions: ReactNode
+    forOwnersOptions: ReactNode
+    businessCentersOptions: ReactNode
+
 }
 
-const FooterComponent: FC<Readonly<IFooterProps>> = ({ settings }) => {
+const FooterComponent: FC<Readonly<IFooterProps>> = ({ settings, aboutUsOptions, businessCentersOptions, privacyPolicyOptions, forOwnersOptions }) => {
     return (
         <footer className={styles.footer}>
             <div className={`${styles.footerWrap} flex flex-col justify-between`}>
@@ -27,116 +31,10 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({ settings }) => {
                         />
                     </Link>
                     <div className={`${styles.listGrid} flex justify-between`}>
-                        <div className="flex flex-col">
-                            <span className="text-white">About us</span>
-                            <ul className="flex flex-col gap-4 pt-5">
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Оренда
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Продаж
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Новобудови
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Коворкінги
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Статистика
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Тарифи
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-white">Політика конфіденційності</span>
-                            <ul className="flex flex-col gap-4 pt-5">
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Реклама на сайті
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Умови використання сайту
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Карта сайту
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Публічна оферта
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        FAQ
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-white">For owners</span>
-                            <ul className="flex flex-col gap-4 pt-5">
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Office Rental
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Office for Sale
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-white">Business Centers</span>
-                            <ul className="flex flex-col gap-4 pt-5">
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Class “A”
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Class “B”
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Class “C”
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Class “OSZ”
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="text-white" href="#">
-                                        Class “AZ”
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
+                        <OptionsComponent settings={settings} title={'About us'} options={aboutUsOptions} />
+                        <OptionsComponent settings={settings} title={'Політика конфіденційності'} options={privacyPolicyOptions} />
+                        <OptionsComponent settings={settings} title={'For owners'} options={forOwnersOptions} />
+                        <OptionsComponent settings={settings} title={'Business Centers'} options={businessCentersOptions} />
                     </div>
                     <div className={`${styles.contacts} flex flex-col`}>
                         <span className="text-white">Contacts</span>
@@ -150,40 +48,7 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({ settings }) => {
                         </div>
                         <h5 className="text-white">+38 (067) 966 07 24</h5>
                         <h6>info@allbc.info</h6>
-                        <div className="flex pt-3 gap-2">
-                            <button>
-                                    <Image
-                                        src={ Instagram }
-                                        alt="icon"
-                                        width={32}
-                                        height={32}
-                                    />
-                            </button>
-                            <button>
-                                <Image
-                                    src={ Twiter }
-                                    alt="icon"
-                                    width={32}
-                                    height={32}
-                                />
-                            </button>
-                            <button>
-                                <Image
-                                    src={ Linkedin }
-                                    alt="icon"
-                                    width={32}
-                                    height={32}
-                                />
-                            </button>
-                            <button>
-                                <Image
-                                    src={ Facebook }
-                                    alt="icon"
-                                    width={32}
-                                    height={32}
-                                />
-                            </button>
-                        </div>
+                        <SocialsComponent settings={settings} />
                     </div>
                 </div>
                 <p className={styles.copyright}>© 2013-2021 Allbc. All rights reserved</p>

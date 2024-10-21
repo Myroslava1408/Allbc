@@ -1,0 +1,32 @@
+categories:
+    - nameCategory: Оренда офісу в БЦ класу А
+      amount: 1234
+      category: rent
+
+    - nameCategory: Оренда офісу в БЦ класу B
+      amount: 234
+      category: rent
+
+    - nameCategory: Оренда офісу в БЦ класу C
+      amount: 134
+      category: rent
+
+    - nameCategory: Оренда офісу в адміністративних зданих(АЗ)
+      amount: 124
+      category: rent
+
+    - nameCategory: Продаж офісу
+      amount: 1234
+      category: sale
+
+    - nameCategory: Продаж офісу в БЦ
+      amount: 234
+      category: sale
+
+    - nameCategory: Продаж офісу в ЖК
+      amount: 134
+      category: sale
+
+    - nameCategory: Купити приміщення 100 кв.м.
+      amount: 124
+      category: sale

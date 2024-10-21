@@ -1,0 +1,25 @@
+types:
+  -
+    id: 1
+    title: БЦ
+    category: rent
+  -
+    id: 2
+    title: Маєтки
+    category: rent
+  -
+    id: 3
+    title: Коворкінги
+    category: rent
+
+  - id: 4
+    title: Офіси
+    category: sale
+
+  - id: 5
+    title: Будинки
+    category: sale
+
+  - id: 6
+    title: Новобудови
+    category: sale

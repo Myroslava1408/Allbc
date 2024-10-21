@@ -1,0 +1,28 @@
+.categories {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 64px;
+  .itemsTable {
+    max-width: 925px;
+    width: 100%;
+  }
+  .lists {
+    max-width: 295px;
+    width: 100%;
+  }
+}
+
+@media (max-width:1024px) {
+  .categories {
+    .itemsTable {
+      margin: 0 auto!important;
+      padding: 20px!important;
+    }
+    .lists {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: unset;
+    }
+  }
+}

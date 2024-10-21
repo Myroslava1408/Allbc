@@ -5,7 +5,6 @@ interface IBurgerProps {
 }
 
 const BurgerComponent: FC<IBurgerProps> = ({  onToggle  }) => {
-
     return (
         <>
             <button

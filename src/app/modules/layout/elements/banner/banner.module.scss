@@ -35,30 +35,12 @@
         height: 47px;
         background: white;
         border-radius: 6px;
-        .listFiltr {
-          max-width: 176px;
-          width: 100%;
-          margin-left: 24px;
-          ul {
-            li {
-              p {
-                font-family: Inter,sans-serif;
-                font-size: 12px;
-                font-weight: 500;
-                line-height: 14.52px;
-                text-align: left;
-                color: rgba(42, 56, 66, 1);
-              }
-            }
-          }
-        }
         .line {
-          width: 1px;
+          min-width: 1px;
           height: 25px;
           background: rgba(228, 228, 228, 1);
           margin-left: 34px;
           margin-right: 34px;
-          margin-top: 11px;
         }
       }
       .btnSearch {
@@ -83,60 +65,6 @@
       justify-content: space-between;
       margin: 0 auto;
       padding-top: 29px;
-      .greenPart {
-        max-width: 222px;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        .greenBox {
-          width: 12px;
-          height: 12px;
-          background: rgba(160, 205, 105, 1);
-        }
-        .greenH2 {
-          font-family: Inter,sans-serif;
-          font-size: 32px;
-          font-weight: 700;
-          line-height: 44.8px;
-          text-align: center;
-          color: rgba(160, 205, 105, 1);
-        }
-        h4 {
-          font-family: Inter,sans-serif;
-          font-size: 12px;
-          font-weight: 500;
-          line-height: 16.8px;
-          text-align: left;
-          color: white;
-        }
-      }
-      .bluePart {
-        max-width: 222px;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        .blueBox {
-          width: 12px;
-          height: 12px;
-          background: rgba(81, 180, 232, 1)
-        }
-        .blueH2 {
-          font-family: Inter,sans-serif;
-          font-size: 32px;
-          font-weight: 700;
-          line-height: 44.8px;
-          text-align: center;
-          color: rgba(81, 180, 232, 1)
-        }
-        h4 {
-          font-family: Inter,sans-serif;
-          font-size: 12px;
-          font-weight: 500;
-          line-height: 16.8px;
-          text-align: left;
-          color: white;
-        }
-      }
     }
     .darkBlock {
       max-width: 607px;
@@ -182,15 +110,23 @@
       }
     }
   }
+  label {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.52px;
+    text-align: left;
+    color: rgb(42, 56, 66);
+  }
 }
 
 
 @media (max-width:1024px) {
   .sectionFirst {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: auto;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-position: center!important;
+    height: auto!important;
 
     .firstText {
       .containSearch {
@@ -206,9 +142,12 @@
 
           .listFiltr {
             padding: 9px 0 5px 0;
-            align-items: center;
+            align-items: normal;
+            justify-content: center;
+            flex-direction: column;
             max-width: unset;
-            width: 88%;
+            margin: 0 auto;
+            width: 44%;
           }
 
           .line {
@@ -233,6 +172,71 @@
         h5, h6 {
           text-align: center;
         }
+      }
+    }
+  }
+}
+
+.listFiltr {
+  max-width: 140px;
+  width: 100%;
+  margin-left: 24px;
+  input {
+    width: 105px;
+    padding: 5px;
+    &::placeholder {
+      font-family: Inter,sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14.52px;
+      text-align: left;
+      color: rgba(42, 56, 66, 1);
+    }
+  }
+  .dropdownList {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    top: 337px;
+    height: 150px;
+    overflow-y: scroll;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #b4b4b4;
+    }
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    li {
+      font-family: Inter,sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14.52px;
+      text-align: left;
+      color: rgba(42, 56, 66, 1);
+      padding: 8px 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  ul {
+    li {
+      p {
+        font-family: Inter,sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14.52px;
+        text-align: left;
+        color: rgba(42, 56, 66, 1);
       }
     }
   }

@@ -1,0 +1,163 @@
+participants:
+    brokers:
+        - nameParticipant: Олександр Імамов
+          proposals: 5
+          image: BrokerFirst
+          category: broker
+
+        - nameParticipant: Дмитро Харламов
+          proposals: 2
+          image: BrokerSecond
+          category: broker
+
+        - nameParticipant: Сергій Казаков
+          proposals: 15
+          image: BrokerThird
+          category: broker
+
+        - nameParticipant: Марина Видиліна
+          proposals: 54
+          image: BrokerFourth
+          category: broker
+
+        - nameParticipant: Денис Потапкін
+          proposals: 5
+          image: BrokerFifth
+          category: broker
+
+        - nameParticipant: Оксана Митрохіна
+          proposals: 1
+          image: BrokerSixth
+          category: broker
+
+        - nameParticipant: Віталій Портнов
+          proposals: 13
+          image: BrokerSeventh
+          category: broker
+
+        - nameParticipant: Андрій Вдовін
+          proposals: 5
+          image: BrokerEighth
+          category: broker
+
+        - nameParticipant: Євгенія Баранова
+          proposals: 55
+          image: BrokerNinth
+          category: broker
+
+        - nameParticipant: Світлана Добра
+          proposals: 123
+          image: BrokerTenth
+          category: broker
+
+    owners:
+        - nameParticipant: IKON Development
+          apartments: 586
+          housing: 2
+          image: OwnerFirst
+          category: owner
+
+        - nameParticipant: Балтійська Будівельна Компанія
+          apartments: 40
+          housing: 1
+          image: OwnerSecond
+          category: owner
+
+        - nameParticipant: ПроМісто(група ВЭБ)
+          apartments: 3
+          housing: 5
+          image: OwnerThird
+          category: owner
+
+        - nameParticipant: Флет і Ко
+          apartments: 94
+          housing: 11
+          image: OwnerFourth
+          category: owner
+
+        - nameParticipant: PPF Real Estate Ukraine
+          apartments: 193
+          housing: 1
+          image: OwnerFifth
+          category: owner
+
+        - nameParticipant: Будовком
+          apartments: 13
+          housing: 1
+          image: OwnerSixth
+          category: owner
+
+        - nameParticipant: Capital Group
+          apartments: 270
+          housing: 37
+          image: OwnerSeventh
+          category: owner
+
+        - nameParticipant: ВМС Девелопмент
+          apartments: 9
+          housing: 3
+          image: OwnerEighth
+          category: owner
+
+        - nameParticipant: Центр-Івест
+          apartments: 148
+          housing: 11
+          image: OwnerNinth
+          category: owner
+
+        - nameParticipant: Hutton Development
+          apartments: 11
+          housing: 4
+          image: OwnerTenth
+          category: owner
+
+    builders:
+        - nameParticipant: IKON Development
+          proposals: 586 квартир в 2 ЖК
+          image: BuilderFirst
+          category: builder
+
+        - nameParticipant: Балтійська Будівельна Компанія
+          proposals: 40 квартир в 1 ЖК
+          image: BuilderSecond
+          category: builder
+
+        - nameParticipant: ПроМісто(група ВЭБ)
+          proposals: 15 пропозицій
+          image: BuilderThird
+          category: builder
+
+        - nameParticipant: Флет і Ко
+          proposals: 94 квартири в 11 ЖК
+          image: BuilderFourth
+          category: builder
+
+        - nameParticipant: PPF Real Estate Ukraine
+          proposals: 193 квартири в 1 ЖК
+          image: BuilderFifth
+          category: builder
+
+        - nameParticipant: Будовком
+          proposals: 13 квартир в 1 ЖК
+          image: BuilderSixth
+          category: builder
+
+        - nameParticipant: Capital Group
+          proposals: 270 квартир в 37 ЖК
+          image: BuilderSeventh
+          category: builder
+
+        - nameParticipant: ВМС Девелопмент
+          proposals: 9 квартир в 3 ЖК
+          image: BuilderEighth
+          category: builder
+
+        - nameParticipant: Центр-Івест
+          proposals: 148 квартир в 11 ЖК
+          image: BuilderNinth
+          category: builder
+
+        - nameParticipant: Hutton Development
+          proposals: 11 квартир в 4 ЖК
+          image: BuilderTenth
+          category: builder

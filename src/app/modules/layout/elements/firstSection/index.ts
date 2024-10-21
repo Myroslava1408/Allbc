@@ -1,1 +1,0 @@
-export { default as FirstSectionComponent } from './firstSection.component'

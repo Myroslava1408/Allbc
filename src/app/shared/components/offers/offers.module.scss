@@ -1,0 +1,23 @@
+.titleRow {
+  padding: 10px;
+  max-width: 925px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: start;
+  .popTit {
+    font-family: Inter,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.2px;
+    text-align: left;
+    color: rgba(94, 94, 94, 1);
+    opacity: 30%;
+  }
+  h2 {
+    font-family: Inter,sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44.8px;
+    text-align: left;
+  }
+}

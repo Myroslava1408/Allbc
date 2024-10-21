@@ -1,0 +1,880 @@
+offers:
+  - type: 1
+    category_id: 3
+    id: 4365452628
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452629
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452630
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452631
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452632
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452633
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49200
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452634
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452635
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452699
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452612
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452610
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452628
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452629
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452636
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452634
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452662
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452639
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49200
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452645
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452635
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452636
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452611
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452222
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452628
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452629
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452630
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452631
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 4
+    id: 4365452632
+    title: ->4<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 4
+    id: 4365452633
+    title: ->4<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49200
+        44: 53800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 4
+    id: 4365452645
+    title: ->4<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452635
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452636
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452637
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452444
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452628
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452629
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452630
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452631
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 48100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452632
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49100
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 6
+    id: 4365452633
+    title: ->6<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 30: 49200
+        44: 54800
+        400: 600000
+        2250: 3000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 5
+    id: 4365452645
+    title: ->5<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 4
+    id: 4365452635
+    title: ->4<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 3
+    id: 4365452636
+    title: ->3<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 2
+    id: 4365452777
+    title: ->2<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender
+
+  - type: 1
+    category_id: 1
+    id: 4365452638
+    title: ->1<- BC “Victory Plaza”
+    description: Бізнес-центр | Клас А
+    total_offices: 12
+    address: м. Івано-Франківськ, р-н Центральний
+    street: вул. Еспланадна 1
+    metro_location: пл. Л. Товстого — 800м
+    metro_time: 10 хв
+    prices:
+      - 35: 62200
+        50: 58900
+        400: 800000
+        2250: 6000000
+    options:
+      - + OPEX 5$/m2/мес: Red
+      - + НДС: Blue
+      - + R/U - 10%: Lavender

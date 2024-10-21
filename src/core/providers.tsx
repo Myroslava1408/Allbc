@@ -3,10 +3,10 @@ import { FC, ReactNode } from 'react'
 import { mainFont } from '@/fonts'
 
 interface IProviderProps {
-    children: ReactNode,
+    children: ReactNode
 }
 
-const Providers: FC<Readonly<IProviderProps>> = async ({ children }) => {
+const Providers: ({children}: { children: any }) => Promise<JSX.Element> = async ({ children }) => {
     const settings = [];
 
     return (

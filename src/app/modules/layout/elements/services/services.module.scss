@@ -1,0 +1,35 @@
+.sectionFifth {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-top: 30px;
+  padding: 10px;
+  h3 {
+    font-family: Inter,sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44.8px;
+    text-align: left;
+  }
+  .itemsGrid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:1024px) {
+  .sectionFifth {
+    .itemsGrid {
+     .itemTop,.itemBottom {
+        max-width: unset;
+        background-size: cover;
+        a {
+          padding-left: 86px;
+        }
+      }
+    }
+  }
+}

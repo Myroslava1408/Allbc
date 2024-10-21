@@ -1,0 +1,58 @@
+options:
+  aboutUs:
+    - option: Оренда
+      category: aboutUs
+
+    - option: Продаж
+      category: aboutUs
+
+    - option: Новобудови
+      category: aboutUs
+
+    - option: Коворкінги
+      category: aboutUs
+
+    - option: Статистика
+      category: aboutUs
+
+    - option: Тарифи
+      category: aboutUs
+
+  privacyPolicy:
+    - option: Реклама на сайті
+      category: privacy
+
+    - option: Умови використання сайту
+      category: privacy
+
+    - option: Карта сайту
+      category: privacy
+
+    - option: Публічна оферта
+      category: privacy
+
+    - option: FAQ
+      category: privacy
+
+  forOwners:
+    - option: Office Rental
+      category: forOwners
+
+    - option: Office for Sale
+      category: forOwners
+
+  businessCenters:
+    - option: Class “A”
+      category: centers
+
+    - option: Class “B”
+      category: centers
+
+    - option: Class “C”
+      category: centers
+
+    - option: Class “OSZ”
+      category: centers
+
+    - option: Class “AZ”
+      category: centers

@@ -1,0 +1,37 @@
+cities:
+  - cityName: Київ
+  - cityName: Харків
+  - cityName: Одеса
+  - cityName: Дніпро
+  - cityName: Донецьк
+  - cityName: Запоріжжя
+  - cityName: Львів
+  - cityName: Кривий Ріг
+  - cityName: Миколаїв
+  - cityName: Маріуполь
+  - cityName: Вінниця
+  - cityName: Херсон
+  - cityName: Чернігів
+  - cityName: Полтава
+  - cityName: Черкаси
+  - cityName: Хмельницький
+  - cityName: Чернівці
+  - cityName: Житомир
+  - cityName: Суми
+  - cityName: Рівне
+  - cityName: Івано-Франківськ
+  - cityName: Кам'янське
+  - cityName: Кропивницький
+  - cityName: Тернопіль
+  - cityName: Кременчук
+  - cityName: Луцьк
+  - cityName: Біла Церква
+  - cityName: Краматорськ
+  - cityName: Мелітополь
+  - cityName: Ужгород
+  - cityName: Бердянськ
+  - cityName: Нікополь
+  - cityName: Слов'янськ
+  - cityName: Бровари
+  - cityName: Павлоград
+  - cityName: Северодонецьк

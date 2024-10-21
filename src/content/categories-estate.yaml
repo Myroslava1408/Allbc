@@ -1,0 +1,48 @@
+---
+- category:
+    id: 1
+    title: Каталог бізнес-центрів
+    title_html: Каталог бізнес-центрів
+    background: BlockFirst
+    rentalPrice: 75 040
+    salePrice: 75 040
+
+- category:
+    id: 2
+    title: Coworking/shared space office
+    title_html: Coworking/shared space office
+    background: BlockSecond
+    rentalPrice: 76 040
+    salePrice: 76 040
+
+- category:
+    id: 3
+    title: Комерційна нерухомість в ЖК (від забудовника)
+    title_html: "Комерційна <br /> нерухомість <br /> в ЖК (від забудовника)"
+    background: BlockThird
+    rentalPrice: 75 040
+    salePrice: 75 040
+
+- category:
+    id: 4
+    title: Маєток/ОСЗ
+    title_html: Маєток/ОСЗ
+    background: BlockFourth
+    rentalPrice: 77 040
+    salePrice: 77 040
+
+- category:
+    id: 5
+    title: Офіс в адмінбудівлі
+    title_html: Офіс в адмінбудівлі
+    background: BlockFifth
+    rentalPrice: 78 040
+    salePrice: 78 040
+
+- category:
+    id: 6
+    title: Проекти будівництва/земля
+    title_html: "Проекти <br /> будівництва/земля"
+    background: BlockSixth
+    rentalPrice: 79 040
+    salePrice: 79 040

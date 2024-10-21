@@ -1,0 +1,81 @@
+districts:
+  - stationName: Оренда офісу в Оболонському районі
+    category: rent
+
+  - districtName: Оренда офісу в Шевченківському районі
+    category: rent
+
+  - districtName: Оренда офісу в Подільському районі
+    category: rent
+
+  - districtName: Оренда офісу в Дарницькому районі
+    category: rent
+
+  - districtName: Оренда офісу в Печерському районі
+    category: rent
+
+  - districtName: Оренда офісу в Солом'янському районі
+    category: rent
+
+  - districtName: Оренда офісу в Шевченківському районі
+    category: rent
+
+  - districtName: Оренда офісу в Голосіївському районі
+    category: rent
+
+  - districtName: Оренда офісу в Деснянському районі
+    category: rent
+
+  - districtName: Оренда офісу в Оболонському районі
+    category: rent
+
+  - districtName: Оренда офісу в Подільському районі
+    category: rent
+
+  - districtName: Оренда офісу в Дарницькому районі
+    category: rent
+
+  - districtName: Оренда офісу в Печерському районі
+    category: rent
+
+  - districtName: Оренда офісу в Солом'янському районі
+    category: rent
+
+  - districtName: Продаж офісу в Оболонському районі
+    category: sale
+
+  - districtName: Продаж офісу в Подільському районі
+    category: sale
+
+  - districtName: Продаж офісу в Дарницькому районі
+    category: sale
+
+  - districtName: Продаж офісу в Печерському районі
+    category: sale
+
+  - districtName: Продаж офісу в Солом'янському районі
+    category: sale
+
+  - districtName: Продаж офісу в Шевченківському районі
+    category: sale
+
+  - districtName: Продаж офісу в Голосіївському районі
+    category: sale
+
+  - districtName: Продаж офісу в Деснянському районі
+    category: sale
+
+  - districtName: Продаж офісу в Оболонському районі
+    category: sale
+
+  - districtName: Продаж офісу в Подільському районі
+    category: sale
+
+  - districtName: Продаж офісу в Дарницькому районі
+    category: sale
+
+  - districtName: Продаж офісу в Печерському районі
+    category: sale
+
+  - districtName: Продаж офісу в Солом'янському районі
+    category: sale

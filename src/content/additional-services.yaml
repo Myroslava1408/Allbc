@@ -1,0 +1,35 @@
+---
+- service:
+    type: 1
+    title: Дизайн і розсадження
+    background: ItemFirst
+
+- service:
+    type: 1
+    title: Ремонт та оздоблення
+    background: ItemSecond
+
+- service:
+    type: 1
+    title: Меблі у Ваш офіс
+    background: ItemThird
+
+- service:
+    type: 2
+    title: Послуги перевізників
+    background: ItemFourth
+
+- service:
+    type: 2
+    title: Прибирання та клінінг
+    background: ItemFifth
+
+- service:
+    type: 2
+    title: Їжа та вода
+    background: ItemSixth
+
+- service:
+    type: 2
+    title: Все для переїзду
+    background: ItemSeventh

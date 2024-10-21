@@ -1,0 +1,1 @@
+export { default as ParticipantsComponent } from './participants.component'

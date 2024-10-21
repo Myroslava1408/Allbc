@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, ReactNode, useState } from 'react'
+import React, { FC, ReactNode, useState } from 'react'
+import {useRouter, useSearchParams} from 'next/navigation'
 import Image from 'next/image'
 import { ImageLogo } from '@/app/shared/images'
 import { ArrDown } from '@/app/shared/images'
@@ -9,18 +10,31 @@ import { Push } from '@/app/shared/images'
 import { Search } from '@/app/shared/images'
 import { AddOffice } from '@/app/shared/images'
 import Link from 'next/link'
+
 import styles from './header.module.scss'
-import BurgerComponent from "@/app/shared/components/burger/burger.component";
+
+
+import BurgerComponent from "@/app/shared/components/burger/burger.component"
+import NavigateComponent from "@/app/shared/components/navigate/navigate.component"
 
 interface IHeaderProps {
     settings: ReactNode,
 }
 
 const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
+
+    const router = useRouter();
     const [sidebarVisible, setSidebarVisible] = useState(false);
 
     const toggleSidebar = () => {
         setSidebarVisible(prev => !prev);
+    };
+    const handleLogoClick = () => {
+        if (router.pathname === '/') {
+            router.refresh();
+        } else {
+            router.push('/');
+        }
     };
 
     return (
@@ -30,7 +44,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
                     <div className={`${styles.rowHeader} flex items-center`}>
                         <BurgerComponent onToggle={toggleSidebar} />
                         <div className="flex gap-4 pl-6">
-                            <Link href="#">
+                            <div onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                                 <Image
                                     className="logo"
                                     src={ImageLogo}
@@ -38,7 +52,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
                                     width={92}
                                     height={31}
                                 />
-                            </Link>
+                            </div>
                             <div className={`${styles.line} lg:block hidden`}></div>
                         </div>
                     </div>
@@ -60,10 +74,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
                 </div>
                 <nav className="lg:flex lg:pl-2 xl:pl-6 hidden">
                     <ul className="flex gap-10">
-                        <li><Link className="text-white" href="#">Оренда</Link></li>
-                        <li><Link className="text-white" href="#">Продаж</Link></li>
-                        <li><Link className="text-white" href="#">Новобудови</Link></li>
-                        <li><Link className="text-white" href="#">Коворкінги</Link></li>
+                        <NavigateComponent settings={settings} />
                     </ul>
                 </nav>
                 <div
@@ -72,10 +83,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
                 >
                     <nav className="flex pl-6">
                         <ul className="flex flex-col p-8 gap-10">
-                            <li><Link className="text-white" href="#">Оренда</Link></li>
-                            <li><Link className="text-white" href="#">Продаж</Link></li>
-                            <li><Link className="text-white" href="#">Новобудови</Link></li>
-                            <li><Link className="text-white" href="#">Коворкінги</Link></li>
+                            <NavigateComponent settings={settings} />
                         </ul>
                     </nav>
                     <div className="flex items-center justify-between w-full p-4">
