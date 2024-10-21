@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import Link from "next/link"
 
 interface IMetroStation {

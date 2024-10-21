@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 
 import styles from './participants-sidebar.module.scss'
 import Link from "next/link"

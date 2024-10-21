@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import { Facebook } from '@/app/shared/images'
 import { Twiter } from '@/app/shared/images'
 import { Linkedin } from '@/app/shared/images'
