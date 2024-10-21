@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import Link from "next/link";
 
 interface ICityOffice {
@@ -7,12 +7,11 @@ interface ICityOffice {
 }
 
 interface ICityOfficesProps {
-    settings: ReactNode
     cities: ICityOffice[]
     title: string
 }
 
-const CityOfficesComponent: FC<Readonly<ICityOfficesProps>> = ({ settings, cities,title }) => {
+const CityOfficesComponent: FC<Readonly<ICityOfficesProps>> = ({ cities,title }) => {
     const columns = {
         top: {
             firstColumn: cities.cities.slice(0, 5),

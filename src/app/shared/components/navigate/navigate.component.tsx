@@ -1,12 +1,9 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import Link from "next/link";
 
 
-interface INavigateProps {
-    settings: ReactNode
-}
 
-const NavigateComponent: FC<Readonly<INavigateProps>> = ({  settings }) => {
+const NavigateComponent: FC = () => {
 
     const links =  {
         Rent: "Оренда",

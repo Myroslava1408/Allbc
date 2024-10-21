@@ -3,7 +3,7 @@
 import Link from "next/link"
 import styles from './categories-estate.module.scss'
 import { imagesMap } from "@/libs/imagesMap"
-import { FC, ReactNode, useState } from "react"
+import { FC, useState } from "react"
 
 interface ICategoryEstate {
     id: number
@@ -15,11 +15,10 @@ interface ICategoryEstate {
 }
 
 interface ICategoriesEstateProps {
-    settings: ReactNode
     categoryEstate: ICategoryEstate
 }
 
-const CategoriesEstateComponent: FC<Readonly<ICategoriesEstateProps>> = ({ categoryEstate, settings }) => {
+const CategoriesEstateComponent: FC<Readonly<ICategoriesEstateProps>> = ({ categoryEstate }) => {
     const background = imagesMap[categoryEstate.background];
     const [isHovered, setIsHovered] = useState(false);
     return (

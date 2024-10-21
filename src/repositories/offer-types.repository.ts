@@ -13,7 +13,7 @@ export const getTypesForRent = () => {
 export const getTypesList = () => {
     const typesData = loadYamlData('offer-types').types;
 
-    return typesData.map((type: any) => ({
+    return typesData.map((type: { id: string; title: string; category: string }) => ({
         id: type.id,
         label: type.title,
         category: type.category

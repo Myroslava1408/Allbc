@@ -1,32 +1,32 @@
-import {loadYamlData} from "@/libs/loadYaml";
+import { loadYamlData } from "@/libs/loadYaml";
 
-export const getOffersForSale = (limit: number) => {
-    const offers =  loadYamlData('offers').offers;
+export const getOffersForSale = (limit: number): Record<string, unknown>[] => {
+    const offers = loadYamlData('offers').offers as Record<string, unknown>[];
     return Array.from({ length: limit }, () => ({ ...offers[0] }));
 };
 
-export const getOffersForRent = (limit: number) => {
-    const offers =  loadYamlData('offers').offers;
+export const getOffersForRent = (limit: number): Record<string, unknown>[] => {
+    const offers = loadYamlData('offers').offers as Record<string, unknown>[];
     return Array.from({ length: limit }, () => ({ ...offers[0] }));
 };
 
-export const searchOffers = (categoryId: number, area: number, price: number) => {
-    const offers = loadYamlData('offers').offers || [];
+export const searchOffers = (categoryId: number, area: number, price: number): Record<string, unknown>[] => {
+    const offers = loadYamlData('offers').offers as Record<string, unknown>[] || [];
 
-    return offers.filter((offer: any) => {
+    return offers.filter((offer) => {
         const matchesCategory = categoryId ? (offer.category_id === categoryId) : true;
-        const matchesArea = area && offer.prices[0] ? Object.keys(offer.prices[0]).includes(String(area)) : true;
-        const matchesPrice = price && offer.prices[0] ? Object.values(offer.prices[0]).some(val => Number(val) <= price) : true;
+        const matchesArea = area && (offer.prices && offer.prices[0]) ? Object.keys(offer.prices[0]).includes(String(area)) : true;
+        const matchesPrice = price && (offer.prices && offer.prices[0]) ? Object.values(offer.prices[0]).some(val => Number(val) <= price) : true;
 
         return matchesCategory && matchesArea && matchesPrice;
     });
 };
 
-export const getAreasList = () => {
-    const offers = loadYamlData('offers').offers || [];
+export const getAreasList = (): { id: string; label: string }[] => {
+    const offers = loadYamlData('offers').offers as Record<string, unknown>[] || [];
     const areas = new Set<string>();
 
-    offers.forEach((offer: any) => {
+    offers.forEach((offer) => {
         if (offer.prices && offer.prices.length > 0 && offer.prices[0]) {
             Object.keys(offer.prices[0]).forEach(area => {
                 areas.add(String(area));
@@ -34,46 +34,45 @@ export const getAreasList = () => {
         }
     });
 
-    const sortedAreas = Array.from(areas).sort((a, b) => a - b);
+    const sortedAreas = Array.from(areas).sort();
 
-    return sortedAreas.map((area, index) => ({
+    return sortedAreas.map((area) => ({
         id: area,
         label: area,
     }));
 };
 
-
-export const getPricesList = () => {
-    const offers = loadYamlData('offers').offers || [];
+export const getPricesList = (): { id: string; label: string }[] => {
+    const offers = loadYamlData('offers').offers as Record<string, unknown>[] || [];
     const prices = new Set<string>();
 
-    offers.forEach((offer: any) => {
-        if (offer.prices[0]) {
+    offers.forEach((offer) => {
+        if (offer.prices && offer.prices[0]) {
             Object.values(offer.prices[0]).forEach(price => {
                 prices.add(String(price));
             });
         }
     });
 
-    const sortedPrices = Array.from(prices).sort((a, b) => a - b);
+    const sortedPrices = Array.from(prices).sort();
 
-    return sortedPrices.map((price, index) => ({
+    return sortedPrices.map((price) => ({
         id: price,
         label: price,
     }));
 };
-export const getCategoriesListWithOffers = (selectedCategory?: string) => {
-    const categoriesTypes = loadYamlData('offer-types')?.types || [];
-    const offers = loadYamlData('offers')?.offers || [];
 
-    const categoriesWithOffers: Array<any> = [];
-    const addedCategories = new Set();
+export const getCategoriesListWithOffers = (selectedCategory?: string): Record<string, unknown>[] => {
+    const categoriesTypes = loadYamlData('offer-types')?.types as Record<string, unknown>[] || [];
+    const offers = loadYamlData('offers')?.offers as Record<string, unknown>[] || [];
 
-    offers.forEach((offer: any) => {
-        const matchedCategory = categoriesTypes.find((categoryObj: any) => categoryObj.id === offer.category_id);
+    const categoriesWithOffers: Record<string, unknown>[] = [];
+    const addedCategories = new Set<string>();
+
+    offers.forEach((offer) => {
+        const matchedCategory = categoriesTypes.find((categoryObj) => categoryObj.id === offer.category_id);
 
         if (matchedCategory && matchedCategory.title) {
-
             if (!selectedCategory || matchedCategory.title === selectedCategory) {
                 categoriesWithOffers.push({
                     ...offer,
@@ -88,4 +87,4 @@ export const getCategoriesListWithOffers = (selectedCategory?: string) => {
     });
 
     return categoriesWithOffers;
-}
+};

@@ -20,11 +20,10 @@ interface  IOffer {
     options: ReactNode
 }
 interface IOfferProps {
-    settings: ReactNode
     offer: IOffer[]
 }
 
-const OfferComponent:FC<Readonly<IOfferProps>> = ({settings, offer}) => {
+const OfferComponent:FC<Readonly<IOfferProps>> = ({offer}) => {
 
     const formatNumber = (num: number) => {
         if (isNaN(num)) return '';
@@ -130,7 +129,7 @@ const OfferComponent:FC<Readonly<IOfferProps>> = ({settings, offer}) => {
                     })}
                 </div>
                 <div className="flex gap-2 items-center">
-                    {offer.options.map((option, index) =>
+                    {offer.options.map((option) =>
                         Object.entries(option).map(([text, color]) => (
                             <div key={text} className={`${styles['item' + color]} flex`}>
                                 <h5 className={styles['tit' + color]}>{text}</h5>

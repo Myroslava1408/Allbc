@@ -11,12 +11,11 @@ interface ICategory {
 }
 
 interface ICategoriesSidebarProps {
-    settings: React.ReactNode
     titleHeader: string
     categories: ICategory[]
 }
 
-const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({ settings, titleHeader, categories }) => {
+const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({ titleHeader, categories }) => {
     const [visibleItems, setVisibleItems] = useState(4);
     const [isExpanded, setIsExpanded] = useState(false);
     const [displayedCategories, setDisplayedCategories] = useState<ICategory[]>([]);

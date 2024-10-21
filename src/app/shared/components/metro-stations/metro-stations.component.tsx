@@ -7,11 +7,10 @@ interface IMetroStation {
 }
 
 interface IMetroStationsProps {
-    settings: ReactNode
     stations: IMetroStation[]
 }
 
-const MetroStationsComponent: FC<Readonly<IMetroStationsProps>> = ({ settings, stations }) => {
+const MetroStationsComponent: FC<Readonly<IMetroStationsProps>> = ({ stations }) => {
     const columns = {
         firstColumn: stations.stations.slice(0, 5),
         secondColumn: stations.stations.slice(5, 10),

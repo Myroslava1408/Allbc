@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import Link from "next/link";
 
 interface IArea {
@@ -7,11 +7,10 @@ interface IArea {
 }
 
 interface IOfficeAreaProps {
-    settings: ReactNode
     areas: IArea[]
 }
 
-const OfficeAreaComponent: FC<Readonly<IOfficeAreaProps>> = ({ settings, areas }) => {
+const OfficeAreaComponent: FC<Readonly<IOfficeAreaProps>> = ({ areas }) => {
         return (
             <ul className="flex flex-col gap-3">
                 {areas.areas.map((areaItem, index) => (

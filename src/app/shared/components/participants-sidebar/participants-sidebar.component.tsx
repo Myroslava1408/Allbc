@@ -29,14 +29,13 @@ interface IBuilder {
 }
 
 interface IParticipantsSidebarProps {
-    settings: ReactNode
     nameHeader: string
     classNameButton: string
     svgColor: string
     participants: (IOwner | IBroker | IBuilder)[]
 }
 const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
-    settings, classNameButton, nameHeader, svgColor, participants
+     classNameButton, nameHeader, svgColor, participants
 }) => {
     const getProposals = (participant) => {
         switch (participant.category) {

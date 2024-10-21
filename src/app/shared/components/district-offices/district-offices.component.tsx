@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import Link from "next/link";
 
 interface IDistrictOffice {
@@ -8,12 +8,11 @@ interface IDistrictOffice {
 }
 
 interface IDistrictOfficesProps {
-    settings: ReactNode
     districts: IDistrictOffice[]
     title: string
 }
 
-const DistrictOfficesComponent: FC<Readonly<IDistrictOfficesProps>> = ({ settings, districts, title }) => {
+const DistrictOfficesComponent: FC<Readonly<IDistrictOfficesProps>> = ({ districts, title }) => {
     const columns = {
         firstColumn: districts.slice(0, 5),
         secondColumn: districts.slice(5, 8),

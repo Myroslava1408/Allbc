@@ -3,14 +3,10 @@ import { Facebook } from '@/app/shared/images'
 import { Twiter } from '@/app/shared/images'
 import { Linkedin } from '@/app/shared/images'
 import { Instagram } from '@/app/shared/images'
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
 
-interface ISocialsProps {
-    settings: ReactNode
-}
 
-const SocialsComponent: FC<Readonly<ISocialsProps>> = ({  settings }) => {
+const SocialsComponent: FC = () => {
 
   const icons =  {
         Instagram: Instagram,

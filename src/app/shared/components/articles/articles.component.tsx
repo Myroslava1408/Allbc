@@ -1,14 +1,12 @@
 "use client";
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 
 import ArticleComponent from "@/app/shared/components/article/article.component"
 import {ArticleFirst, ArticleSecond, ArticleThird} from "@/app/shared/images"
 
-interface IArticlesProps {
-    settings: ReactNode
-}
 
-const ArticlesComponent: FC<Readonly<IArticlesProps>> = ({ settings }) => {
+
+const ArticlesComponent: FC = () => {
     return (
         <div className="flex flex-col gap-1.5">
             <ArticleComponent imageSrc={ArticleFirst}/>

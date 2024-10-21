@@ -5,11 +5,10 @@ import styles from './services.module.scss'
 import {AdditionalService} from "@/app/shared/components/additional-service"
 
 interface IServicesProps {
-    settings: ReactNode
     additionalServices: ReactNode
 }
 
-const ServicesComponent: FC<Readonly<IServicesProps>> = ({ settings, additionalServices }) => {
+const ServicesComponent: FC<Readonly<IServicesProps>> = ({ additionalServices }) => {
     const type1Services = additionalServices.filter(item => item.service.type === 1);
     const type2Services = additionalServices.filter(item => item.service.type === 2);
 

@@ -7,13 +7,21 @@ import styles from './offers.module.scss'
 import FilterListComponent from "@/app/shared/components/filter-list/filter-list.component"
 import OfferComponent from "@/app/shared/components/offer/offer.component"
 
+interface IPrice {
+    amount: number
+    price: number
+}
+interface IOption {
+    title: string
+    name: string
+}
 interface IOffer {
     id: number
     title: string
     description: string
     category_id: number
-    prices: any[]
-    options: any[]
+    prices: IPrice[]
+    options: IOption[]
 }
 
 interface ICategory {

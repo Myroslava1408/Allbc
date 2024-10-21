@@ -1,7 +1,6 @@
 "use client";
 
 import React, {ReactNode} from 'react'
-import { useSearchParams } from 'next/navigation'
 import OfferComponent from "@/app/shared/components/offer/offer.component"
 
 interface Offer {

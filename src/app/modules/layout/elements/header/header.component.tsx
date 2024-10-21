@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC, ReactNode, useState } from 'react'
-import {useRouter, useSearchParams} from 'next/navigation'
+import {useRouter} from 'next/navigation'
 import Image from 'next/image'
 import { ImageLogo } from '@/app/shared/images'
 import { ArrDown } from '@/app/shared/images'

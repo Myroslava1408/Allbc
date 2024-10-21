@@ -1,12 +1,13 @@
 import { RootLayoutComponent } from '@/app/modules/layout'
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { mainFont } from '@/fonts'
 
-interface IProviderProps {
-    children: ReactNode
+
+interface ProvidersProps {
+    children: ReactNode;
 }
 
-const Providers: ({children}: { children: any }) => Promise<JSX.Element> = async ({ children }) => {
+const Providers: ({ children }: ProvidersProps) => Promise<JSX.Element> = async ({ children }) => {
     const settings = [];
 
     return (
