@@ -7,16 +7,57 @@ import ParticipantsSidebarComponent from "@/app/shared/components/participants-s
 import BannerRightComponent from "@/app/shared/components/bannerRight/bannerRight.component"
 import {iconSrc, NewsBan} from "@/app/shared/images"
 
+interface IPrice {
+    amount: number
+    price: number
+}
+interface IOption {
+    title: string
+    name: string
+}
+interface IOffer {
+    id: number
+    title: string
+    description: string
+    category_id: number
+    prices: IPrice[]
+    options: IOption[]
+}
+interface ICategory {
+    id: number
+    title: string
+    category: string
+}
+interface IOwner {
+    nameParticipant: string
+    apartments: number
+    housing: number
+    image: string
+    category: 'owner'
+}
+interface IBroker {
+    nameParticipant: string
+    proposals: number
+    image: string
+    category: 'broker'
+}
+interface IBuilder {
+    nameParticipant: string
+    proposals: string
+    image: string
+    category: 'builder'
+}
+
 interface IPopularOffersProps {
     settings: ReactNode
-    offerTypesForSale: ReactNode
-    offerTypesForRent: ReactNode
-    offersForSale: ReactNode
-    offersForRent: ReactNode
-    builders: ReactNode
-    owners: ReactNode
-    brokers: ReactNode
-    categoriesListWithOffers: ReactNode
+    offerTypesForSale: ICategory[]
+    offerTypesForRent: ICategory[]
+    offersForSale: Record<string, unknown>[]
+    offersForRent: Record<string, unknown>[]
+    builders: IBuilder[]
+    owners: IOwner[]
+    brokers: IBroker[]
+    categoriesListWithOffers: IOffer[]
 }
 
 const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({

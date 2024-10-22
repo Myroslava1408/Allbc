@@ -23,13 +23,37 @@ import {getCities} from "@/repositories/location.repository"
 import {getAreas} from "@/repositories/location.repository"
 import  {getSettingsMain} from "@/repositories/settings.repository";
 
+
+interface IPrice {
+    amount: number
+    price: number
+}
+interface IOption {
+    title: string
+    name: string
+}
+interface IOffer {
+    type: number
+    id: number
+    title: string
+    description: string
+    total_offices: number
+    address: string
+    street: string
+    metro_location: string
+    metro_time: string
+    prices: IPrice[]
+    options: IOption[]
+    category_id?: number
+}
+
 const Page: () => Promise<JSX.Element> = async () => {
     const settings = getSettingsMain();
     const additionalServices = getAdditionalServices();
     const offerTypesForSale = getTypesForSale();
     const offerTypesForRent = getTypesForRent();
-    const offersForSale = getOffersForSale(9);
-    const offersForRent = getOffersForRent(9);
+    const offersForSaleRaw = getOffersForSale(9);
+    const offersForRentRaw =  getOffersForRent(9);
     const builders = getBuilders();
     const owners = getOwners();
     const brokers = getBrokers();
@@ -42,7 +66,29 @@ const Page: () => Promise<JSX.Element> = async () => {
     const stations = getStations();
     const cities = getCities();
     const areas = getAreas();
-    const categoriesListWithOffers = getCategoriesListWithOffers();
+
+    const categoriesListWithOffersRaw = getCategoriesListWithOffers();
+
+    const mapOfferData = (offer: Record<string, unknown>): IOffer => ({
+        id: offer.id as number,
+        title: offer.title as string,
+        description: offer.description as string,
+        category_id: offer.category_id as number,
+        prices: offer.prices as IPrice[],
+        options: offer.options as IOption[],
+
+
+        type: offer.type as number,
+        total_offices: offer.total_offices as number,
+        address: offer.address as string,
+        street: offer.street as string,
+        metro_location: offer.metro_location as string,
+        metro_time: offer.metro_time as string,
+    });
+
+    const categoriesListWithOffers: IOffer[] = categoriesListWithOffersRaw.map(mapOfferData);
+    const offersForSale: IOffer[] = offersForSaleRaw.map(mapOfferData);
+    const offersForRent: IOffer[] = offersForRentRaw.map(mapOfferData);
 
     return (
        <>
