@@ -52,8 +52,8 @@ interface IPopularOffersProps {
     settings: ReactNode
     offerTypesForSale: ICategory[]
     offerTypesForRent: ICategory[]
-    offersForSale: Record<string, unknown>[]
-    offersForRent: Record<string, unknown>[]
+    offersForSale: IOffer[]
+    offersForRent: IOffer[]
     builders: IBuilder[]
     owners: IOwner[]
     brokers: IBroker[]

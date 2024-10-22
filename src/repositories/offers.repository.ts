@@ -1,12 +1,12 @@
 import { loadYamlData } from "@/libs/loadYaml";
 
-export const getOffersForSale = (limit: number): Record<string, unknown>[] => {
-    const offers = loadYamlData('offers').offers as Record<string, unknown>[];
+export const getOffersForSale = (limit: number) => {
+    const offers =  loadYamlData('offers').offers;
     return Array.from({ length: limit }, () => ({ ...offers[0] }));
 };
 
-export const getOffersForRent = (limit: number): Record<string, unknown>[] => {
-    const offers = loadYamlData('offers').offers as Record<string, unknown>[];
+export const getOffersForRent = (limit: number) => {
+    const offers =  loadYamlData('offers').offers;
     return Array.from({ length: limit }, () => ({ ...offers[0] }));
 };
 
@@ -61,18 +61,18 @@ export const getPricesList = (): { id: string; label: string }[] => {
         label: price,
     }));
 };
+export const getCategoriesListWithOffers = (selectedCategory?: string) => {
+    const categoriesTypes = loadYamlData('offer-types')?.types || [];
+    const offers = loadYamlData('offers')?.offers || [];
 
-export const getCategoriesListWithOffers = (selectedCategory?: string): Record<string, unknown>[] => {
-    const categoriesTypes = loadYamlData('offer-types')?.types as Record<string, unknown>[] || [];
-    const offers = loadYamlData('offers')?.offers as Record<string, unknown>[] || [];
+    const categoriesWithOffers: Array<any> = [];
+    const addedCategories = new Set();
 
-    const categoriesWithOffers: Record<string, unknown>[] = [];
-    const addedCategories = new Set<string>();
-
-    offers.forEach((offer) => {
-        const matchedCategory = categoriesTypes.find((categoryObj) => categoryObj.id === offer.category_id);
+    offers.forEach((offer: any) => {
+        const matchedCategory = categoriesTypes.find((categoryObj: any) => categoryObj.id === offer.category_id);
 
         if (matchedCategory && matchedCategory.title) {
+
             if (!selectedCategory || matchedCategory.title === selectedCategory) {
                 categoriesWithOffers.push({
                     ...offer,
