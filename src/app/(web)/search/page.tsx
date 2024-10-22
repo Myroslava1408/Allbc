@@ -1,8 +1,15 @@
 import {searchOffers} from "@/repositories/offers.repository"
 import SearchResultsComponent from "@/app/shared/components/search-results/search-results.component";
+import {ReactNode} from "react";
 
-const SearchPage = async ({ searchParams }) => {
-    const settings = {};
+interface ISearchParams {
+    categoryId?: string
+    area?: string
+    price?: string
+}
+
+const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => {
+    const settings: ReactNode = null;
 
     const categoryId = Number(searchParams.categoryId);
     const area = Number(searchParams.area);

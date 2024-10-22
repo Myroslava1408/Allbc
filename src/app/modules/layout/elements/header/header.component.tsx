@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC, ReactNode, useState } from 'react'
-import {useRouter} from 'next/navigation'
+import {usePathname, useRouter} from 'next/navigation'
 import Image from 'next/image'
 import { ImageLogo } from '@/app/shared/images'
 import { ArrDown } from '@/app/shared/images'
@@ -23,17 +23,17 @@ interface IHeaderProps {
 
 const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
 
-    const router = useRouter();
+    const pathname = usePathname();
     const [sidebarVisible, setSidebarVisible] = useState(false);
 
     const toggleSidebar = () => {
         setSidebarVisible(prev => !prev);
     };
     const handleLogoClick = () => {
-        if (router.pathname === '/') {
-            router.refresh();
+        if (pathname === '/') {
+            window.location.reload();
         } else {
-            router.push('/');
+            window.location.href = '/';
         }
     };
 
@@ -74,7 +74,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
                 </div>
                 <nav className="lg:flex lg:pl-2 xl:pl-6 hidden">
                     <ul className="flex gap-10">
-                        <NavigateComponent settings={settings} />
+                        <NavigateComponent  />
                     </ul>
                 </nav>
                 <div
@@ -83,7 +83,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ settings }) => {
                 >
                     <nav className="flex pl-6">
                         <ul className="flex flex-col p-8 gap-10">
-                            <NavigateComponent settings={settings} />
+                            <NavigateComponent  />
                         </ul>
                     </nav>
                     <div className="flex items-center justify-between w-full p-4">

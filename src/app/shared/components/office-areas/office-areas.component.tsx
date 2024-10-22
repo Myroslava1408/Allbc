@@ -2,10 +2,14 @@
 import React, { FC, ReactNode } from 'react'
 import OfficeAreaComponent from "@/app/shared/components/office-area/office-area.component"
 
+interface IArea {
+    area: string
+}
+
 interface IOfficeAreasProps {
     settings: ReactNode
     title: string
-    areas: string
+    areas: IArea[]
 }
 
 const OfficeAreasComponent: FC<Readonly<IOfficeAreasProps>> = ({ settings, title, areas }) => {

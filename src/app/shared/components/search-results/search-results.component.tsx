@@ -3,11 +3,15 @@
 import React, {ReactNode} from 'react'
 import OfferComponent from "@/app/shared/components/offer/offer.component"
 
+interface Price {
+    [key: string]: number
+}
+
 interface Offer {
     id: number
     title: string
     category_id: number
-    prices: Record<string, number>[]
+    prices: Price[]
     area?: number
     category_title: string
 }

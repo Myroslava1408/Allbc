@@ -10,23 +10,23 @@ export const getOffersForRent = (limit: number) => {
     return Array.from({ length: limit }, () => ({ ...offers[0] }));
 };
 
-export const searchOffers = (categoryId: number, area: number, price: number): Record<string, unknown>[] => {
-    const offers = loadYamlData('offers').offers as Record<string, unknown>[] || [];
+export const searchOffers = (categoryId: number, area: number, price: number) => {
+    const offers = loadYamlData('offers').offers || [];
 
-    return offers.filter((offer) => {
+    return offers.filter((offer: any) => {
         const matchesCategory = categoryId ? (offer.category_id === categoryId) : true;
-        const matchesArea = area && (offer.prices && offer.prices[0]) ? Object.keys(offer.prices[0]).includes(String(area)) : true;
-        const matchesPrice = price && (offer.prices && offer.prices[0]) ? Object.values(offer.prices[0]).some(val => Number(val) <= price) : true;
+        const matchesArea = area && offer.prices[0] ? Object.keys(offer.prices[0]).includes(String(area)) : true;
+        const matchesPrice = price && offer.prices[0] ? Object.values(offer.prices[0]).some(val => Number(val) <= price) : true;
 
         return matchesCategory && matchesArea && matchesPrice;
     });
 };
 
-export const getAreasList = (): { id: string; label: string }[] => {
-    const offers = loadYamlData('offers').offers as Record<string, unknown>[] || [];
+export const getAreasList = () => {
+    const offers = loadYamlData('offers').offers || [];
     const areas = new Set<string>();
 
-    offers.forEach((offer) => {
+    offers.forEach((offer: any) => {
         if (offer.prices && offer.prices.length > 0 && offer.prices[0]) {
             Object.keys(offer.prices[0]).forEach(area => {
                 areas.add(String(area));
@@ -34,20 +34,21 @@ export const getAreasList = (): { id: string; label: string }[] => {
         }
     });
 
-    const sortedAreas = Array.from(areas).sort();
+    const sortedAreas = Array.from(areas).sort((a, b) => a - b);
 
-    return sortedAreas.map((area) => ({
+    return sortedAreas.map((area, index) => ({
         id: area,
         label: area,
     }));
 };
 
-export const getPricesList = (): { id: string; label: string }[] => {
-    const offers = loadYamlData('offers').offers as Record<string, unknown>[] || [];
+
+export const getPricesList = () => {
+    const offers = loadYamlData('offers').offers || [];
     const prices = new Set<string>();
 
-    offers.forEach((offer) => {
-        if (offer.prices && offer.prices[0]) {
+    offers.forEach((offer: any) => {
+        if (offer.prices[0]) {
             Object.values(offer.prices[0]).forEach(price => {
                 prices.add(String(price));
             });
@@ -87,4 +88,4 @@ export const getCategoriesListWithOffers = (selectedCategory?: string) => {
     });
 
     return categoriesWithOffers;
-};
+}

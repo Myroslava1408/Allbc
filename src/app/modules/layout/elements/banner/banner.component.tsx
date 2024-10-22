@@ -32,9 +32,9 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({ settings, areasList, pric
 
     const router = useRouter();
 
-    const [selectedCategory, setSelectedCategory] = useState<Option>(null);
-    const [selectedArea, setSelectedArea] = useState<Option>(null);
-    const [selectedPrice, setSelectedPrice] = useState<Option>(null);
+    const [selectedCategory, setSelectedCategory] = useState<Option | null>(null);
+    const [selectedArea, setSelectedArea] = useState<Option | null>(null);
+    const [selectedPrice, setSelectedPrice] = useState<Option | null>(null);
 
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -92,7 +92,6 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({ settings, areasList, pric
                                                 shrink: false,
                                             }}
                                         />}
-                                    name="categoryId"
                                     className=""
                                     onChange={(event, value) => setSelectedCategory(value)}
                                 />
@@ -116,7 +115,6 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({ settings, areasList, pric
                                                              shrink: false,
                                                          }}
                                         />}
-                                    name="area"
                                     className=""
                                     onChange={(event, value) => setSelectedArea(value)}
                                 />
@@ -140,7 +138,6 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({ settings, areasList, pric
                                                              shrink: false,
                                                          }}
                                         />}
-                                    name="price"
                                     className=""
                                     onChange={(event, value) => setSelectedPrice(value)}
                                 />

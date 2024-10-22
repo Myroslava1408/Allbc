@@ -9,9 +9,28 @@ import {BgBanRight} from "@/app/shared/images"
 import BannerRightComponent from "@/app/shared/components/bannerRight/bannerRight.component"
 import OfferComponent from "@/app/shared/components/offer/offer.component"
 
+interface IPrice {
+    amount: number
+    price: number
+}
+interface IOption {
+    title: string
+    name: string
+}
+interface IOffer {
+    id: number
+    title: string
+    description: string
+    category_id: number
+    prices: IPrice[]
+    options: IOption[]
+}
+
 interface IRecommendedCentersProps {
     settings: ReactNode
-    offers: ReactNode
+    offers: {
+        offers: IOffer[] | null;
+    } | null;
 }
 
 const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ settings, offers }) => {

@@ -7,12 +7,17 @@ import styles from './footer.module.scss'
 import OptionsComponent from "@/app/shared/components/options/options.component"
 import SocialsComponent from "@/app/shared/components/socials/socials.component"
 
+interface IOptionBlock {
+    option: string
+    category: string
+}
+
 interface IFooterProps {
     settings: ReactNode
-    aboutUsOptions: ReactNode
-    privacyPolicyOptions: ReactNode
-    forOwnersOptions: ReactNode
-    businessCentersOptions: ReactNode
+    aboutUsOptions: IOptionBlock[]
+    privacyPolicyOptions: IOptionBlock[]
+    forOwnersOptions: IOptionBlock[]
+    businessCentersOptions: IOptionBlock[]
 
 }
 
@@ -31,10 +36,10 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({ settings, aboutUsOptions,
                         />
                     </Link>
                     <div className={`${styles.listGrid} flex justify-between`}>
-                        <OptionsComponent settings={settings} title={'About us'} options={aboutUsOptions} />
-                        <OptionsComponent settings={settings} title={'Політика конфіденційності'} options={privacyPolicyOptions} />
-                        <OptionsComponent settings={settings} title={'For owners'} options={forOwnersOptions} />
-                        <OptionsComponent settings={settings} title={'Business Centers'} options={businessCentersOptions} />
+                        <OptionsComponent title={'About us'} options={aboutUsOptions} />
+                        <OptionsComponent title={'Політика конфіденційності'} options={privacyPolicyOptions} />
+                        <OptionsComponent title={'For owners'} options={forOwnersOptions} />
+                        <OptionsComponent title={'Business Centers'} options={businessCentersOptions} />
                     </div>
                     <div className={`${styles.contacts} flex flex-col`}>
                         <span className="text-white">Contacts</span>
@@ -48,7 +53,7 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({ settings, aboutUsOptions,
                         </div>
                         <h5 className="text-white">+38 (067) 966 07 24</h5>
                         <h6>info@allbc.info</h6>
-                        <SocialsComponent settings={settings} />
+                        <SocialsComponent />
                     </div>
                 </div>
                 <p className={styles.copyright}>© 2013-2021 Allbc. All rights reserved</p>

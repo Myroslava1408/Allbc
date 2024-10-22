@@ -34,10 +34,11 @@ interface IOffersProps {
     settings: ReactNode
     offerTypes: ICategory[]
     title: string
+    offers: IOffer[]
     categoriesListWithOffers: IOffer[]
 }
 
-const OffersComponent: FC<Readonly<IOffersProps>> = ({ settings, offerTypes, title, categoriesListWithOffers }) => {
+const OffersComponent: FC<Readonly<IOffersProps>> = ({ settings, offerTypes, title, categoriesListWithOffers,offers }) => {
 
     const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
     const [filteredOffers, setFilteredOffers] = useState<IOffer[]>([]);

@@ -86,7 +86,6 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
                     <div className={`${styles.blockRight} grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 lg:grid-cols-1 m-auto`}>
                         <div className={"flex flex-col"}>
                         <ParticipantsSidebarComponent
-                            settings={settings}
                             nameHeader={'Брокери'}
                             classNameButton={styles.greenBtn}
                             svgColor={'white'}
@@ -97,14 +96,12 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
                         </button>
                         </div>
                         <ParticipantsSidebarComponent
-                            settings={settings}
                             nameHeader={'Забудовники'}
                             classNameButton={styles.blueBtn}
                             svgColor={'black'}
                             participants={builders}
                         />
                         <ParticipantsSidebarComponent
-                            settings={settings}
                             nameHeader={'Власники'}
                             classNameButton={styles.pinkBtn}
                             svgColor={'black'}
@@ -118,7 +115,7 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
                         buttonText="Підписатися"
                         inputClassName={styles.inputNews}
                         secondButtonText="Призначити чат-бота Telegram"
-                        iconSrc={iconSrc}
+                        iconSrc={typeof iconSrc === 'string' ? iconSrc : iconSrc.src}
                         onButtonClick={() => console.log('Підписатися')}
                         containerClassName={styles.newsItem}
                         titleClassName={styles.titH}

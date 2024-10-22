@@ -7,23 +7,35 @@ import MetroOfficesComponent from "@/app/shared/components/metro-offices/metro-o
 import CityOfficesComponent from "@/app/shared/components/city-offices/city-offices.component"
 import OfficeAreasComponent from "@/app/shared/components/office-areas/office-areas.component"
 
+interface IDistrictOffice {
+    districtName: string
+    category: string
+}
+interface IArea {
+    area: string
+}
+
+interface ICityOffice {
+    cityName: string
+}
+
 interface IOfficeSpaceProps {
     settings: ReactNode
-    districtsForSale: string
-    districtsForRent: string
+    districtsForSale: IDistrictOffice[]
+    districtsForRent: IDistrictOffice[]
     stations: string
-    cities: string
-    areas: string
+    cities: ICityOffice[]
+    areas: IArea[]
 }
 
 const OfficeSpaceComponent: FC<Readonly<IOfficeSpaceProps>> = ({ settings, districtsForSale, districtsForRent, stations, cities, areas }) => {
     return (
         <section className={`flex flex-col ${styles.OfficeProperty}`}>
             <div className={`flex flex-col gap-12 ${styles.PropertyWrap}`}>
-                <DistrictOfficesComponent settings={settings} districts={districtsForSale} title={'Продаж офісу по районаx:'} />
+                <DistrictOfficesComponent  districts={districtsForSale} title={'Продаж офісу по районаx:'} />
                 <MetroOfficesComponent settings={settings} title={'Оренда офісу біля метро:'} stations={stations} />
-                <CityOfficesComponent settings={settings} cities={cities} title={'Оренда офісу по містах:'} />
-                <DistrictOfficesComponent settings={settings} districts={districtsForRent} title={'Оренда офісу по районаx:'} />
+                <CityOfficesComponent  cities={cities} title={'Оренда офісу по містах:'} />
+                <DistrictOfficesComponent  districts={districtsForRent} title={'Оренда офісу по районаx:'} />
                 <OfficeAreasComponent settings={settings} title={'Оренда офісу по площі:'} areas={areas} />
             </div>
         </section>

@@ -31,8 +31,8 @@ const MagazineComponent: FC<Readonly<IMagazineProps>> = ({ settings }) => {
                     </h5>
                 </div>
                 <div className="flex md:flex-row flex-col gap-5">
-                        <ArticlesComponent settings={settings} />
-                        <ArticlesComponent settings={settings} />
+                        <ArticlesComponent  />
+                        <ArticlesComponent  />
                 </div>
             </div>
         </section>
