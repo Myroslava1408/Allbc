@@ -10,10 +10,11 @@ import BannerRightComponent from "@/app/shared/components/bannerRight/bannerRigh
 import OfferComponent from "@/app/shared/components/offer/offer.component"
 
 interface IRecommendedCentersProps {
+    settings: ReactNode
     offers: ReactNode
 }
 
-const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ offers }) => {
+const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ settings, offers }) => {
 
     return (
         <section className={`${styles.sectionThird} flex flex-col`}>
