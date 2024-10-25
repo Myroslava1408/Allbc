@@ -19,13 +19,19 @@ interface ICityOffice {
     cityName: string
 }
 
+interface IMetroStation {
+    stationName: string
+}
+
 interface IOfficeSpaceProps {
     settings: ReactNode
     districtsForSale: IDistrictOffice[]
     districtsForRent: IDistrictOffice[]
-    stations: string
-    cities: ICityOffice[]
-    areas: IArea[]
+    stations: {
+        stations: IMetroStation[] |  { stations: IMetroStation[] }
+    }
+    cities: ICityOffice[] | { cities: ICityOffice[] } | null
+    areas: IArea[] | { areas: IArea[] } | null
 }
 
 const OfficeSpaceComponent: FC<Readonly<IOfficeSpaceProps>> = ({ settings, districtsForSale, districtsForRent, stations, cities, areas }) => {

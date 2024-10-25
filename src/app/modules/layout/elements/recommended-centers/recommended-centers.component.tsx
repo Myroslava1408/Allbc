@@ -9,32 +9,38 @@ import {BgBanRight} from "@/app/shared/images"
 import BannerRightComponent from "@/app/shared/components/bannerRight/bannerRight.component"
 import OfferComponent from "@/app/shared/components/offer/offer.component"
 
-interface IPrice {
-    amount: number
-    price: number
-}
-interface IOption {
-    title: string
-    name: string
-}
 interface IOffer {
+    type: number
     id: number
     title: string
     description: string
-    category_id: number
-    prices: IPrice[]
-    options: IOption[]
+    total_offices: number
+    address: string
+    street: string
+    metro_location: string
+    metro_time: string
+    prices: Array<{ [key: string]: number }>
+    options: Array<{ [key: string]: string }>
 }
 
 interface IRecommendedCentersProps {
     settings: ReactNode
     offers: {
-        offers: IOffer[] | null;
-    } | null;
+        offers: IOffer[] |  { offers: IOffer[] }
+    };
 }
 
 const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ settings, offers }) => {
 
+    const offersArray = Array.isArray(offers.offers)
+        ? offers.offers
+        : Array.isArray(offers.offers.offers)
+        ? offers.offers.offers
+        : [];
+
+    if (!offersArray.length) {
+        return <p>Немає пропозицій</p>;
+    }
     return (
         <section className={`${styles.sectionThird} flex flex-col`}>
             <div className={`${styles.titleRow} flex md:flex-row flex-col`}>
@@ -48,15 +54,13 @@ const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ s
             </div>
             <div className="flex lg:flex-row flex-col p-2.5 lg:p-0 items-center justify-between">
                 <div className="grid gap-2 xl:gap-5 pt-6 md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-                    {Array.isArray(offers.offers) && offers.offers.length > 0 ? (
-                        offers.offers.slice(0, 3).map((item, index) => (
-                            <div key={index}>
-                            <OfferComponent key={item.id} offer={item} />
+                    {offersArray.slice(0, 3).map((item: IOffer) => {
+                        return (
+                            <div key={item.id}>
+                                <OfferComponent offer={item} />
                             </div>
-                        ))
-                    ) : (
-                        <p>Немає пропозицій</p>
-                    )}
+                        );
+                    })}
                 </div>
                 <BannerRightComponent
                     title="Тут може бути  Ваш офіс"

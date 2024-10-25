@@ -5,36 +5,36 @@ import {FC, ReactNode, useState, FormEvent} from 'react'
 import HeaderComponent from "@/app/modules/layout/elements/header/header.component"
 
 import Image from 'next/image'
-import {Emblem} from "@/app/shared/images";
-import {Banner} from "@/app/shared/images";
+import {Emblem} from "@/app/shared/images"
+import {Banner} from "@/app/shared/images"
 
 
 import styles from './banner.module.scss'
 import { styled } from '@mui/material/styles'
 
-import StatisticsBlockComponent from "@/app/shared/components/statistics-block/statistics-block.component";
-import {Autocomplete, TextField} from "@mui/material";
-import {useRouter} from "next/navigation";
+import StatisticsBlockComponent from "@/app/shared/components/statistics-block/statistics-block.component"
+import {Autocomplete, TextField} from "@mui/material"
+import {useRouter} from "next/navigation"
 
-interface Option {
-    id: number|null
+interface IOption {
+    id: string | null
     label: string
 }
 
 interface IBannerProps {
     settings: ReactNode
-    areasList: Option[]
-    pricesList: Option[]
-    categoriesList: Option[]
+    areasList: IOption[]
+    pricesList: IOption[]
+    categoriesList: IOption[]
 }
 
 const BannerComponent: FC<Readonly<IBannerProps>> = ({ settings, areasList, pricesList, categoriesList }) => {
 
     const router = useRouter();
 
-    const [selectedCategory, setSelectedCategory] = useState<Option | null>(null);
-    const [selectedArea, setSelectedArea] = useState<Option | null>(null);
-    const [selectedPrice, setSelectedPrice] = useState<Option | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<IOption | null>(null);
+    const [selectedArea, setSelectedArea] = useState<IOption | null>(null);
+    const [selectedPrice, setSelectedPrice] = useState<IOption | null>(null);
 
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();

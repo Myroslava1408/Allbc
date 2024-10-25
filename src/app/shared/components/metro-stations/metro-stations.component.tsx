@@ -7,31 +7,48 @@ interface IMetroStation {
 }
 
 interface IMetroStationsProps {
-    stations: IMetroStation[]
+    stations: {
+        stations: IMetroStation[] |  { stations: IMetroStation[] }
+    }
 }
 
 const MetroStationsComponent: FC<Readonly<IMetroStationsProps>> = ({ stations }) => {
+
+    const stationArray = Array.isArray(stations.stations)
+        ?stations.stations
+        : Array.isArray(stations.stations.stations)
+            ? stations.stations.stations
+            : [];
+
+    if (!stationArray.length) {
+        return <p>Немає пропозицій</p>;
+    }
+
     const columns = {
-        firstColumn: stations.stations.slice(0, 5),
-        secondColumn: stations.stations.slice(5, 10),
-        thirdColumn: stations.stations.slice(10, 15),
-        fourthColumn: stations.stations.slice(15, 20),
-        fifthColumn: stations.stations.slice(20, 25),
-        sixthColumn: stations.stations.slice(25, 30),
+        firstColumn: Array.isArray(stationArray) ? stationArray.slice(0, 5) : [],
+        secondColumn: Array.isArray(stationArray) ? stationArray.slice(5, 10): [],
+        thirdColumn: Array.isArray(stationArray) ? stationArray.slice(10, 15): [],
+        fourthColumn: Array.isArray(stationArray) ? stationArray.slice(15, 20) : [],
+        fifthColumn: Array.isArray(stationArray) ? stationArray.slice(20, 25) : [],
+        sixthColumn: Array.isArray(stationArray) ? stationArray.slice(25, 30) : [],
     };
 
     return (
         <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-20">
             {Object.entries(columns).map(([column, stations]) => (
-                <ul className="flex flex-col gap-3" key={column}>
-                    {stations.map((station, index) => (
-                        <li key={index}>
-                            <Link href="#">
-                                {station.stationName}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                Array.isArray(stations) && stations.length > 0 ? (
+                    <ul className="flex flex-col gap-3" key={column}>
+                        {stations.map((station, index) => (
+                            <li key={index}>
+                                <Link href="#">
+                                    {station.stationName}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p key={column}>Станції відсутні в колонці {column}</p>
+                )
             ))}
         </div>
     )

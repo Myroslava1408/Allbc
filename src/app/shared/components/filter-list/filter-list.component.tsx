@@ -5,7 +5,7 @@ import styles from "@/app/shared/components/filter-list/filter-list.module.scss"
 
 
 interface IListItem {
-    id: number;
+    id: number
     title: string
     category: string
 }
@@ -22,19 +22,23 @@ const FilterListComponent: FC<Readonly<IFilterListProps>> = ({ list, onCategoryS
     };
     return (
         <div className={`${styles.aRow} gap-5 flex`}>
-            {list.map((listItem, index) => {
-                return (
-                    <button key={index} onClick={() => handleClick(listItem.id)}>
-                        <div
-                            className={`${styles.blockRed} ${activeId === listItem.id ? styles.active : ''}`}
-                        >
-                            <p className={activeId === listItem.id ? styles.activeText : ''}>
-                                {listItem.title}
-                            </p>
-                        </div>
-                    </button>
-                )
-            })}
+            {Array.isArray(list) && list.length > 0 ? (
+                list.map((listItem, index) => {
+                    return (
+                        <button key={index} onClick={() => handleClick(listItem.id)}>
+                            <div
+                                className={`${styles.blockRed} ${activeId === listItem.id ? styles.active : ''}`}
+                            >
+                                <p className={activeId === listItem.id ? styles.activeText : ''}>
+                                    {listItem.title}
+                                </p>
+                            </div>
+                        </button>
+                    );
+                })
+            ) : (
+                <p>Список порожній</p>
+            )}
         </div>
     )
 }

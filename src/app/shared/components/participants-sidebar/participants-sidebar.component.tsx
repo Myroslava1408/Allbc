@@ -10,21 +10,21 @@ interface IOwner {
     nameParticipant: string
     apartments: number
     housing: number
-    image: string
+    image: keyof typeof imagesMap
     category: 'owner'
 }
 
 interface IBroker {
     nameParticipant: string
     proposals: number
-    image: string
+    image: keyof typeof imagesMap
     category: 'broker'
 }
 
 interface IBuilder {
     nameParticipant: string
     proposals: string
-    image: string
+    image: keyof typeof imagesMap
     category: 'builder'
 }
 
@@ -37,7 +37,8 @@ interface IParticipantsSidebarProps {
 const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
      classNameButton, nameHeader, svgColor, participants
 }) => {
-    const getProposals = (participant) => {
+
+    const getProposals = (participant: IOwner | IBroker | IBuilder) => {
         switch (participant.category) {
             case 'owner':
                 return <p className={styles.proposals}>{participant.apartments} квартир в {participant.housing} ЖК</p>;
@@ -66,20 +67,24 @@ const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
                         </button>
                     </div>
                     <ul className="pt-6 flex flex-col gap-3">
-                        {participants.map((participant, index) => {
-                            return (
-                                <li key={index}>
-                                    <Link href="#" className="flex items-center gap-3">
-                                        <Image src={imagesMap[participant.image]} alt={participant.nameParticipant}
-                                               width={42} height={42}/>
-                                        <div className="flex flex-col">
-                                            <p className={styles.name}>{participant.nameParticipant}</p>
-                                            { getProposals(participant) }
-                                        </div>
-                                    </Link>
-                                </li>
-                            )
-                        })}
+                        {Array.isArray(participants) && participants.length > 0 ? (
+                            participants.map((participant, index) => {
+                                const image = imagesMap[participant.image];
+                                return (
+                                    <li key={index}>
+                                        <Link href="#" className="flex items-center gap-3">
+                                            <Image src={image} alt={participant.nameParticipant} width={42} height={42} />
+                                            <div className="flex flex-col">
+                                                <p className={styles.name}>{participant.nameParticipant}</p>
+                                                {getProposals(participant)}
+                                            </div>
+                                        </Link>
+                                    </li>
+                                );
+                            })
+                        ) : (
+                            <p>Немає учасників</p>
+                        )}
                     </ul>
                 </div>
             </div>

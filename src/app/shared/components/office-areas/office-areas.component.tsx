@@ -9,7 +9,7 @@ interface IArea {
 interface IOfficeAreasProps {
     settings: ReactNode
     title: string
-    areas: IArea[]
+    areas: IArea[] | { areas: IArea[] } | null
 }
 
 const OfficeAreasComponent: FC<Readonly<IOfficeAreasProps>> = ({ settings, title, areas }) => {
@@ -18,12 +18,12 @@ const OfficeAreasComponent: FC<Readonly<IOfficeAreasProps>> = ({ settings, title
             <h3>{title}</h3>
             <div className="flex flex-col gap-12">
                 <div className="grid md:grid-cols-6 grid-cols-3 gap-8 md:gap-20">
-                    <OfficeAreaComponent settings={settings} areas={areas} />
-                    <OfficeAreaComponent settings={settings} areas={areas} />
-                    <OfficeAreaComponent settings={settings} areas={areas} />
-                    <OfficeAreaComponent settings={settings} areas={areas} />
-                    <OfficeAreaComponent settings={settings} areas={areas} />
-                    <OfficeAreaComponent settings={settings} areas={areas} />
+                    <OfficeAreaComponent  areas={areas} />
+                    <OfficeAreaComponent  areas={areas} />
+                    <OfficeAreaComponent  areas={areas} />
+                    <OfficeAreaComponent  areas={areas} />
+                    <OfficeAreaComponent  areas={areas} />
+                    <OfficeAreaComponent  areas={areas} />
                 </div>
             </div>
         </div>

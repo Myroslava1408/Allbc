@@ -21,7 +21,7 @@ import {getDistrictsForRent, getDistrictsForSale} from "@/repositories/district-
 import {getStations} from "@/repositories/location.repository"
 import {getCities} from "@/repositories/location.repository"
 import {getAreas} from "@/repositories/location.repository"
-import  {getSettingsMain} from "@/repositories/settings.repository";
+import  {getSettingsMain} from "@/repositories/settings.repository"
 
 
 interface IPrice {
@@ -76,7 +76,7 @@ const Page: () => Promise<JSX.Element> = async () => {
                categoriesOffersForSale={categoriesOffersForSale}
                categoriesOffersForRent={categoriesOffersForRent}
            />
-           <RecommendedCentersComponent settings={settings} offers={offers} />
+           <RecommendedCentersComponent settings={settings} offers={{offers}}  />
            <PopularOffersComponent
                settings={settings}
                offerTypesForRent={offerTypesForRent}
@@ -95,7 +95,7 @@ const Page: () => Promise<JSX.Element> = async () => {
                settings={settings}
                districtsForSale={districtsForSale}
                districtsForRent={districtsForRent}
-               stations={stations}
+               stations={{stations}}
                cities={cities}
                areas={areas}
            />

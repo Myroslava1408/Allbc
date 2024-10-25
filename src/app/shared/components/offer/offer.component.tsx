@@ -16,11 +16,11 @@ interface  IOffer {
     street: string
     metro_location: string
     metro_time: string
-    prices: ReactNode
-    options: ReactNode
+    prices: Array<{ [key: string]: number }>
+    options: Array<{ [key: string]: string }>
 }
 interface IOfferProps {
-    offer: IOffer[]
+    offer: IOffer
 }
 
 const OfferComponent:FC<Readonly<IOfferProps>> = ({offer}) => {
@@ -116,26 +116,37 @@ const OfferComponent:FC<Readonly<IOfferProps>> = ({offer}) => {
                 </div>
                 <div className={styles.line}></div>
                 <div className="flex gap-4 items-center">
-                    {Object.entries(offer.prices[0]).map(([meters, price]) => {
-                        const numericPrice = Number(price);
-                        return (
-                            <div className="flex flex-col numbM" key={meters}>
-                                <span className="font-bold text-sm">
+                    {Array.isArray(offer.prices) && offer.prices.length > 0 ? (
+                        Object.entries(offer.prices[0]).map(([meters, price]) => {
+                            const numericPrice = Number(price);
+                            return (
+                                <div className="flex flex-col numbM" key={meters}>
+                                     <span className="font-bold text-sm">
                                     {meters} м<sup>2</sup>
                                 </span>
-                                <p>{formatNumber(numericPrice)} ₽</p>
-                            </div>
-                        );
-                    })}
+                                    <p>{formatNumber(numericPrice)} ₽</p>
+                                </div>
+                            );
+                        })
+                    ) : (
+                        <div>No price information available</div>
+                    )}
                 </div>
                 <div className="flex gap-2 items-center">
-                    {offer.options.map((option) =>
-                        Object.entries(option).map(([text, color]) => (
-                            <div key={text} className={`${styles['item' + color]} flex`}>
-                                <h5 className={styles['tit' + color]}>{text}</h5>
-                            </div>
-                        ))
+                    {Array.isArray(offer.options) && offer.options.length > 0 ? (
+                        offer.options.map((option) =>
+                            typeof option === 'object' && option !== null ? (
+                                Object.entries(option).map(([text, color]) => (
+                                    <div key={text} className={`${styles['item' + color]} flex`}>
+                                        <h5 className={styles['tit' + color]}>{text}</h5>
+                                    </div>
+                                ))
+                            ) : null
+                        )
+                    ) : (
+                        <p>Немає доступних опцій</p>
                     )}
+
                 </div>
             </div>
         </div>

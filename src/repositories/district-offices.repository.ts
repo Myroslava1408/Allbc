@@ -1,11 +1,16 @@
 import {loadYamlData} from "@/libs/loadYaml";
 
-export const getDistrictsForSale = () => {
-    const types =  loadYamlData('district-offices').districts;
-    return types.filter(item => item.category === 'sale');
+interface IDistrictOffice {
+    districtName: string
+    category: string
+}
+
+export const getDistrictsForSale  = () => {
+    const categories = (loadYamlData('district-offices') as { districts: IDistrictOffice[] }).districts;
+    return categories.filter(item => item.category === 'sale');
 };
 
-export const getDistrictsForRent = () => {
-    const types =  loadYamlData('district-offices').districts;
-    return types.filter(item => item.category === 'rent');
+export const getDistrictsForRent  = () => {
+    const categories = (loadYamlData('district-offices') as { districts: IDistrictOffice[] }).districts;
+    return categories.filter(item => item.category === 'rent');
 };

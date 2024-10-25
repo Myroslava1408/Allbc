@@ -3,17 +3,27 @@ import { ReactNode } from 'react'
 import { mainFont } from '@/fonts'
 
 
+interface ISetting {
+    id: number
+}
+
 interface ProvidersProps {
-    children: ReactNode;
+    children: ReactNode
 }
 
 const Providers: ({ children }: ProvidersProps) => Promise<JSX.Element> = async ({ children }) => {
-    const settings = [];
+    const settings: ISetting[] = [];
+
+    const renderSettings = () => {
+        return settings.map(setting => (
+            <div key={setting.id}></div>
+        ));
+    };
 
     return (
         <html>
             <body className={mainFont.className}>
-                <RootLayoutComponent settings={settings}>{children}</RootLayoutComponent>
+                <RootLayoutComponent settings={renderSettings()}>{children}</RootLayoutComponent>
             </body>
         </html>
     )

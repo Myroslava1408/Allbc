@@ -3,10 +3,26 @@
 import { FC, ReactNode } from 'react'
 import styles from './services.module.scss'
 import {AdditionalService} from "@/app/shared/components/additional-service"
+import { imagesMap } from "@/libs/imagesMap"
 
+
+type BackgroundKeys = keyof typeof imagesMap;
+
+
+interface IBlock {
+    type: number
+    title: string
+    background:  BackgroundKeys
+}
+interface IService extends IBlock {
+    type: number
+}
+interface IAdditionalService {
+    service: IService
+}
 interface IServicesProps {
     settings: ReactNode
-    additionalServices: any
+    additionalServices: IAdditionalService[]
 }
 
 const ServicesComponent: FC<Readonly<IServicesProps>> = ({ settings, additionalServices }) => {
@@ -18,17 +34,25 @@ const ServicesComponent: FC<Readonly<IServicesProps>> = ({ settings, additionalS
             <h3 className="flex items-start font-bold">Додаткові послуги</h3>
              <div className={` ${styles.itemsGrid} gap-6`}>
                  <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:p-0 p-2 gap-7 justify-center">
-                     {type1Services.map((block, blockItem) => {
-                         const className = (blockItem === type1Services.length - 1) ? 'md:col-span-2 lg:col-span-1' : '';
-                         return (
-                             <AdditionalService block={block.service} key={blockItem} className={className} />
-                         )
-                     })}
+                     {Array.isArray(type1Services) && type1Services.length > 0 ? (
+                         type1Services.map((block, blockItem) => {
+                             const className = (blockItem === type1Services.length - 1) ? 'md:col-span-2 lg:col-span-1' : '';
+                             return (
+                                 <AdditionalService block={block.service} key={blockItem} className={className} />
+                             );
+                         })
+                     ) : (
+                         <p>Немає доступних послуг</p>
+                     )}
                 </div>
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 lg:p-0 p-2 justify-center">
-                    {type2Services.map((block, index) => (
-                        <AdditionalService block={block.service} key={index} />
-                    ))}
+                    {Array.isArray(type2Services) && type2Services.length > 0 ? (
+                        type2Services.map((block, index) => (
+                            <AdditionalService block={block.service} key={index} />
+                        ))
+                    ) : (
+                        <p>Немає доступних послуг</p>
+                    )}
                 </div>
             </div>
         </section>

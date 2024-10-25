@@ -1,91 +1,179 @@
 import { loadYamlData } from "@/libs/loadYaml";
 
-export const getOffersForSale = (limit: number) => {
-    const offers =  loadYamlData('offers').offers;
-    return Array.from({ length: limit }, () => ({ ...offers[0] }));
+interface IOffer {
+    type: number
+    id: number
+    title: string
+    description: string
+    total_offices: number
+    address: string
+    street: string
+    metro_location: string
+    metro_time: string
+    prices: Array<{ [key: string]: number }>
+    options: Array<{ [key: string]: string }>
+    category_id: number;
+}
+
+interface IOfferType {
+    id: number
+    title: string
+}
+
+export const getOffersForSale = (limit: number): IOffer[] => {
+    try {
+        const data = loadYamlData('offers');
+
+        if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+            const offers: IOffer[] = data.offers;
+            return Array.from({ length: limit }, () => ({ ...offers[0] }));
+        }
+
+        return [];
+    } catch (error) {
+        console.error('Error loading offers for sale:', error);
+        return [];
+    }
 };
 
-export const getOffersForRent = (limit: number) => {
-    const offers =  loadYamlData('offers').offers;
-    return Array.from({ length: limit }, () => ({ ...offers[0] }));
+export const getOffersForRent = (limit: number): IOffer[] => {
+    try {
+        const data = loadYamlData('offers');
+
+        if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+            const offers: IOffer[] = data.offers;
+            return Array.from({ length: limit }, () => ({ ...offers[0] }));
+        }
+
+        return [];
+    } catch (error) {
+        console.error('Error loading offers for rent:', error);
+        return [];
+    }
 };
 
-export const searchOffers = (categoryId: number, area: number, price: number) => {
-    const offers = loadYamlData('offers').offers || [];
+export const searchOffers = (categoryId: number, area: number, price: number): IOffer[] => {
+    try {
+        const data = loadYamlData('offers');
 
-    return offers.filter((offer: any) => {
-        const matchesCategory = categoryId ? (offer.category_id === categoryId) : true;
-        const matchesArea = area && offer.prices[0] ? Object.keys(offer.prices[0]).includes(String(area)) : true;
-        const matchesPrice = price && offer.prices[0] ? Object.values(offer.prices[0]).some(val => Number(val) <= price) : true;
+        if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+            const offers: IOffer[] = data.offers;
 
-        return matchesCategory && matchesArea && matchesPrice;
-    });
+            return offers.filter((offer: IOffer) => {
+                const matchesCategory = categoryId ? (offer.category_id === categoryId) : true;
+                const matchesArea = area && offer.prices[0] ? Object.keys(offer.prices[0]).includes(String(area)) : true;
+                const matchesPrice = price && offer.prices[0] ? Object.values(offer.prices[0]).some(val => Number(val) <= price) : true;
+
+                return matchesCategory && matchesArea && matchesPrice;
+            });
+        }
+
+        return [];
+    } catch (error) {
+        console.error('Error searching offers:', error);
+        return [];
+    }
 };
 
 export const getAreasList = () => {
-    const offers = loadYamlData('offers').offers || [];
-    const areas = new Set<string>();
+    try {
+        const data = loadYamlData('offers');
 
-    offers.forEach((offer: any) => {
-        if (offer.prices && offer.prices.length > 0 && offer.prices[0]) {
-            Object.keys(offer.prices[0]).forEach(area => {
-                areas.add(String(area));
+        if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+            const offers: IOffer[] = data.offers;
+            const areas = new Set<string>();
+
+            offers.forEach((offer: IOffer) => {
+                if (offer.prices && offer.prices.length > 0 && offer.prices[0]) {
+                    Object.keys(offer.prices[0]).forEach(area => {
+                        areas.add(String(area));
+                    });
+                }
             });
+
+            const sortedAreas = Array.from(areas).sort((a, b) => Number(a) - Number(b));
+
+            return sortedAreas.map((area) => ({
+                id: area,
+                label: area,
+            }));
         }
-    });
 
-    const sortedAreas = Array.from(areas).sort((a, b) => a - b);
-
-    return sortedAreas.map((area, index) => ({
-        id: area,
-        label: area,
-    }));
+        return [];
+    } catch (error) {
+        console.error('Error getting areas list:', error);
+        return [];
+    }
 };
-
 
 export const getPricesList = () => {
-    const offers = loadYamlData('offers').offers || [];
-    const prices = new Set<string>();
+    try {
+        const data = loadYamlData('offers');
 
-    offers.forEach((offer: any) => {
-        if (offer.prices[0]) {
-            Object.values(offer.prices[0]).forEach(price => {
-                prices.add(String(price));
-            });
-        }
-    });
+        if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+            const offers: IOffer[] = data.offers;
+            const prices = new Set<string>();
 
-    const sortedPrices = Array.from(prices).sort();
-
-    return sortedPrices.map((price) => ({
-        id: price,
-        label: price,
-    }));
-};
-export const getCategoriesListWithOffers = (selectedCategory?: string) => {
-    const categoriesTypes = loadYamlData('offer-types')?.types || [];
-    const offers = loadYamlData('offers')?.offers || [];
-
-    const categoriesWithOffers: Array<any> = [];
-    const addedCategories = new Set();
-
-    offers.forEach((offer: any) => {
-        const matchedCategory = categoriesTypes.find((categoryObj: any) => categoryObj.id === offer.category_id);
-
-        if (matchedCategory && matchedCategory.title) {
-
-            if (!selectedCategory || matchedCategory.title === selectedCategory) {
-                categoriesWithOffers.push({
-                    ...offer,
-                    category_title: matchedCategory.title
-                });
-
-                if (!addedCategories.has(matchedCategory.title)) {
-                    addedCategories.add(matchedCategory.title);
+            offers.forEach((offer: IOffer) => {
+                if (offer.prices[0]) {
+                    Object.values(offer.prices[0]).forEach(price => {
+                        prices.add(String(price));
+                    });
                 }
-            }
-        }
-    });
+            });
 
-    return categoriesWithOffers;
-}
+            const sortedPrices = Array.from(prices).sort();
+
+            return sortedPrices.map((price) => ({
+                id: price,
+                label: price,
+            }));
+        }
+
+        return [];
+    } catch (error) {
+        console.error('Error getting prices list:', error);
+        return [];
+    }
+};
+
+export const getCategoriesListWithOffers = (selectedCategory?: string) => {
+    try {
+        const categoryData = loadYamlData('offer-types');
+        const categoriesTypes: IOfferType[] = (categoryData && typeof categoryData === 'object' && 'types' in categoryData && Array.isArray(categoryData.types))
+            ? categoryData.types
+            : [];
+
+        const data = loadYamlData('offers');
+
+        if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+            const offers: IOffer[] = data.offers;
+            const categoriesWithOffers: Array<any> = [];
+            const addedCategories = new Set();
+
+            offers.forEach((offer: IOffer) => {
+                const matchedCategory = categoriesTypes.find((categoryObj: IOfferType) => categoryObj.id === offer.category_id);
+
+                if (matchedCategory && matchedCategory.title) {
+                    if (!selectedCategory || matchedCategory.title === selectedCategory) {
+                        categoriesWithOffers.push({
+                            ...offer,
+                            category_title: matchedCategory.title
+                        });
+
+                        if (!addedCategories.has(matchedCategory.title)) {
+                            addedCategories.add(matchedCategory.title);
+                        }
+                    }
+                }
+            });
+
+            return categoriesWithOffers;
+        }
+
+        return [];
+    } catch (error) {
+        console.error('Error getting categories list with offers:', error);
+        return [];
+    }
+};

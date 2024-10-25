@@ -6,22 +6,21 @@ import OffersComponent from "@/app/shared/components/offers/offers.component"
 import ParticipantsSidebarComponent from "@/app/shared/components/participants-sidebar/participants-sidebar.component"
 import BannerRightComponent from "@/app/shared/components/bannerRight/bannerRight.component"
 import {iconSrc, NewsBan} from "@/app/shared/images"
+import {imagesMap} from "@/libs/imagesMap";
 
-interface IPrice {
-    amount: number
-    price: number
-}
-interface IOption {
-    title: string
-    name: string
-}
 interface IOffer {
+    type: number
     id: number
     title: string
     description: string
+    total_offices: number
     category_id: number
-    prices: IPrice[]
-    options: IOption[]
+    address: string
+    street: string
+    metro_location: string
+    metro_time: string
+    prices: Array<{ [key: string]: number }>
+    options: Array<{ [key: string]: string }>
 }
 interface ICategory {
     id: number
@@ -32,19 +31,19 @@ interface IOwner {
     nameParticipant: string
     apartments: number
     housing: number
-    image: string
+    image: keyof typeof imagesMap
     category: 'owner'
 }
 interface IBroker {
     nameParticipant: string
     proposals: number
-    image: string
+    image: keyof typeof imagesMap
     category: 'broker'
 }
 interface IBuilder {
     nameParticipant: string
     proposals: string
-    image: string
+    image: keyof typeof imagesMap
     category: 'builder'
 }
 

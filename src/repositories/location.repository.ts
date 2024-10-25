@@ -1,13 +1,25 @@
 import {loadYamlData} from "@/libs/loadYaml";
 
-export const getAreas = () => {
-    return  loadYamlData('areas');
+interface IArea {
+    area: string
+}
+
+interface ICityOffice {
+    cityName: string
+}
+
+interface IMetroStation {
+    stationName: string
+}
+
+export const getAreas = (): IArea[] => {
+    return  loadYamlData('areas') as IArea[];
 };
 
-export const getCities = () => {
-    return  loadYamlData('cities');
+export const getCities = (): ICityOffice[] => {
+    return  loadYamlData('cities') as ICityOffice[];
 };
 
-export const getStations = () => {
-    return  loadYamlData('stations');
+export const getStations = (): IMetroStation[] => {
+    return  loadYamlData('stations') as IMetroStation[];
 };

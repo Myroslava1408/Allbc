@@ -66,7 +66,7 @@ const BannerRightComponent : React.FC<BannerRightProps> = ({
                     {secondButtonText && (
                         <button className={`${secondButtonClassName} flex gap-2.5 text-white`}>
                             {secondButtonText}
-                            {iconSrc && <Image src={iconSrc} alt="icon"/>}
+                            {iconSrc && <Image src={iconSrc} alt="icon" width={20} height={20}/> }
                         </button>
                     )}
                 </div>

@@ -12,11 +12,15 @@ import {
     getPrivacyPolicyOptions
 } from "@/repositories/options.repository"
 import {getAreasList, getPricesList} from "@/repositories/offers.repository"
-import {getTypesList} from "@/repositories/offer-types.repository";
+import {getTypesList} from "@/repositories/offer-types.repository"
 
 interface ILayoutProps {
     settings: ReactNode
     children: ReactNode
+}
+interface IOption {
+    id: string | null
+    label: string
 }
 
 const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ settings, children }) => {
@@ -25,8 +29,8 @@ const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ settings, children })
     const forOwnersOptions = getForOwnersOptions();
     const businessCentersOptions = getBusinessCentersOptions();
 
-    const areasList = getAreasList();
-    const pricesList = getPricesList();
+    const areasList: IOption[] = getAreasList();
+    const pricesList: IOption[] = getPricesList();
     const categoriesList = getTypesList();
 
     return (

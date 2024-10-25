@@ -23,6 +23,11 @@ const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({ tit
     const additionalAmount = 2;
 
     const getRandomItems = (items: ICategory[], count: number) => {
+        if (!Array.isArray(items)) {
+            console.error("Expected items to be an array");
+            return [];
+        }
+
         const shuffled = items.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     };
@@ -44,18 +49,23 @@ const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({ tit
         <div className={`${styles.listOffice} flex flex-col`}>
             <p>{titleHeader}</p>
             <ul className="pt-3 flex flex-col gap-2">
-                {displayedCategories.map((category, index) => (
-                    <li key={index}>
-                        <div className={`${styles.listUl} flex justify-between`}>
-                            <Link href="#">
-                                {category.nameCategory}
-                            </Link>
-                            <div className={styles.numbBlue}>
-                                <span>{category.amount}</span>
+                {Array.isArray(displayedCategories) && displayedCategories.length > 0 ? (
+                    displayedCategories.map((category, index) => (
+                        <li key={index}>
+                            <div className={`${styles.listUl} flex justify-between`}>
+                                <Link href="#">
+                                    {category.nameCategory}
+                                </Link>
+                                <div className={styles.numbBlue}>
+                                    <span>{category.amount}</span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                ))}
+                        </li>
+                    ))
+                ) : (
+                    <p>Немає доступних категорій</p>
+                )}
+
             </ul>
             <div className={`${styles.moreBlock} flex`}>
                 <button onClick={toggleItems} className="flex items-center pt-2 gap-3">

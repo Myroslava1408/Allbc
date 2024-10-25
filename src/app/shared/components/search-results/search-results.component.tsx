@@ -8,12 +8,17 @@ interface Price {
 }
 
 interface Offer {
+    type: number
     id: number
     title: string
-    category_id: number
-    prices: Price[]
-    area?: number
-    category_title: string
+    description: string
+    total_offices: number
+    address: string
+    street: string
+    metro_location: string
+    metro_time: string
+    prices: Array<{ [key: string]: number }>
+    options: Array<{ [key: string]: string }>
 }
 
 interface SearchResultsProps {
@@ -31,7 +36,7 @@ const SearchResultsComponent: React.FC<SearchResultsProps> = ({ offers, settings
                 {offers.length > 0 ? (
                     offers.map((offer, index) => (
                         <div className={"flex flex-col"} key={index}>
-                            <OfferComponent settings={settings} offer={offer}/>
+                            <OfferComponent  offer={offer}/>
                         </div>
                     ))
                 ) : (
@@ -42,4 +47,4 @@ const SearchResultsComponent: React.FC<SearchResultsProps> = ({ offers, settings
     );
 };
 
-export default SearchResultsComponent;
+export default SearchResultsComponent
