@@ -121,7 +121,7 @@ const OfferComponent:FC<Readonly<IOfferProps>> = ({offer}) => {
                             const numericPrice = Number(price);
                             return (
                                 <div className="flex flex-col numbM" key={meters}>
-                                     <span className="font-bold text-sm">
+                                     <span className="font-bold meters">
                                     {meters} м<sup>2</sup>
                                 </span>
                                     <p>{formatNumber(numericPrice)} ₽</p>

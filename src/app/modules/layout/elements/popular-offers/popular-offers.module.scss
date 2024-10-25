@@ -86,7 +86,7 @@
       position: relative;
       z-index: 1;
       font-family: Inter,sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 33.6px;
       text-align: center;
@@ -96,6 +96,7 @@
       height: 40px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 1);
+      padding-left: 16px;
       &::placeholder {
         font-family: Inter,sans-serif;
         font-size: 12px;
@@ -103,8 +104,6 @@
         line-height: 16.8px;
         text-align: left;
         color: rgba(191, 191, 191, 1);
-        padding-left: 16px;
-        padding-top: 11.5px;
       }
     }
     .subscribeBtn {
@@ -124,9 +123,11 @@
       height: 40px;
       border-radius: 6px;
       background: rgba(84, 157, 203, 1);
-      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: Inter,sans-serif;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 600;
       line-height: 19.6px;
       text-align: center;
