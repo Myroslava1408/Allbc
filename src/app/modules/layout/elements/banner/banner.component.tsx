@@ -1,44 +1,38 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { Autocomplete, TextField } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { Autocomplete, TextField } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useState } from 'react'
 
-import HeaderComponent from '@/app/modules/layout/elements/header/header.component';
-import StatisticsBlockComponent from '@/app/shared/components/statistics-block/statistics-block.component';
-import { Banner, Emblem } from '@/app/shared/images';
+import HeaderComponent from '@/app/modules/layout/elements/header/header.component'
+import StatisticsBlockComponent from '@/app/shared/components/statistics-block/statistics-block.component'
+import { Banner, Emblem } from '@/app/shared/images'
 
-import styles from './banner.module.scss';
+import styles from './banner.module.scss'
 
 interface IOption {
-  id: string | null;
-  label: string;
+  id: string | null
+  label: string
 }
 
 interface IBannerProps {
-  areasList: IOption[];
-  pricesList: IOption[];
-  categoriesList: IOption[];
+  areasList: IOption[]
+  pricesList: IOption[]
+  categoriesList: IOption[]
 }
 
-const BannerComponent: FC<Readonly<IBannerProps>> = ({
-  areasList,
-  pricesList,
-  categoriesList,
-}) => {
-  const router = useRouter();
+const BannerComponent: FC<Readonly<IBannerProps>> = ({ areasList, pricesList, categoriesList }) => {
+  const router = useRouter()
 
-  const [selectedCategory, setSelectedCategory] = useState<IOption | null>(
-    null,
-  );
-  const [selectedArea, setSelectedArea] = useState<IOption | null>(null);
-  const [selectedPrice, setSelectedPrice] = useState<IOption | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<IOption | null>(null)
+  const [selectedArea, setSelectedArea] = useState<IOption | null>(null)
+  const [selectedPrice, setSelectedPrice] = useState<IOption | null>(null)
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const queryString =
       'categoryId=' +
@@ -46,10 +40,10 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
       '&area=' +
       (selectedArea ? selectedArea.id : '') +
       '&price=' +
-      (selectedPrice ? selectedPrice.id : '');
+      (selectedPrice ? selectedPrice.id : '')
 
-    return router.push(`/search?${queryString}`);
-  };
+    return router.push(`/search?${queryString}`)
+  }
 
   const CustomTextField = styled(TextField)({
     '& .MuiInputLabel-root': {
@@ -58,7 +52,7 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
     '& .MuiInputLabel-root.MuiFormLabel-filled': {
       display: 'none',
     },
-  });
+  })
 
   return (
     <section
@@ -73,14 +67,9 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
           <br />
           офіси в твоєму місті
         </h1>
-        <form
-          onSubmit={onSubmit}
-          className={`${styles.containSearch} flex containSearch`}
-        >
+        <form onSubmit={onSubmit} className={`${styles.containSearch} flex containSearch`}>
           <div className={`${styles.whiteWrap} flex lg:flex-row flex-col`}>
-            <div
-              className={`${styles.listFiltr} flex items-center justify-between`}
-            >
+            <div className={`${styles.listFiltr} flex items-center justify-between`}>
               <Autocomplete
                 disablePortal
                 options={categoriesList}
@@ -96,13 +85,13 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label="Категорія"
+                    label='Категорія'
                     InputLabelProps={{
                       shrink: false,
                     }}
                   />
                 )}
-                className=""
+                className=''
                 onChange={(event, value) => setSelectedCategory(value)}
               />
               <div className={styles.line}></div>
@@ -121,13 +110,13 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label="Площа"
+                    label='Площа'
                     InputLabelProps={{
                       shrink: false,
                     }}
                   />
                 )}
-                className=""
+                className=''
                 onChange={(event, value) => setSelectedArea(value)}
               />
               <div className={styles.line}></div>
@@ -146,46 +135,41 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label="Ціна"
+                    label='Ціна'
                     InputLabelProps={{
                       shrink: false,
                     }}
                   />
                 )}
-                className=""
+                className=''
                 onChange={(event, value) => setSelectedPrice(value)}
               />
             </div>
           </div>
-          <button className={styles.btnSearch} type="submit">
+          <button className={styles.btnSearch} type='submit'>
             Шукати
           </button>
         </form>
         <div className={`${styles.rowParts} flex sm:flex-row flex-col`}>
+          <StatisticsBlockComponent title='Вільних' count={75040} subtitle='офісів' color='green' />
           <StatisticsBlockComponent
-            title="Вільних"
-            count={75040}
-            subtitle="офісів"
-            color="green"
-          />
-          <StatisticsBlockComponent
-            title="Бізнес центрів"
+            title='Бізнес центрів'
             count={2508}
-            subtitle="у Києві"
-            color="blue"
+            subtitle='у Києві'
+            color='blue'
           />
         </div>
         <div className={`${styles.darkBlock} flex sm:flex-row flex-col`}>
-          <Image src={Emblem} alt="icon" width={106} height={84} />
-          <div className="flex flex-col">
-            <h5 className="text-white">Люблінський парк</h5>
-            <h6 className="text-white">15 хв пішки до м “Братиславська”</h6>
+          <Image src={Emblem} alt='icon' width={106} height={84} />
+          <div className='flex flex-col'>
+            <h5 className='text-white'>Люблінський парк</h5>
+            <h6 className='text-white'>15 хв пішки до м “Братиславська”</h6>
           </div>
           <button className={styles.darkBtn}>Дізнатися ціни</button>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default BannerComponent;
+export default BannerComponent

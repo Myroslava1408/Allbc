@@ -1,29 +1,26 @@
-'use client';
-import Link from 'next/link';
+'use client'
+import Link from 'next/link'
 
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
 interface ICityOffice {
-  cityName: string;
+  cityName: string
 }
 
 interface ICityOfficesProps {
-  cities: ICityOffice[] | { cities: ICityOffice[] } | null;
-  title: string;
+  cities: ICityOffice[] | { cities: ICityOffice[] } | null
+  title: string
 }
 
-const CityOfficesComponent: FC<Readonly<ICityOfficesProps>> = ({
-  cities,
-  title,
-}) => {
+const CityOfficesComponent: FC<Readonly<ICityOfficesProps>> = ({ cities, title }) => {
   const citiesArray = Array.isArray(cities)
     ? cities
     : cities && Array.isArray(cities.cities)
       ? cities.cities
-      : [];
+      : []
 
   if (!citiesArray.length) {
-    return <p>Немає міст</p>;
+    return <p>Немає міст</p>
   }
 
   const columns = {
@@ -39,23 +36,20 @@ const CityOfficesComponent: FC<Readonly<ICityOfficesProps>> = ({
       seventhColumn: citiesArray.slice(30, 35),
       eighthColumn: citiesArray.slice(35, 36),
     },
-  };
+  }
 
   return (
-    <div className="flex flex-col">
+    <div className='flex flex-col'>
       <h3>{title}</h3>
-      <div className="flex flex-col gap-12">
+      <div className='flex flex-col gap-12'>
         {Object.entries(columns).map(([group, groupColumns]) => (
-          <div
-            className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-20"
-            key={group}
-          >
+          <div className='grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-20' key={group}>
             {Object.entries(groupColumns).map(([column, columnCities]) => (
-              <ul className="flex flex-col gap-3" key={column}>
+              <ul className='flex flex-col gap-3' key={column}>
                 {Array.isArray(columnCities) && columnCities.length > 0 ? (
                   columnCities.map((city, index) => (
                     <li key={index}>
-                      <Link href="#">{city.cityName}</Link>
+                      <Link href='#'>{city.cityName}</Link>
                     </li>
                   ))
                 ) : (
@@ -67,6 +61,6 @@ const CityOfficesComponent: FC<Readonly<ICityOfficesProps>> = ({
         ))}
       </div>
     </div>
-  );
-};
-export default CityOfficesComponent;
+  )
+}
+export default CityOfficesComponent

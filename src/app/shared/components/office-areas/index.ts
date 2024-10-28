@@ -1,1 +1,1 @@
-export { default as OfficeAreasComponent } from './office-areas.component';
+export { default as OfficeAreasComponent } from '@/app/shared/components/office-areas/office-areas.component'

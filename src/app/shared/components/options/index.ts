@@ -1,1 +1,1 @@
-export { default as OptionsComponent } from './options.component';
+export { default as OptionsComponent } from '@/app/shared/components/options/options.component'

@@ -1,19 +1,19 @@
-import { imagesMap } from '@/libs/imagesMap';
-import { loadYamlData } from '@/libs/loadYaml';
+import { imagesMap } from '@/libs/imagesMap'
+import { loadYamlData } from '@/libs/loadYaml'
 
-type BackgroundKeys = keyof typeof imagesMap;
+type BackgroundKeys = keyof typeof imagesMap
 interface IBlock {
-  type: number;
-  title: string;
-  background: BackgroundKeys;
+  type: number
+  title: string
+  background: BackgroundKeys
 }
 interface IService extends IBlock {
-  type: number;
+  type: number
 }
 interface IAdditionalService {
-  service: IService;
+  service: IService
 }
 
 export const getAdditionalServices = (): IAdditionalService[] => {
-  return loadYamlData('additional-services') as IAdditionalService[];
-};
+  return loadYamlData('additional-services') as IAdditionalService[]
+}

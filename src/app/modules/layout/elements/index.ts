@@ -1,2 +1,2 @@
-export * from './banner';
-export * from './footer';
+export * from '@/app/modules/layout/elements/banner'
+export * from '@/app/modules/layout/elements/footer'

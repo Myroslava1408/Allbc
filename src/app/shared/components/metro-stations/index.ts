@@ -1,1 +1,1 @@
-export { default as MetroStations } from './metro-stations.component';
+export { default as MetroStations } from '@/app/shared/components/metro-stations/metro-stations.component'

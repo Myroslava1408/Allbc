@@ -62,7 +62,7 @@ import {
   Push,
   Search,
   Twiter,
-} from '@/app/shared/images';
+} from '@/app/shared/images'
 
 export const imagesMap = {
   ImageLogo: ImageLogo,
@@ -128,4 +128,4 @@ export const imagesMap = {
   ArticleFirst: ArticleFirst,
   ArticleSecond: ArticleSecond,
   ArticleThird: ArticleThird,
-};
+}

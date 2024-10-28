@@ -1,37 +1,36 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { FC } from 'react';
+import { FC } from 'react'
 
-import { imagesMap } from '@/libs/imagesMap';
+import { imagesMap } from '@/libs/imagesMap'
 
-import styles from './additional-service.module.scss';
+import styles from './additional-service.module.scss'
 
-type BackgroundKeys = keyof typeof imagesMap;
+type BackgroundKeys = keyof typeof imagesMap
 
 interface IBlock {
-  type: number;
-  title: string;
-  background: BackgroundKeys;
+  type: number
+  title: string
+  background: BackgroundKeys
 }
 
 interface IAdditionalServiceProps {
-  block: IBlock;
-  className?: string;
+  block: IBlock
+  className?: string
 }
 
 const AdditionalServiceComponent: FC<Readonly<IAdditionalServiceProps>> = ({
   block,
   className,
 }) => {
-  const backgroundKey = block.background;
-  const background =
-    backgroundKey in imagesMap ? imagesMap[backgroundKey] : null;
+  const backgroundKey = block.background
+  const background = backgroundKey in imagesMap ? imagesMap[backgroundKey] : null
 
-  let fullClassName = block.type === 1 ? styles.itemTop : styles.itemBottom;
+  let fullClassName = block.type === 1 ? styles.itemTop : styles.itemBottom
   if (className) {
-    fullClassName += ' ' + className;
+    fullClassName += ' ' + className
   }
 
   return (
@@ -41,8 +40,8 @@ const AdditionalServiceComponent: FC<Readonly<IAdditionalServiceProps>> = ({
         backgroundImage: background ? `url(${background.src})` : undefined,
       }}
     >
-      <Link href="#">{block.title}</Link>
+      <Link href='#'>{block.title}</Link>
     </div>
-  );
-};
-export default AdditionalServiceComponent;
+  )
+}
+export default AdditionalServiceComponent

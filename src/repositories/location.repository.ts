@@ -1,25 +1,25 @@
-import { loadYamlData } from '@/libs/loadYaml';
+import { loadYamlData } from '@/libs/loadYaml'
 
 interface IArea {
-  area: string;
+  area: string
 }
 
 interface ICityOffice {
-  cityName: string;
+  cityName: string
 }
 
 interface IMetroStation {
-  stationName: string;
+  stationName: string
 }
 
 export const getAreas = (): IArea[] => {
-  return loadYamlData('areas') as IArea[];
-};
+  return loadYamlData('areas') as IArea[]
+}
 
 export const getCities = (): ICityOffice[] => {
-  return loadYamlData('cities') as ICityOffice[];
-};
+  return loadYamlData('cities') as ICityOffice[]
+}
 
 export const getStations = (): IMetroStation[] => {
-  return loadYamlData('stations') as IMetroStation[];
-};
+  return loadYamlData('stations') as IMetroStation[]
+}

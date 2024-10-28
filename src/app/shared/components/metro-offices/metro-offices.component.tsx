@@ -1,30 +1,27 @@
-'use client';
-import React, { FC } from 'react';
+'use client'
+import React, { FC } from 'react'
 
-import MetroStationsComponent from '@/app/shared/components/metro-stations/metro-stations.component';
+import MetroStationsComponent from '@/app/shared/components/metro-stations/metro-stations.component'
 
 interface IMetroStation {
-  stationName: string;
+  stationName: string
 }
 
 interface IMetroOfficesProps {
-  title: string;
+  title: string
   stations: {
-    stations: IMetroStation[] | { stations: IMetroStation[] };
-  };
+    stations: IMetroStation[] | { stations: IMetroStation[] }
+  }
 }
-const MetroOfficesComponent: FC<Readonly<IMetroOfficesProps>> = ({
-  title,
-  stations,
-}) => {
+const MetroOfficesComponent: FC<Readonly<IMetroOfficesProps>> = ({ title, stations }) => {
   return (
-    <div className="flex flex-col">
+    <div className='flex flex-col'>
       <h3>{title}</h3>
-      <div className="flex flex-col gap-12">
+      <div className='flex flex-col gap-12'>
         <MetroStationsComponent stations={stations} />
         <MetroStationsComponent stations={stations} />
       </div>
     </div>
-  );
-};
-export default MetroOfficesComponent;
+  )
+}
+export default MetroOfficesComponent

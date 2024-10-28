@@ -1,34 +1,34 @@
-import BannerComponent from './elements/banner/banner.component';
+import BannerComponent from './elements/banner/banner.component'
 
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react'
 
-import { FooterComponent } from '@/app/modules/layout/elements';
-import { getTypesList } from '@/repositories/offer-types.repository';
-import { getAreasList, getPricesList } from '@/repositories/offers.repository';
+import { FooterComponent } from '@/app/modules/layout/elements'
+import { getTypesList } from '@/repositories/offer-types.repository'
+import { getAreasList, getPricesList } from '@/repositories/offers.repository'
 import {
   getAboutUsOptions,
   getBusinessCentersOptions,
   getForOwnersOptions,
   getPrivacyPolicyOptions,
-} from '@/repositories/options.repository';
+} from '@/repositories/options.repository'
 
 interface ILayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 interface IOption {
-  id: string | null;
-  label: string;
+  id: string | null
+  label: string
 }
 
 const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ children }) => {
-  const aboutUsOptions = getAboutUsOptions();
-  const privacyPolicyOptions = getPrivacyPolicyOptions();
-  const forOwnersOptions = getForOwnersOptions();
-  const businessCentersOptions = getBusinessCentersOptions();
+  const aboutUsOptions = getAboutUsOptions()
+  const privacyPolicyOptions = getPrivacyPolicyOptions()
+  const forOwnersOptions = getForOwnersOptions()
+  const businessCentersOptions = getBusinessCentersOptions()
 
-  const areasList: IOption[] = getAreasList();
-  const pricesList: IOption[] = getPricesList();
-  const categoriesList = getTypesList();
+  const areasList: IOption[] = getAreasList()
+  const pricesList: IOption[] = getPricesList()
+  const categoriesList = getTypesList()
 
   return (
     <div>
@@ -45,7 +45,7 @@ const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ children }) => {
         businessCentersOptions={businessCentersOptions}
       />
     </div>
-  );
-};
+  )
+}
 
-export default RootLayoutComponent;
+export default RootLayoutComponent

@@ -1,64 +1,64 @@
-'use client';
+'use client'
 
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react'
 
-import BannerRightComponent from '@/app/shared/components/bannerRight/bannerRight.component';
-import OffersComponent from '@/app/shared/components/offers/offers.component';
-import ParticipantsSidebarComponent from '@/app/shared/components/participants-sidebar/participants-sidebar.component';
-import { iconSrc, NewsBan } from '@/app/shared/images';
-import { imagesMap } from '@/libs/imagesMap';
+import BannerRightComponent from '@/app/shared/components/bannerRight/bannerRight.component'
+import OffersComponent from '@/app/shared/components/offers/offers.component'
+import ParticipantsSidebarComponent from '@/app/shared/components/participants-sidebar/participants-sidebar.component'
+import { iconSrc, NewsBan } from '@/app/shared/images'
+import { imagesMap } from '@/libs/imagesMap'
 
-import styles from './popular-offers.module.scss';
+import styles from './popular-offers.module.scss'
 
 interface IOffer {
-  type: number;
-  id: number;
-  title: string;
-  description: string;
-  total_offices: number;
-  category_id: number;
-  address: string;
-  street: string;
-  metro_location: string;
-  metro_time: string;
-  prices: Array<{ [key: string]: number }>;
-  options: Array<{ [key: string]: string }>;
+  type: number
+  id: number
+  title: string
+  description: string
+  total_offices: number
+  category_id: number
+  address: string
+  street: string
+  metro_location: string
+  metro_time: string
+  prices: Array<{ [key: string]: number }>
+  options: Array<{ [key: string]: string }>
 }
 interface ICategory {
-  id: number;
-  title: string;
-  category: string;
+  id: number
+  title: string
+  category: string
 }
 interface IOwner {
-  nameParticipant: string;
-  apartments: number;
-  housing: number;
-  image: keyof typeof imagesMap;
-  category: 'owner';
+  nameParticipant: string
+  apartments: number
+  housing: number
+  image: keyof typeof imagesMap
+  category: 'owner'
 }
 interface IBroker {
-  nameParticipant: string;
-  proposals: number;
-  image: keyof typeof imagesMap;
-  category: 'broker';
+  nameParticipant: string
+  proposals: number
+  image: keyof typeof imagesMap
+  category: 'broker'
 }
 interface IBuilder {
-  nameParticipant: string;
-  proposals: string;
-  image: keyof typeof imagesMap;
-  category: 'builder';
+  nameParticipant: string
+  proposals: string
+  image: keyof typeof imagesMap
+  category: 'builder'
 }
 
 interface IPopularOffersProps {
-  settings: ReactNode;
-  offerTypesForSale: ICategory[];
-  offerTypesForRent: ICategory[];
-  offersForSale: IOffer[];
-  offersForRent: IOffer[];
-  builders: IBuilder[];
-  owners: IOwner[];
-  brokers: IBroker[];
-  categoriesListWithOffers: IOffer[];
+  settings: ReactNode
+  offerTypesForSale: ICategory[]
+  offerTypesForRent: ICategory[]
+  offersForSale: IOffer[]
+  offersForRent: IOffer[]
+  builders: IBuilder[]
+  owners: IOwner[]
+  brokers: IBroker[]
+  categoriesListWithOffers: IOffer[]
 }
 
 const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
@@ -74,8 +74,8 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
 }) => {
   return (
     <section className={`${styles.offers} flex flex-col`}>
-      <div className="flex lg:flex-row items-baseline flex-col justify-between">
-        <div className="flex m-auto flex-col">
+      <div className='flex lg:flex-row items-baseline flex-col justify-between'>
+        <div className='flex m-auto flex-col'>
           <OffersComponent
             settings={settings}
             title={'Продаж'}
@@ -91,9 +91,7 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
             categoriesListWithOffers={categoriesListWithOffers}
           />
         </div>
-        <div
-          className={`${styles.blockParticipants} flex items-center flex-col`}
-        >
+        <div className={`${styles.blockParticipants} flex items-center flex-col`}>
           <div
             className={`${styles.blockRight} grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 lg:grid-cols-1 m-auto`}
           >
@@ -122,12 +120,12 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
             />
           </div>
           <BannerRightComponent
-            title="Subscribe on news & updates"
-            subtitle="Always be in the center of events"
-            inputPlaceholder="Email"
-            buttonText="Підписатися"
+            title='Subscribe on news & updates'
+            subtitle='Always be in the center of events'
+            inputPlaceholder='Email'
+            buttonText='Підписатися'
             inputClassName={styles.inputNews}
-            secondButtonText="Призначити чат-бота Telegram"
+            secondButtonText='Призначити чат-бота Telegram'
             iconSrc={typeof iconSrc === 'string' ? iconSrc : iconSrc.src}
             onButtonClick={() => alert('Підписатися')}
             containerClassName={styles.newsItem}
@@ -139,6 +137,6 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
         </div>
       </div>
     </section>
-  );
-};
-export default PopularOffersComponent;
+  )
+}
+export default PopularOffersComponent

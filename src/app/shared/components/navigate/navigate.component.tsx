@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
 const NavigateComponent: FC = () => {
   const links = {
@@ -8,19 +8,19 @@ const NavigateComponent: FC = () => {
     Sale: 'Продаж',
     newConstructions: 'Новобудови',
     Coworkings: 'Коворкінги',
-  };
+  }
 
   return (
     <>
       {Object.entries(links).map(([link, linkName]) => (
         <li key={link}>
-          <Link className="text-white" href="#">
+          <Link className='text-white' href='#'>
             {linkName}
           </Link>
         </li>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default NavigateComponent;
+export default NavigateComponent

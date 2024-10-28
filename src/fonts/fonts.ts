@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google'
 
 // main font
 export const mainFont = Inter({
@@ -6,4 +6,4 @@ export const mainFont = Inter({
   subsets: ['cyrillic', 'latin'],
   display: 'swap',
   preload: true,
-});
+})

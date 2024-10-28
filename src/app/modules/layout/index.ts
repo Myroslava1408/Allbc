@@ -1,1 +1,1 @@
-export { default as RootLayoutComponent } from './layout.component';
+export { default as RootLayoutComponent } from '@/app/modules/layout/layout.component'
