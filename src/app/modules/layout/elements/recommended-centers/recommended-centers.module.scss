@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     h2 {
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 32px;
       font-weight: 700;
       line-height: 44.8px;
@@ -18,7 +18,7 @@
     }
     a {
       p {
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 12px;
         font-weight: 500;
         line-height: 16.8px;
@@ -30,7 +30,7 @@
         border-radius: 6px;
         background: rgba(5, 173, 229, 0.2);
         span {
-          font-family: Inter,sans-serif;
+          font-family: Inter, sans-serif;
           font-size: 12px;
           font-weight: 600;
           line-height: 16.8px;
@@ -51,13 +51,14 @@
     overflow: hidden;
     position: relative;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5)),var(--bg-image);
+      background: linear-gradient(rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5)),
+        var(--bg-image);
       background-size: cover;
       background-position: center;
       filter: blur(3px);
@@ -71,7 +72,7 @@
     h4 {
       position: relative;
       z-index: 1;
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 20px;
       font-weight: 700;
       line-height: 33.6px;
@@ -87,7 +88,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 14px;
       font-weight: 600;
       line-height: 19.6px;
@@ -96,9 +97,9 @@
   }
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .officeItem {
-    max-width: unset!important;
-    top: 110px!important;
+    max-width: unset !important;
+    top: 110px !important;
   }
 }

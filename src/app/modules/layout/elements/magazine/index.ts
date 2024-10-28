@@ -1,1 +1,1 @@
-export { default as SixthSectionComponent } from './magazine.component'
+export { default as SixthSectionComponent } from './magazine.component';

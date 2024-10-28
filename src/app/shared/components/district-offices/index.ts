@@ -1,1 +1,1 @@
-export { default as DistrictOffices } from './district-offices.component'
+export { default as DistrictOffices } from './district-offices.component';

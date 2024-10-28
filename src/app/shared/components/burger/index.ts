@@ -1,1 +1,1 @@
-export { default as BurgerComponent } from './burger.component'
+export { default as BurgerComponent } from './burger.component';

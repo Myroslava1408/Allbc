@@ -1,46 +1,49 @@
-import {FC} from "react";
-import { useState } from 'react'
+import { FC, useState } from 'react';
 
-import styles from "@/app/shared/components/filter-list/filter-list.module.scss"
-
+import styles from '@/app/shared/components/filter-list/filter-list.module.scss';
 
 interface IListItem {
-    id: number
-    title: string
-    category: string
+  id: number;
+  title: string;
+  category: string;
 }
 interface IFilterListProps {
-    list: IListItem[]
-    onCategorySelect: (categoryId: number) => void
+  list: IListItem[];
+  onCategorySelect: (categoryId: number) => void;
 }
-const FilterListComponent: FC<Readonly<IFilterListProps>> = ({ list, onCategorySelect }) => {
-    const [activeId, setActiveId] = useState<number | null>(null);
+const FilterListComponent: FC<Readonly<IFilterListProps>> = ({
+  list,
+  onCategorySelect,
+}) => {
+  const [activeId, setActiveId] = useState<number | null>(null);
 
-    const handleClick = (id: number) => {
-        setActiveId(id);
-        onCategorySelect(id);
-    };
-    return (
-        <div className={`${styles.aRow} gap-5 flex`}>
-            {Array.isArray(list) && list.length > 0 ? (
-                list.map((listItem, index) => {
-                    return (
-                        <button key={index} onClick={() => handleClick(listItem.id)}>
-                            <div
-                                className={`${styles.blockRed} ${activeId === listItem.id ? styles.active : ''}`}
-                            >
-                                <p className={activeId === listItem.id ? styles.activeText : ''}>
-                                    {listItem.title}
-                                </p>
-                            </div>
-                        </button>
-                    );
-                })
-            ) : (
-                <p>Список порожній</p>
-            )}
-        </div>
-    )
-}
+  const handleClick = (id: number) => {
+    setActiveId(id);
+    onCategorySelect(id);
+  };
+  return (
+    <div className={`${styles.aRow} gap-5 flex`}>
+      {Array.isArray(list) && list.length > 0 ? (
+        list.map((listItem, index) => {
+          return (
+            <button key={index} onClick={() => handleClick(listItem.id)}>
+              <div
+                className={`${styles.blockRed} ${activeId === listItem.id ? styles.active : ''}`}
+              >
+                <p
+                  className={activeId === listItem.id ? styles.activeText : ''}
+                >
+                  {listItem.title}
+                </p>
+              </div>
+            </button>
+          );
+        })
+      ) : (
+        <p>Список порожній</p>
+      )}
+    </div>
+  );
+};
 
-export default FilterListComponent
+export default FilterListComponent;

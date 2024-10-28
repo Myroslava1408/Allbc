@@ -1,1 +1,1 @@
-export { default as FilterListComponent } from './filter-list.component'
+export { default as FilterListComponent } from './filter-list.component';

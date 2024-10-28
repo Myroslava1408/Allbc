@@ -1,1 +1,1 @@
-export { default as ParticipantsSidebarComponent } from './participants-sidebar.component'
+export { default as ParticipantsSidebarComponent } from './participants-sidebar.component';

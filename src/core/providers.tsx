@@ -1,32 +1,36 @@
-import { RootLayoutComponent } from '@/app/modules/layout'
-import { ReactNode } from 'react'
-import { mainFont } from '@/fonts'
+import { ReactNode } from 'react';
 
+import '@/styles/globals.scss';
+
+import { RootLayoutComponent } from '@/app/modules/layout';
+import { mainFont } from '@/fonts';
 
 interface ISetting {
-    id: number
+  id: number;
 }
 
 interface ProvidersProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
-const Providers: ({ children }: ProvidersProps) => Promise<JSX.Element> = async ({ children }) => {
-    const settings: ISetting[] = [];
+const Providers: ({
+  children,
+}: ProvidersProps) => Promise<JSX.Element> = async ({ children }) => {
+  const settings: ISetting[] = [];
 
-    const renderSettings = () => {
-        return settings.map(setting => (
-            <div key={setting.id}></div>
-        ));
-    };
+  const renderSettings = () => {
+    return settings.map((setting) => <div key={setting.id}></div>);
+  };
 
-    return (
-        <html>
-            <body className={mainFont.className}>
-                <RootLayoutComponent settings={renderSettings()}>{children}</RootLayoutComponent>
-            </body>
-        </html>
-    )
-}
+  return (
+    <html>
+      <body className={mainFont.className}>
+        <RootLayoutComponent settings={renderSettings()}>
+          {children}
+        </RootLayoutComponent>
+      </body>
+    </html>
+  );
+};
 
-export default Providers
+export default Providers;

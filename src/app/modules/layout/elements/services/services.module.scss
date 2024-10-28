@@ -8,7 +8,7 @@
   padding-top: 30px;
   padding: 10px;
   h3 {
-    font-family: Inter,sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 44.8px;
@@ -20,10 +20,11 @@
   }
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .sectionFifth {
     .itemsGrid {
-     .itemTop,.itemBottom {
+      .itemTop,
+      .itemBottom {
         max-width: unset;
         background-size: cover;
         a {

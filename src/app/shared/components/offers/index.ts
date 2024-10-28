@@ -1,1 +1,1 @@
-export { default as OffersComponent } from './offers.component'
+export { default as OffersComponent } from './offers.component';

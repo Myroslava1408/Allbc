@@ -1,1 +1,1 @@
-export { default as CityOffices } from './city-offices.component'
+export { default as CityOffices } from './city-offices.component';

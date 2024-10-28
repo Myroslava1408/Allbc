@@ -45,13 +45,13 @@ a {
   }
 }
 
-  @media (max-width:1024px) {
-    .itemCategory {
-      margin: 0 auto!important;
-      background-repeat: no-repeat!important;
-      background-size: cover!important;
-      background-position: center!important;
-      width: auto!important;
-      max-width: 100% !important;
-    }
+@media (max-width: 1024px) {
+  .itemCategory {
+    margin: 0 auto !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    width: auto !important;
+    max-width: 100% !important;
   }
+}

@@ -1,32 +1,35 @@
-"use client";
-import React, { FC, ReactNode } from 'react'
-import OfficeAreaComponent from "@/app/shared/components/office-area/office-area.component"
+'use client';
+import React, { FC } from 'react';
+
+import OfficeAreaComponent from '@/app/shared/components/office-area/office-area.component';
 
 interface IArea {
-    area: string
+  area: string;
 }
 
 interface IOfficeAreasProps {
-    settings: ReactNode
-    title: string
-    areas: IArea[] | { areas: IArea[] } | null
+  title: string;
+  areas: IArea[] | { areas: IArea[] } | null;
 }
 
-const OfficeAreasComponent: FC<Readonly<IOfficeAreasProps>> = ({ settings, title, areas }) => {
-    return (
-        <div className="flex flex-col">
-            <h3>{title}</h3>
-            <div className="flex flex-col gap-12">
-                <div className="grid md:grid-cols-6 grid-cols-3 gap-8 md:gap-20">
-                    <OfficeAreaComponent  areas={areas} />
-                    <OfficeAreaComponent  areas={areas} />
-                    <OfficeAreaComponent  areas={areas} />
-                    <OfficeAreaComponent  areas={areas} />
-                    <OfficeAreaComponent  areas={areas} />
-                    <OfficeAreaComponent  areas={areas} />
-                </div>
-            </div>
+const OfficeAreasComponent: FC<Readonly<IOfficeAreasProps>> = ({
+  title,
+  areas,
+}) => {
+  return (
+    <div className="flex flex-col">
+      <h3>{title}</h3>
+      <div className="flex flex-col gap-12">
+        <div className="grid md:grid-cols-6 grid-cols-3 gap-8 md:gap-20">
+          <OfficeAreaComponent areas={areas} />
+          <OfficeAreaComponent areas={areas} />
+          <OfficeAreaComponent areas={areas} />
+          <OfficeAreaComponent areas={areas} />
+          <OfficeAreaComponent areas={areas} />
+          <OfficeAreaComponent areas={areas} />
         </div>
-    )
-}
-export default OfficeAreasComponent
+      </div>
+    </div>
+  );
+};
+export default OfficeAreasComponent;

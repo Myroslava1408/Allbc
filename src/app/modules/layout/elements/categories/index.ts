@@ -1,1 +1,1 @@
-export { default as CategoriesComponent } from './categories.component'
+export { default as CategoriesComponent } from './categories.component';

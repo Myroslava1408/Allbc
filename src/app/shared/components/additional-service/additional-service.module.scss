@@ -16,9 +16,10 @@
   background-size: cover;
   display: flex;
 }
-.itemTop,.itemBottom {
+.itemTop,
+.itemBottom {
   a {
-    font-family: Inter,sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 22px;
     font-weight: 600;
     line-height: 30.8px;
@@ -31,12 +32,13 @@
   }
 }
 
-@media (max-width:1024px) {
-      .itemTop,.itemBottom {
-        max-width: unset!important;
-        background-size: cover!important;
-        a {
-          padding-left: 86px!important;
-        }
-      }
+@media (max-width: 1024px) {
+  .itemTop,
+  .itemBottom {
+    max-width: unset !important;
+    background-size: cover !important;
+    a {
+      padding-left: 86px !important;
     }
+  }
+}

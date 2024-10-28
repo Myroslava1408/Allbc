@@ -12,7 +12,7 @@
       height: 40px;
       border-radius: 6px;
       background: rgba(160, 205, 105, 1);
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 14px;
       font-weight: 600;
       line-height: 19.6px;
@@ -26,7 +26,7 @@
     border-radius: 6px;
     background: rgba(160, 205, 105, 1);
     color: white;
-    font-family: Inter,sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 12px;
     font-weight: 600;
     line-height: 16.8px;
@@ -38,7 +38,7 @@
     padding: 4px 6px;
     border-radius: 6px;
     background: rgba(5, 173, 229, 0.2);
-    font-family: Inter,sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 12px;
     font-weight: 600;
     line-height: 16.8px;
@@ -50,7 +50,7 @@
     padding: 4px 6px;
     border-radius: 6px;
     background: rgba(198, 68, 159, 0.2);
-    font-family: Inter,sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 12px;
     font-weight: 600;
     line-height: 16.8px;
@@ -65,13 +65,14 @@
     overflow: hidden;
     position: relative;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6)), var(--bg-img);
+      background: linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6)),
+        var(--bg-img);
       background-size: cover;
       background-position: center;
       filter: blur(3px);
@@ -85,7 +86,7 @@
     h4 {
       position: relative;
       z-index: 1;
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 20px;
       font-weight: 700;
       line-height: 33.6px;
@@ -98,7 +99,7 @@
       background: rgba(255, 255, 255, 1);
       padding-left: 16px;
       &::placeholder {
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 12px;
         font-weight: 500;
         line-height: 16.8px;
@@ -111,7 +112,7 @@
       height: 40px;
       border-radius: 6px;
       background: rgba(160, 205, 105, 1);
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 14px;
       font-weight: 600;
       line-height: 19.6px;
@@ -126,26 +127,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 10px;
       font-weight: 600;
       line-height: 19.6px;
       text-align: center;
     }
-
   }
 }
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .offers {
-    height: auto!important;
-    padding-top: 130px!important;
+    height: auto !important;
+    padding-top: 130px !important;
     .blockRight {
-      height: auto!important;
-      width: inherit!important;
+      height: auto !important;
+      width: inherit !important;
       max-width: 100% !important;
     }
     .newsItem {
-      max-width: unset!important;
+      max-width: unset !important;
     }
     .blockParticipants {
       margin: 0 auto;

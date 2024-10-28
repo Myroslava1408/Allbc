@@ -9,7 +9,7 @@
     max-width: 820px;
     width: 100%;
     h1 {
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 40px;
       font-weight: 800;
       line-height: 48px;
@@ -24,7 +24,7 @@
       max-width: 820px;
       width: 100%;
       height: 80px;
-      background: linear-gradient(90.22deg, #05ADE5 0%, #8ABE4B 100%);
+      background: linear-gradient(90.22deg, #05ade5 0%, #8abe4b 100%);
       border-radius: 6px;
       padding: 16px 24px 16px 24px;
       margin-top: 23px;
@@ -49,7 +49,7 @@
         background: rgba(255, 87, 34, 1);
         border-radius: 6px;
         box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 14px;
         font-weight: 600;
         line-height: 19.6px;
@@ -82,14 +82,14 @@
         height: 70px;
       }
       h5 {
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 18px;
         font-weight: 700;
         line-height: 25.2px;
         text-align: left;
       }
       h6 {
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 19.6px;
@@ -101,7 +101,7 @@
         padding: 4px 5px 5px 18px;
         border-radius: 6px;
         background: rgba(255, 255, 255, 0.3);
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 14px;
         font-weight: 600;
         line-height: 19.6px;
@@ -120,13 +120,12 @@
   }
 }
 
-
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .sectionFirst {
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
-    background-position: center!important;
-    height: auto!important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: auto !important;
 
     .firstText {
       .containSearch {
@@ -169,7 +168,8 @@
         padding: 20px;
         margin-bottom: 25px;
 
-        h5, h6 {
+        h5,
+        h6 {
           text-align: center;
         }
       }
@@ -185,7 +185,7 @@
     width: 105px;
     padding: 5px;
     &::placeholder {
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 12px;
       font-weight: 500;
       line-height: 14.52px;
@@ -213,7 +213,7 @@
     }
 
     li {
-      font-family: Inter,sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 12px;
       font-weight: 500;
       line-height: 14.52px;
@@ -231,7 +231,7 @@
   ul {
     li {
       p {
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 12px;
         font-weight: 500;
         line-height: 14.52px;
