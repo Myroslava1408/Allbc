@@ -1,0 +1,46 @@
+@mixin phone {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop-m {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop-l {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+@mixin hover-button {
+  &:hover {
+    color: var(--font-color-primary);
+    background: white;
+    transition: var(--transition);
+  }
+}
+@mixin hover-link {
+  &:hover {
+    color: var(--font-color-primary);
+    transition: var(--transition);
+  }
+}

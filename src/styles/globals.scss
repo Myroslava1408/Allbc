@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'variables';
+@import 'breakpoints';
+@import 'classnames';
+
+$font-color-primary: var(--font-color-primary);
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

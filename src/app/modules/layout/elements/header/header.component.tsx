@@ -2,19 +2,80 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { Autocomplete, IconButton } from '@mui/material'
 
-import React, { FC, useState } from 'react'
+import classNames from 'classnames'
+
+import React, { FC, useEffect, useRef, useState } from 'react'
 
 import BurgerComponent from '@/app/shared/components/burger/burger.component'
 import NavigateComponent from '@/app/shared/components/navigate/navigate.component'
-import { AddOffice, ArrDown, ImageLogo, Like, Push, Search } from '@/app/shared/images'
+import { AddOffice, ArrDown, Like, Push, Search } from '@/app/shared/icons'
+import { ImageLogo } from '@/app/shared/images'
+import { CustomTextField } from '@/constants/banner.constants'
 
 import styles from './header.module.scss'
 
-const HeaderComponent: FC = () => {
+interface IOption {
+  id: string | null
+  label: string
+}
+
+interface Offer {
+  type: number
+  id: number
+  title: string
+  description: string
+  total_offices: number
+  address: string
+  street: string
+  metro_location: string
+  metro_time: string
+  prices: Array<{ [key: string]: number }>
+  options: Array<{ [key: string]: string }>
+}
+
+interface IHeaderProps {
+  offers: Offer[]
+  onSearch: (filteredOffers: Offer[]) => void
+  titlesList: IOption[]
+}
+
+const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }) => {
   const pathname = usePathname()
+  const router = useRouter()
   const [sidebarVisible, setSidebarVisible] = useState(false)
+  const [searchInput, setSearchInput] = useState('')
+  const [isFormVisible, setIsFormVisible] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+  const searchButtonRef = useRef<HTMLButtonElement>(null)
+
+  const onSubmitHand = async (event?: React.FormEvent<HTMLFormElement>) => {
+    if (event) {
+      event.preventDefault()
+    }
+
+    const filteredOffers = (offers || []).filter((offer) =>
+      offer.title.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+    onSearch(filteredOffers)
+
+    const queryString = `title=${encodeURIComponent(searchInput)}`
+    return router.push(`/search?${queryString}`)
+  }
+
+  const handleInputChange = (event: React.SyntheticEvent, value: string | null) => {
+    setSearchInput(value || '')
+  }
+
+  const handleIconButtonClick = () => {
+    if (isFormVisible) {
+      onSubmitHand()
+    } else {
+      setIsFormVisible(true)
+    }
+  }
 
   const toggleSidebar = () => {
     setSidebarVisible((prev) => !prev)
@@ -27,32 +88,52 @@ const HeaderComponent: FC = () => {
     }
   }
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const isOutside =
+        formRef.current &&
+        !formRef.current.contains(event.target as Node) &&
+        searchButtonRef.current &&
+        !searchButtonRef.current.contains(event.target as Node)
+
+      if (isOutside) {
+        setIsFormVisible(false)
+      }
+    }
+
+    window.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   return (
-    <header className={`${styles.header} flex lg:gap-0 gap-4 justify-center items-center p-5`}>
-      <div className={`${styles.headerWrap} flex sm:gap-0 gap-5 items-center`}>
-        <div className='flex items-center w-auto md:justify-start justify-between flex-row'>
-          <div className={`${styles.rowHeader} flex items-center`}>
+    <header className={styles.header}>
+      <div className={styles.header__headerWrap}>
+        <div className={styles.header__inner}>
+          <div className={styles.header__rowHeader}>
             <BurgerComponent onToggle={toggleSidebar} />
-            <div className='flex gap-4 pl-6'>
+            <div className={styles.header__row}>
               <div onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                 <Image className='logo' src={ImageLogo} alt='logo' width={92} height={31} />
               </div>
-              <div className={`${styles.line} lg:block hidden`}></div>
+              <div className={styles.header__line}></div>
             </div>
           </div>
-          <div className='lg:flex hidden items-center gap-1 pl-3.5'>
+          <div className={styles.header__cities}>
             <ul>
               <li>
-                <p className='text-white'>Івано-Франківськ</p>
+                <p className={styles.header__citiesName}>Івано-Франківськ</p>
               </li>
             </ul>
             <button>
-              <Image src={ArrDown} alt='svg' width={10} height={6} />
+              <ArrDown alt='svg' width={10} height={6} className={styles.header__colorIcon} />
             </button>
           </div>
         </div>
-        <nav className='lg:flex lg:pl-2 xl:pl-6 hidden'>
-          <ul className='flex gap-10'>
+        <nav className={styles.header__navigate}>
+          <ul className={styles.header__navigateList}>
             <NavigateComponent />
           </ul>
         </nav>
@@ -60,77 +141,128 @@ const HeaderComponent: FC = () => {
           className={`${styles.sidebar} ${sidebarVisible ? 'open' : ''}`}
           style={{ right: sidebarVisible ? '0px' : '-250px' }}
         >
-          <nav className='flex pl-6'>
-            <ul className='flex flex-col p-8 gap-10'>
+          <nav className={styles.header__navigateSidebar}>
+            <ul className={styles.header__listSidebar}>
               <NavigateComponent />
             </ul>
           </nav>
-          <div className='flex items-center justify-between w-full p-4'>
-            <button className={`${styles.wishlist} items-center justify-center flex`}>
-              <Image src={Like} alt='icon' width={20} height={19} />
+          <div className={styles.header__rowIcons}>
+            <button className={styles.header__wishlist}>
+              <Like
+                alt='icon'
+                width={20}
+                height={19}
+                className={classNames(styles.header__wishlist, styles.header__colorIcon)}
+              />
             </button>
-            <button className={`${styles.notifications} items-center justify-center flex`}>
-              <Image src={Push} alt='icon' width={20} height={21} />
+            <button className={styles.header__notifications}>
+              <Push alt='icon' width={20} height={21} className={styles.header__colorIcon} />
             </button>
-            <div className='text-white  flex items-center justify-center gap-1 lg:hidden'>
+            <div className={styles.header__sidebarRow}>
               <ul>
                 <li>
-                  <Link href='#' className='text-white'>
+                  <Link href='#' className={styles.header__colorIcon}>
                     EN
                   </Link>
                 </li>
               </ul>
-              <button className='w-full'>
-                <Image src={ArrDown} alt='icon' width={10} height={6} />
+              <button>
+                <ArrDown alt='icon' width={10} height={6} className={styles.header__colorIcon} />
               </button>
             </div>
           </div>
-          <div className='flex items-center gap-1 p-8'>
+          <div className={styles.header__citiesSidebar}>
             <ul>
               <li>
-                <p className='text-white'>Івано-Франківськ</p>
+                <p className={styles.header__citiesName}>Івано-Франківськ</p>
               </li>
             </ul>
             <button>
-              <Image src={ArrDown} alt='icon' width={10} height={6} />
+              <ArrDown alt='icon' width={10} height={6} className={styles.header__colorIcon} />
             </button>
           </div>
-          <button className={`${styles.add} flex items-center ml-3 gap-2 text-white`}>
-            <Image src={AddOffice} alt='icon' width={14} height={14} />
+          <button className={styles.header__add}>
+            <AddOffice alt='icon' width={14} height={14} className={styles.header__colorIcon} />
             Додати офіс
           </button>
+          <button className={styles.header__loginSidebar}>Вхід</button>
         </div>
-        <div className='flex items-center md:gap-4 gap-3  lg:pl-2 xl:pl-12 justify-center'>
-          <button className={`${styles.search} w-full pl-0`}>
-            <Image src={Search} alt='icon' width={24} height={24} />
+        <div className={styles.header__rowSearch}>
+          {isFormVisible && (
+            <form onSubmit={onSubmitHand} className={styles.header__searchInput} ref={formRef}>
+              <Autocomplete
+                disablePortal
+                disableCloseOnSelect
+                disableClearable
+                options={titlesList}
+                inputValue={searchInput}
+                onInputChange={handleInputChange}
+                className={styles.customAutocomplete}
+                sx={{
+                  width: 160,
+                  '& .MuiOutlinedInput-root': {
+                    width: 260,
+                    background: 'white',
+                    height: '42px',
+                    '& fieldset': {
+                      border: 'black',
+                    },
+                  },
+                  '& .MuiSvgIcon-root': {
+                    display: 'none',
+                  },
+                }}
+                renderInput={(params) => (
+                  <CustomTextField
+                    {...params}
+                    label='search by name'
+                    InputLabelProps={{
+                      shrink: true,
+                      style: { top: '20px', left: '0px' },
+                    }}
+                  />
+                )}
+              />
+            </form>
+          )}
+          <div className={styles.header__rowIconsSidebar}>
+            <IconButton
+              type='button'
+              style={{ cursor: 'pointer' }}
+              onClick={handleIconButtonClick}
+              ref={searchButtonRef}
+              className={isFormVisible ? styles.header__searchBtn : ''}
+            >
+              <Search alt='icon' width={24} height={24} className={styles.header__colorIcon} />
+            </IconButton>
+          </div>
+          <button className={styles.header__notificationsLaptop}>
+            <Push alt='icon' width={20} height={21} className={styles.header__colorIcon} />
           </button>
-          <button className={`${styles.notifications} w-full pl-0`}>
-            <Image src={Push} alt='icon' width={20} height={21} />
+          <button className={styles.header__wishlistLaptop}>
+            <Like alt='icon' width={20} height={19} className={styles.header__colorIcon} />
           </button>
-          <button className={`${styles.wishlist} lg:flex hidden w-full`}>
-            <Image src={Like} alt='icon' width={20} height={19} />
-          </button>
-          <div className='text-white lg:flex hidden items-center justify-center gap-1 lg:pl-2 xl:pl-5'>
+          <div className={styles.header__citiesLaptop}>
             <ul>
               <li>
-                <Link href='#' className='text-white'>
+                <Link href='#' className={styles.header__colorIcon}>
                   EN
                 </Link>
               </li>
             </ul>
-            <button className={`${styles.BtnDown} w-full`}>
-              <Image src={ArrDown} alt='icon' width={10} height={6} />
+            <button className={styles.header__BtnDown}>
+              <ArrDown alt='icon' width={10} height={6} className={styles.header__colorIcon} />
             </button>
           </div>
         </div>
       </div>
-      <div className='flex lg:flex-row flex-col lg:gap-0 gap-5'>
-        <div className='flex gap-3 lg:pl-4 xl:pl-9'>
-          <button className={`${styles.add} lg:flex hidden items-center gap-2 text-white`}>
-            <Image src={AddOffice} alt='icon' width={14} height={14} />
+      <div className={styles.header__laptopRow}>
+        <div className={styles.header__btnsRow}>
+          <button className={styles.header__addLaptop}>
+            <AddOffice alt='icon' width={14} height={14} className={styles.header__colorIcon} />
             Додати офіс
           </button>
-          <button className={`${styles.login} text-white`}>Вхід</button>
+          <button className={styles.header__login}>Вхід</button>
         </div>
       </div>
     </header>

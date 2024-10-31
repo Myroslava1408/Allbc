@@ -52,7 +52,12 @@ export const getOffersForRent = (limit: number): IOffer[] => {
   }
 }
 
-export const searchOffers = (categoryId: number, area: number, price: number): IOffer[] => {
+export const searchOffers = (
+  categoryId: number,
+  area: number,
+  price: number,
+  title: string | undefined,
+): IOffer[] => {
   try {
     const data = loadYamlData('offers')
 
@@ -61,6 +66,7 @@ export const searchOffers = (categoryId: number, area: number, price: number): I
 
       return offers.filter((offer: IOffer) => {
         const matchesCategory = categoryId ? offer.category_id === categoryId : true
+        const matchesTitle = title ? offer.title === title : true
         const matchesArea =
           area && offer.prices[0] ? Object.keys(offer.prices[0]).includes(String(area)) : true
         const matchesPrice =
@@ -68,8 +74,36 @@ export const searchOffers = (categoryId: number, area: number, price: number): I
             ? Object.values(offer.prices[0]).some((val) => Number(val) <= price)
             : true
 
-        return matchesCategory && matchesArea && matchesPrice
+        return matchesCategory && matchesArea && matchesPrice && matchesTitle
       })
+    }
+
+    return []
+  } catch {
+    notFound()
+  }
+}
+
+export const getTitlesList = () => {
+  try {
+    const data = loadYamlData('offers')
+
+    if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
+      const offers: IOffer[] = data.offers
+      const titles = new Set<string>()
+
+      offers.forEach((offer: IOffer) => {
+        if (offer.title) {
+          titles.add(offer.title)
+        }
+      })
+
+      const sortedTitles = Array.from(titles).sort()
+
+      return sortedTitles.map((title) => ({
+        id: title,
+        label: title,
+      }))
     }
 
     return []

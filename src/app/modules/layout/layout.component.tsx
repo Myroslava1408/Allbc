@@ -4,7 +4,7 @@ import { FC, ReactNode } from 'react'
 
 import { FooterComponent } from '@/app/modules/layout/elements'
 import { getTypesList } from '@/repositories/offer-types.repository'
-import { getAreasList, getPricesList } from '@/repositories/offers.repository'
+import { getAreasList, getPricesList, getTitlesList } from '@/repositories/offers.repository'
 import {
   getAboutUsOptions,
   getBusinessCentersOptions,
@@ -29,6 +29,7 @@ const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ children }) => {
   const areasList: IOption[] = getAreasList()
   const pricesList: IOption[] = getPricesList()
   const categoriesList = getTypesList()
+  const titlesList = getTitlesList()
 
   return (
     <div>
@@ -36,6 +37,7 @@ const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ children }) => {
         areasList={areasList}
         pricesList={pricesList}
         categoriesList={categoriesList}
+        titlesList={titlesList}
       />
       <main>{children}</main>
       <FooterComponent

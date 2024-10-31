@@ -13,7 +13,9 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.4",
+    "classnames": "^2.5.1",
     "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
     "mongoose": "^8.6.3",
@@ -24,6 +26,7 @@
     "sass": "^1.79.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^18",

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 
 import BannerRightComponent from '@/app/shared/components/bannerRight/bannerRight.component'
 import OffersComponent from '@/app/shared/components/offers/offers.component'
@@ -50,7 +50,6 @@ interface IBuilder {
 }
 
 interface IPopularOffersProps {
-  settings: ReactNode
   offerTypesForSale: ICategory[]
   offerTypesForRent: ICategory[]
   offersForSale: IOffer[]
@@ -62,7 +61,6 @@ interface IPopularOffersProps {
 }
 
 const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
-  settings,
   offerTypesForSale,
   offerTypesForRent,
   offersForSale,
@@ -77,14 +75,12 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
       <div className='flex lg:flex-row items-baseline flex-col justify-between'>
         <div className='flex m-auto flex-col'>
           <OffersComponent
-            settings={settings}
             title={'Продаж'}
             offerTypes={offerTypesForSale}
             offers={offersForSale}
             categoriesListWithOffers={categoriesListWithOffers}
           />
           <OffersComponent
-            settings={settings}
             title={'Оренда'}
             offerTypes={offerTypesForRent}
             offers={offersForRent}

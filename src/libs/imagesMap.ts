@@ -1,6 +1,5 @@
+import { AddOffice, ArrDown, Like, Push, Search } from '@/app/shared/icons'
 import {
-  AddOffice,
-  ArrDown,
   ArticleFirst,
   ArticleSecond,
   ArticleThird,
@@ -45,7 +44,6 @@ import {
   ItemSeventh,
   ItemSixth,
   ItemThird,
-  Like,
   Linkedin,
   Man,
   NewsBan,
@@ -59,8 +57,6 @@ import {
   OwnerSixth,
   OwnerTenth,
   OwnerThird,
-  Push,
-  Search,
   Twiter,
 } from '@/app/shared/images'
 

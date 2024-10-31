@@ -7,6 +7,7 @@ interface ISearchParams {
   categoryId?: string
   area?: string
   price?: string
+  title?: string
 }
 
 const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => {
@@ -15,8 +16,9 @@ const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => 
   const categoryId = Number(searchParams.categoryId)
   const area = Number(searchParams.area)
   const price = Number(searchParams.price)
+  const title = searchParams.title
 
-  const offers = searchOffers(categoryId, area, price)
+  const offers = searchOffers(categoryId, area, price, title)
 
   return (
     <div>

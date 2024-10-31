@@ -22,7 +22,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452629
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC “Conquest Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -42,7 +42,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452630
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC “Triumph Square”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -62,7 +62,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452631
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC "Triumph Square”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -82,7 +82,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452632
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC "Triumph Square”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -142,7 +142,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452635
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Conquest Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -162,7 +162,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452699
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Conquest Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -182,7 +182,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452612
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Success Center”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -202,7 +202,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452610
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Success Center”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -222,7 +222,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452628
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Success Center”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -242,7 +242,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452629
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Glory Hub”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -262,7 +262,7 @@ offers:
   - type: 1
     category_id: 1
     id: 4365452636
-    title: ->1<- BC “Victory Plaza”
+    title: ->1<- BC “Glory Hub”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -282,7 +282,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452634
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Glory Hub”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -302,7 +302,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452662
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Achievement Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -322,7 +322,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452639
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Achievement Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -342,7 +342,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452645
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Champion's Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -362,7 +362,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452635
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Champion's Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -382,7 +382,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452636
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Champion's Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -422,7 +422,7 @@ offers:
   - type: 1
     category_id: 2
     id: 4365452222
-    title: ->2<- BC “Victory Plaza”
+    title: ->2<- BC “Prestige Square”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -442,7 +442,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452628
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC “Prestige Square”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -462,7 +462,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452629
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC “Prestige Square”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -482,7 +482,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452630
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC “Excellence Park”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -502,7 +502,7 @@ offers:
   - type: 1
     category_id: 3
     id: 4365452631
-    title: ->3<- BC “Victory Plaza”
+    title: ->3<- BC “Excellence Park”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -522,7 +522,7 @@ offers:
   - type: 1
     category_id: 4
     id: 4365452632
-    title: ->4<- BC “Victory Plaza”
+    title: ->4<- BC “Prosperity Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -542,7 +542,7 @@ offers:
   - type: 1
     category_id: 4
     id: 4365452633
-    title: ->4<- BC “Victory Plaza”
+    title: ->4<- BC “Prosperity Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -562,7 +562,7 @@ offers:
   - type: 1
     category_id: 4
     id: 4365452645
-    title: ->4<- BC “Victory Plaza”
+    title: ->4<- BC “Prosperity Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -582,7 +582,7 @@ offers:
   - type: 1
     category_id: 5
     id: 4365452635
-    title: ->5<- BC “Victory Plaza”
+    title: ->5<- BC “Prosperity Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -602,7 +602,7 @@ offers:
   - type: 1
     category_id: 5
     id: 4365452636
-    title: ->5<- BC “Victory Plaza”
+    title: ->5<- BC “Ascend Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -622,7 +622,7 @@ offers:
   - type: 1
     category_id: 5
     id: 4365452637
-    title: ->5<- BC “Victory Plaza”
+    title: ->5<- BC “Ascend Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -642,7 +642,7 @@ offers:
   - type: 1
     category_id: 5
     id: 4365452444
-    title: ->5<- BC “Victory Plaza”
+    title: ->5<- BC “Ascend Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -662,7 +662,7 @@ offers:
   - type: 1
     category_id: 5
     id: 4365452628
-    title: ->5<- BC “Victory Plaza”
+    title: ->5<- BC “Ascend Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
@@ -682,7 +682,7 @@ offers:
   - type: 1
     category_id: 5
     id: 4365452629
-    title: ->5<- BC “Victory Plaza”
+    title: ->5<- BC “Ascend Plaza”
     description: Бізнес-центр | Клас А
     total_offices: 12
     address: м. Івано-Франківськ, р-н Центральний
