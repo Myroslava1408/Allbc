@@ -19,7 +19,7 @@ const FilterListComponent: FC<Readonly<IFilterListProps>> = ({ list, onCategoryS
     onCategorySelect(id)
   }
   return (
-    <div className={`${styles.aRow} gap-5 flex`}>
+    <div className={styles.aRow}>
       {Array.isArray(list) && list.length > 0 ? (
         list.map((listItem, index) => {
           return (

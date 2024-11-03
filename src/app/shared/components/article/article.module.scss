@@ -4,30 +4,41 @@
   background: rgba(255, 255, 255, 1);
   border-radius: 6px;
   box-shadow: 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
+  display: flex;
+  gap: 1rem;
   &:hover {
     box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
   }
-  .imgArticle {
+  @include laptop {
+    max-width: unset !important;
+  }
+  &__inner {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  &__img {
     width: 52px;
     height: 52px;
   }
-  h4 {
-    font-family: Inter, sans-serif;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
     font-size: 14px;
     font-weight: 600;
     line-height: 19.6px;
     text-align: left;
+    @include hover {
+      text-decoration: underline;
+      color: #171717;
+    }
   }
-  h5 {
-    font-family: Inter, sans-serif;
+  &__description {
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
     text-align: left;
-  }
-}
-@media (max-width: 1024px) {
-  .article {
-    max-width: unset !important;
   }
 }

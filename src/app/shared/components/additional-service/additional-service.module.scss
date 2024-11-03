@@ -19,7 +19,6 @@
 .itemTop,
 .itemBottom {
   a {
-    font-family: Inter, sans-serif;
     font-size: 22px;
     font-weight: 600;
     line-height: 30.8px;
@@ -29,6 +28,10 @@
     padding-bottom: 16px;
     display: flex;
     align-items: flex-end;
+    @include hover {
+      text-decoration: underline;
+      color: white;
+    }
   }
 }
 

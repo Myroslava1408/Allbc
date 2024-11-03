@@ -55,7 +55,6 @@ const Page: () => Promise<JSX.Element> = async () => {
       />
       <RecommendedCentersComponent offers={{ offers }} />
       <PopularOffersComponent
-        settings={settings}
         offerTypesForRent={offerTypesForRent}
         offerTypesForSale={offerTypesForSale}
         offersForRent={offersForRent}

@@ -38,8 +38,8 @@ const CategoriesComponent: FC<Readonly<ICategoriesProps>> = ({
   categoriesOffersForSale = [],
 }) => {
   return (
-    <section className={`${styles.categories} flex lg:flex-row flex-col gap-5 p-2.5`}>
-      <div className={`${styles.itemsTable} grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5`}>
+    <section className={styles.categories}>
+      <div className={styles.categories__itemsTable}>
         {Array.isArray(categoryEstate) ? (
           categoryEstate.length > 0 ? (
             categoryEstate.map((item, index) => (
@@ -52,7 +52,7 @@ const CategoriesComponent: FC<Readonly<ICategoriesProps>> = ({
           <p>Error: categoryEstate is not an array</p>
         )}
       </div>
-      <div className={`${styles.lists} flex gap-3 flex-col`}>
+      <div className={styles.categories__lists}>
         <CategoriesSidebarComponent titleHeader={'Оренда'} categories={categoriesOffersForRent} />
         <CategoriesSidebarComponent titleHeader={'Продаж'} categories={categoriesOffersForSale} />
       </div>

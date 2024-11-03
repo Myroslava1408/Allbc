@@ -29,21 +29,21 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({
 }) => {
   return (
     <footer className={styles.footer}>
-      <div className={`${styles.footerWrap} flex flex-col justify-between`}>
-        <div className='flex justify-between md:flex-row flex-col'>
-          <Link href='#'>
-            <Image src={ImageLogo} alt='logo' className='logo' width={97} height={92} />
+      <div className={styles.footer__footerWrap}>
+        <div className={styles.footer__inner}>
+          <Link className={styles.footer__logo} href='#'>
+            <Image src={ImageLogo} alt='logo' width={97} height={92} />
           </Link>
-          <div className={`${styles.listGrid} flex justify-between`}>
+          <div className={styles.footer__listGrid}>
             <OptionsComponent title={'About us'} options={aboutUsOptions} />
             <OptionsComponent title={'Політика конфіденційності'} options={privacyPolicyOptions} />
             <OptionsComponent title={'For owners'} options={forOwnersOptions} />
             <OptionsComponent title={'Business Centers'} options={businessCentersOptions} />
           </div>
-          <div className={`${styles.contacts} flex flex-col`}>
-            <span className='text-white'>Contacts</span>
-            <div className='flex pt-5 pl-7'>
-              <button className={`${styles.btnFoot} w-5 h-5`}>
+          <div className={styles.footer__contacts}>
+            <span className={styles.footer__contactsTitle}>Contacts</span>
+            <div className={styles.footer__group}>
+              <button className={styles.footer__btnFoot}>
                 <svg
                   className='relative z-10 left-2'
                   width='21'
@@ -62,11 +62,11 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({
                 type='text'
                 name='text'
                 placeholder='Пошук по сайту...'
-                className={`${styles.inputSearch} absolute z-0`}
+                className={styles.footer__inputSearch}
               />
             </div>
-            <h5 className='text-white'>+38 (067) 966 07 24</h5>
-            <h6>info@allbc.info</h6>
+            <h5 className={styles.footer__number}>+38 (067) 966 07 24</h5>
+            <h6 className={styles.footer__email}>info@allbc.info</h6>
             <SocialsComponent />
           </div>
         </div>

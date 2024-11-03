@@ -1,0 +1,25 @@
+.officeAreas {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36.4px;
+    text-align: left;
+    padding-bottom: 28px;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  &__group {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    @include tablet {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 5rem;
+    }
+  }
+}

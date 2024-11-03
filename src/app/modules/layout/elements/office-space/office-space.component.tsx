@@ -36,7 +36,6 @@ interface IOfficeSpaceProps {
 }
 
 const OfficeSpaceComponent: FC<Readonly<IOfficeSpaceProps>> = ({
-  settings,
   districtsForSale,
   districtsForRent,
   stations,
@@ -44,17 +43,13 @@ const OfficeSpaceComponent: FC<Readonly<IOfficeSpaceProps>> = ({
   areas,
 }) => {
   return (
-    <section className={`flex flex-col ${styles.OfficeProperty}`}>
-      <div className={`flex flex-col gap-12 ${styles.PropertyWrap}`}>
+    <section className={styles.officeSpace}>
+      <div className={styles.officeSpace__wrap}>
         <DistrictOfficesComponent districts={districtsForSale} title={'Продаж офісу по районаx:'} />
-        <MetroOfficesComponent
-          settings={settings}
-          title={'Оренда офісу біля метро:'}
-          stations={stations}
-        />
+        <MetroOfficesComponent title={'Оренда офісу біля метро:'} stations={stations} />
         <CityOfficesComponent cities={cities} title={'Оренда офісу по містах:'} />
         <DistrictOfficesComponent districts={districtsForRent} title={'Оренда офісу по районаx:'} />
-        <OfficeAreasComponent settings={settings} title={'Оренда офісу по площі:'} areas={areas} />
+        <OfficeAreasComponent title={'Оренда офісу по площі:'} areas={areas} />
       </div>
     </section>
   )

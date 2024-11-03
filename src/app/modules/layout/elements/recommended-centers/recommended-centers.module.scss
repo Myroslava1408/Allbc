@@ -1,43 +1,83 @@
-.sectionThird {
+.centers {
   max-width: 1240px;
   width: 100%;
   margin: 0 auto;
   padding-top: 64px;
-  .titleRow {
+  display: flex;
+  flex-direction: column;
+  &__titleRow {
     padding: 10px;
     max-width: 925px;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    h2 {
-      font-family: Inter, sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 44.8px;
-      text-align: left;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
     }
-    a {
-      p {
-        font-family: Inter, sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 16.8px;
-        text-align: left;
-      }
-      .numbBlue {
-        width: 24px;
-        height: 24px;
-        border-radius: 6px;
-        background: rgba(5, 173, 229, 0.2);
-        span {
-          font-family: Inter, sans-serif;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 16.8px;
-          text-align: left;
-          padding: 2px 4px 2px 4px;
-        }
-      }
+  }
+  &__numbBlue {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(5, 173, 229, 0.2);
+  }
+  &__blueSpan {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.8px;
+    text-align: left;
+    padding: 2px 4px 2px 4px;
+  }
+  &__moreLink {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  &__moreTitle {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-align: left;
+    @include hover {
+      color: #2a6496;
+      text-decoration: underline;
+    }
+  }
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44.8px;
+    text-align: left;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem;
+    align-items: center;
+    justify-content: space-between;
+    @include laptop-m {
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+  &__tableOffers {
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include phone {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include laptop-l {
+      gap: 1.25rem;
+    }
+    @include tablet {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @include laptop-m {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
@@ -64,20 +104,21 @@
       z-index: -1;
       border-radius: 6px;
     }
-    .titH {
+    @include laptop {
+      max-width: unset !important;
+      top: 110px !important;
+    }
+    &__titH {
       max-width: 173px;
       width: 100%;
-    }
-    h4 {
       position: relative;
       z-index: 1;
-      font-family: Inter, sans-serif;
       font-size: 20px;
       font-weight: 700;
       line-height: 33.6px;
       text-align: center;
     }
-    .btnOrange {
+    &__btnOrange {
       width: 228px;
       height: 40px;
       padding: 16px 48px;
@@ -87,18 +128,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Inter, sans-serif;
       font-size: 14px;
       font-weight: 600;
       line-height: 19.6px;
       text-align: center;
+      @include hover {
+        background: #ff7e00;
+      }
     }
-  }
-}
-
-@media (max-width: 1024px) {
-  .officeItem {
-    max-width: unset !important;
-    top: 110px !important;
   }
 }

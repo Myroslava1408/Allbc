@@ -29,10 +29,10 @@ const ServicesComponent: FC<Readonly<IServicesProps>> = ({ additionalServices })
   const type2Services = additionalServices.filter((item) => item.service.type === 2)
 
   return (
-    <section className={`${styles.sectionFifth}  flex flex-col`}>
-      <h3 className='flex items-start font-bold'>Додаткові послуги</h3>
-      <div className={` ${styles.itemsGrid} gap-6`}>
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:p-0 p-2 gap-7 justify-center'>
+    <section className={styles.services}>
+      <h3 className={styles.services__title}>Додаткові послуги</h3>
+      <div className={styles.services__itemsGrid}>
+        <div className={styles.services__servicesTable}>
           {Array.isArray(type1Services) && type1Services.length > 0 ? (
             type1Services.map((block, blockItem) => {
               const className =
@@ -45,7 +45,7 @@ const ServicesComponent: FC<Readonly<IServicesProps>> = ({ additionalServices })
             <p>Немає доступних послуг</p>
           )}
         </div>
-        <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 lg:p-0 p-2 justify-center'>
+        <div className={styles.services__rowBottom}>
           {Array.isArray(type2Services) && type2Services.length > 0 ? (
             type2Services.map((block, index) => (
               <AdditionalService block={block.service} key={index} />

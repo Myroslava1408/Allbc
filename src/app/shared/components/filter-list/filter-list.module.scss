@@ -1,3 +1,8 @@
+.aRow {
+  gap: 1.25rem;
+  display: flex;
+}
+
 .blockRed {
   width: auto;
   height: 30px;
@@ -19,14 +24,12 @@
   }
 
   p {
-    font-family: Inter, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 22.4px;
     text-align: left;
     color: rgba(94, 123, 143, 1);
     transition: color 0.3s;
-
     &:hover {
       color: rgba(255, 255, 255, 1);
     }

@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import React, { FC } from 'react'
 
+import styles from './options.module.scss'
+
 interface IOptionBlock {
   option: string
   category: string
@@ -14,12 +16,12 @@ interface IOptionsProps {
 
 const OptionsComponent: FC<Readonly<IOptionsProps>> = ({ title, options }) => {
   return (
-    <div className='flex flex-col'>
-      <span className='text-white'>{title}</span>
-      <ul className='flex flex-col gap-4 pt-5'>
+    <div className={styles.options}>
+      <span className={styles.options__title}>{title}</span>
+      <ul className={styles.options__list}>
         {options.map((optionName, index) => (
           <li key={index}>
-            <Link className='text-white' href='#'>
+            <Link className={styles.options__option} href='#'>
               {optionName.option}
             </Link>
           </li>

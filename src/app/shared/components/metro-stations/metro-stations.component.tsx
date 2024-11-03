@@ -3,6 +3,10 @@ import Link from 'next/link'
 
 import React, { FC } from 'react'
 
+import { getStationArray, getStationColumns } from '@/constants/office-space.constants'
+
+import styles from './metro-stations.module.scss'
+
 interface IMetroStation {
   stationName: string
 }
@@ -14,33 +18,24 @@ interface IMetroStationsProps {
 }
 
 const MetroStationsComponent: FC<Readonly<IMetroStationsProps>> = ({ stations }) => {
-  const stationArray = Array.isArray(stations.stations)
-    ? stations.stations
-    : Array.isArray(stations.stations.stations)
-      ? stations.stations.stations
-      : []
+  const stationArray = getStationArray(stations)
 
   if (!stationArray.length) {
     return <p>Немає пропозицій</p>
   }
 
-  const columns = {
-    firstColumn: Array.isArray(stationArray) ? stationArray.slice(0, 5) : [],
-    secondColumn: Array.isArray(stationArray) ? stationArray.slice(5, 10) : [],
-    thirdColumn: Array.isArray(stationArray) ? stationArray.slice(10, 15) : [],
-    fourthColumn: Array.isArray(stationArray) ? stationArray.slice(15, 20) : [],
-    fifthColumn: Array.isArray(stationArray) ? stationArray.slice(20, 25) : [],
-    sixthColumn: Array.isArray(stationArray) ? stationArray.slice(25, 30) : [],
-  }
+  const columns = getStationColumns(stationArray)
 
   return (
-    <div className='grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-20'>
+    <div className={styles.metroStations}>
       {Object.entries(columns).map(([column, stations]) =>
         Array.isArray(stations) && stations.length > 0 ? (
-          <ul className='flex flex-col gap-3' key={column}>
+          <ul className={styles.metroStations__inner} key={column}>
             {stations.map((station, index) => (
               <li key={index}>
-                <Link href='#'>{station.stationName}</Link>
+                <Link className={styles.metroStations__name} href='#'>
+                  {station.stationName}
+                </Link>
               </li>
             ))}
           </ul>

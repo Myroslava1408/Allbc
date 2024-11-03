@@ -1,37 +1,66 @@
 .blockRight {
   max-width: 239px;
   width: 100%;
-  .listPeople {
-    height: 615px;
-    .titList {
-      font-family: Inter, sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 25.2px;
-      text-align: left;
-      color: rgba(20, 31, 39, 1);
+  display: flex;
+  flex-direction: column;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
     }
-    ul {
-      li {
-        a {
-          .name {
-            font-family: Inter, sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 19.6px;
-            text-align: left;
-            color: rgba(18, 18, 18, 1);
-          }
-          .proposals {
-            font-family: Inter, sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 19.6px;
-            text-align: left;
-            color: rgba(72, 72, 72, 1);
-          }
-        }
-      }
+    @include laptop-m {
+      flex-direction: column;
     }
   }
+  &__titList {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.2px;
+    text-align: left;
+    color: rgba(20, 31, 39, 1);
+  }
+  &__rowTitle {
+    display: flex;
+    gap: 0.75rem;
+  }
+  &__linkParticipant {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  &__nameParticipant {
+    display: flex;
+    flex-direction: column;
+  }
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.6px;
+    text-align: left;
+    color: rgba(18, 18, 18, 1);
+    @include hover {
+      color: rgba(18, 18, 18, 1);
+      text-decoration: underline;
+    }
+  }
+  &__listPeople {
+    display: flex;
+    flex-direction: column;
+    height: 615px;
+  }
+  &__participantsList {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.proposals {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: rgba(72, 72, 72, 1);
 }

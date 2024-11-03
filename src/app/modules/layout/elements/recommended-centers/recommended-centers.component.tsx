@@ -41,18 +41,18 @@ const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ o
     return <p>Немає пропозицій</p>
   }
   return (
-    <section className={`${styles.sectionThird} flex flex-col`}>
-      <div className={`${styles.titleRow} flex md:flex-row flex-col`}>
-        <h2>Рекомендовані БЦ</h2>
-        <Link className='flex gap-2 items-center' href='#'>
-          <p>Подивитися ще</p>
-          <div className={styles.numbBlue}>
-            <span>20</span>
+    <section className={styles.centers}>
+      <div className={styles.centers__titleRow}>
+        <h2 className={styles.centers__title}>Рекомендовані БЦ</h2>
+        <Link className={styles.centers__moreLink} href='#'>
+          <p className={styles.centers__moreTitle}>Подивитися ще</p>
+          <div className={styles.centers__numbBlue}>
+            <span className={styles.centers__blueSpan}>20</span>
           </div>
         </Link>
       </div>
-      <div className='flex lg:flex-row flex-col p-2.5 lg:p-0 items-center justify-between'>
-        <div className='grid gap-2 xl:gap-5 pt-6 md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1'>
+      <div className={styles.centers__inner}>
+        <div className={styles.centers__tableOffers}>
           {offersArray.slice(0, 3).map((item: IOffer) => {
             return (
               <div key={item.id}>
@@ -66,8 +66,8 @@ const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ o
           buttonText='Додати офіс'
           onButtonClick={() => alert('Додати офіс')}
           containerClassName={styles.officeItem}
-          titleClassName={styles.titH}
-          buttonClassName={styles.btnOrange}
+          titleClassName={styles.officeItem__titH}
+          buttonClassName={styles.officeItem__btnOrange}
           style={{ '--bg-image': `url(${BgBanRight.src})` }}
         />
       </div>

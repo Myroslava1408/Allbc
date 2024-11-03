@@ -71,9 +71,9 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
   categoriesListWithOffers,
 }) => {
   return (
-    <section className={`${styles.offers} flex flex-col`}>
-      <div className='flex lg:flex-row items-baseline flex-col justify-between'>
-        <div className='flex m-auto flex-col'>
+    <section className={styles.offers}>
+      <div className={styles.offers__inner}>
+        <div className={styles.offers__block}>
           <OffersComponent
             title={'Продаж'}
             offerTypes={offerTypesForSale}
@@ -87,30 +87,26 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
             categoriesListWithOffers={categoriesListWithOffers}
           />
         </div>
-        <div className={`${styles.blockParticipants} flex items-center flex-col`}>
-          <div
-            className={`${styles.blockRight} grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 lg:grid-cols-1 m-auto`}
-          >
-            <div className={'flex flex-col'}>
+        <div className={styles.offers__blockParticipants}>
+          <div className={styles.offers__blockRight}>
+            <div className={styles.offers__paticipantsRight}>
               <ParticipantsSidebarComponent
                 nameHeader={'Брокери'}
-                classNameButton={styles.greenBtn}
+                classNameButton={styles.offers__greenBtn}
                 svgColor={'white'}
                 participants={brokers}
               />
-              <button className={`${styles.orderBtn} text-white mb-5`}>
-                Замовити консультацію
-              </button>
+              <button className={styles.offers__orderBtn}>Замовити консультацію</button>
             </div>
             <ParticipantsSidebarComponent
               nameHeader={'Забудовники'}
-              classNameButton={styles.blueBtn}
+              classNameButton={styles.offers__blueBtn}
               svgColor={'black'}
               participants={builders}
             />
             <ParticipantsSidebarComponent
               nameHeader={'Власники'}
-              classNameButton={styles.pinkBtn}
+              classNameButton={styles.offers__pinkBtn}
               svgColor={'black'}
               participants={owners}
             />
@@ -120,14 +116,14 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
             subtitle='Always be in the center of events'
             inputPlaceholder='Email'
             buttonText='Підписатися'
-            inputClassName={styles.inputNews}
+            inputClassName={styles.offers__inputNews}
             secondButtonText='Призначити чат-бота Telegram'
             iconSrc={typeof iconSrc === 'string' ? iconSrc : iconSrc.src}
             onButtonClick={() => alert('Підписатися')}
-            containerClassName={styles.newsItem}
-            titleClassName={styles.titH}
-            buttonClassName={styles.subscribeBtn}
-            secondButtonClassName={styles.designationBtn}
+            containerClassName={styles.offers__newsItem}
+            titleClassName={styles.offers__titH}
+            buttonClassName={styles.offers__subscribeBtn}
+            secondButtonClassName={styles.offers__designationBtn}
             style={{ '--bg-img': `url(${NewsBan.src})` }}
           />
         </div>

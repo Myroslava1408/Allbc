@@ -58,12 +58,12 @@ const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
   }
 
   return (
-    <div className={`${styles.blockRight} flex flex-col`}>
-      <div className='flex flex-col md:flex-row lg:flex-col'>
-        <div className={`${styles.listPeople} flex flex-col`}>
-          <div className='flex gap-3'>
-            <p className={styles.titList}>{nameHeader}</p>
-            <button className={`${classNameButton}  flex items-center gap-1.5 justify-center`}>
+    <div className={styles.blockRight}>
+      <div className={styles.blockRight__inner}>
+        <div className={styles.blockRight__listPeople}>
+          <div className={styles.blockRight__rowTitle}>
+            <p className={styles.blockRight__titList}>{nameHeader}</p>
+            <button className={classNameButton}>
               20
               <svg
                 width='15'
@@ -82,16 +82,16 @@ const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
               </svg>
             </button>
           </div>
-          <ul className='pt-6 flex flex-col gap-3'>
+          <ul className={styles.blockRight__participantsList}>
             {Array.isArray(participants) && participants.length > 0 ? (
               participants.map((participant, index) => {
                 const image = imagesMap[participant.image]
                 return (
                   <li key={index}>
-                    <Link href='#' className='flex items-center gap-3'>
+                    <Link href='#' className={styles.blockRight__linkParticipant}>
                       <Image src={image} alt={participant.nameParticipant} width={42} height={42} />
-                      <div className='flex flex-col'>
-                        <p className={styles.name}>{participant.nameParticipant}</p>
+                      <div className={styles.blockRight__nameParticipant}>
+                        <p className={styles.blockRight__name}>{participant.nameParticipant}</p>
                         {getProposals(participant)}
                       </div>
                     </Link>

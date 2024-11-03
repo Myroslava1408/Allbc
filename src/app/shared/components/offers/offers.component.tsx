@@ -32,6 +32,7 @@ interface IOffersProps {
   offerTypes: ICategory[]
   title: string
   categoriesListWithOffers: IOffer[]
+  offers: IOffer[]
 }
 
 const OffersComponent: FC<Readonly<IOffersProps>> = ({
@@ -73,9 +74,9 @@ const OffersComponent: FC<Readonly<IOffersProps>> = ({
   }, [selectedCategory, categoriesListWithOffers])
   return (
     <>
-      <div className={`flex gap-4 flex-col ${styles.titleRow}`}>
-        <span className={styles.popTit}>Популярні оголошення</span>
-        <h2>{title}:</h2>
+      <div className={styles.titleRow}>
+        <span className={styles.titleRow__popTit}>Популярні оголошення</span>
+        <h2 className={styles.titleRow__subTitle}>{title}:</h2>
         <FilterListComponent
           list={offerTypes}
           onCategorySelect={(categoryId: number) => {
@@ -83,8 +84,8 @@ const OffersComponent: FC<Readonly<IOffersProps>> = ({
           }}
         />
       </div>
-      <div className='flex lg:flex-row flex-col p-2.5 items-center justify-center gap-4'>
-        <div className='grid gap-2 xl:gap-5 pt-6 md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1'>
+      <div className={styles.offersWrap}>
+        <div className={styles.offersWrap__group}>
           {Array.isArray(filteredOffers) && filteredOffers.length > 0 ? (
             filteredOffers
               .slice(0, 9)

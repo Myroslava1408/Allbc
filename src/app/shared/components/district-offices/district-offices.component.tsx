@@ -3,7 +3,11 @@ import Link from 'next/link'
 
 import React, { FC } from 'react'
 
-interface IDistrictOffice {
+import { getDistrictColumns } from '@/constants/office-space.constants'
+
+import styles from './district-offices.module.scss'
+
+export interface IDistrictOffice {
   districtName: string
   category: string
 }
@@ -14,23 +18,21 @@ interface IDistrictOfficesProps {
 }
 
 const DistrictOfficesComponent: FC<Readonly<IDistrictOfficesProps>> = ({ districts, title }) => {
-  const columns = {
-    firstColumn: Array.isArray(districts) ? districts.slice(0, 5) : [],
-    secondColumn: Array.isArray(districts) ? districts.slice(5, 8) : [],
-    thirdColumn: Array.isArray(districts) ? districts.slice(8, 13) : [],
-  }
+  const columns = getDistrictColumns(districts)
 
   return (
-    <div className='flex flex-col'>
-      <h3>{title}</h3>
-      <div className='grid md:grid-cols-3 grid-cols-1 gap-5'>
+    <div className={styles.districtOffices}>
+      <h3 className={styles.districtOffices__title}>{title}</h3>
+      <div className={styles.districtOffices__inner}>
         {Object.entries(columns).length > 0 ? (
           Object.entries(columns).map(([column, districts]) =>
             Array.isArray(districts) && districts.length > 0 ? (
-              <ul className='flex flex-col gap-3' key={column}>
+              <ul className={styles.districtOffices__list} key={column}>
                 {districts.map((district, index) => (
                   <li key={index}>
-                    <Link href='#'>{district.districtName}</Link>
+                    <Link className={styles.districtOffices__name} href='#'>
+                      {district.districtName}
+                    </Link>
                   </li>
                 ))}
               </ul>

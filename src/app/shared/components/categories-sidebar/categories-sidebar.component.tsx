@@ -4,6 +4,12 @@ import Link from 'next/link'
 
 import React, { FC, useEffect, useState } from 'react'
 
+import {
+  additionalAmount,
+  defaultAmount,
+  initialVisibleItems,
+} from '@/constants/categories-sidebar.constants'
+
 import styles from './categories-sidebar.module.scss'
 
 interface ICategory {
@@ -21,11 +27,9 @@ const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({
   titleHeader,
   categories,
 }) => {
-  const [visibleItems, setVisibleItems] = useState(4)
+  const [visibleItems, setVisibleItems] = useState(initialVisibleItems)
   const [isExpanded, setIsExpanded] = useState(false)
   const [displayedCategories, setDisplayedCategories] = useState<ICategory[]>([])
-  const defaultAmount = 4
-  const additionalAmount = 2
 
   const getRandomItems = (items: ICategory[], count: number) => {
     if (!Array.isArray(items)) {
@@ -50,16 +54,18 @@ const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({
   }
 
   return (
-    <div className={`${styles.listOffice} flex flex-col`}>
-      <p>{titleHeader}</p>
-      <ul className='pt-3 flex flex-col gap-2'>
+    <div className={styles.listOffice}>
+      <p className={styles.listOffice__titleHeader}>{titleHeader}</p>
+      <ul className={styles.listOffice__list}>
         {Array.isArray(displayedCategories) && displayedCategories.length > 0 ? (
           displayedCategories.map((category, index) => (
             <li key={index}>
-              <div className={`${styles.listUl} flex justify-between`}>
-                <Link href='#'>{category.nameCategory}</Link>
-                <div className={styles.numbBlue}>
-                  <span>{category.amount}</span>
+              <div className={styles.listOffice__listUl}>
+                <Link className={styles.listOffice__link} href='#'>
+                  {category.nameCategory}
+                </Link>
+                <div className={styles.listOffice__numbBlue}>
+                  <span className={styles.listOffice__amount}>{category.amount}</span>
                 </div>
               </div>
             </li>
@@ -68,9 +74,9 @@ const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({
           <p>Немає доступних категорій</p>
         )}
       </ul>
-      <div className={`${styles.moreBlock} flex`}>
-        <button onClick={toggleItems} className='flex items-center pt-2 gap-3'>
-          <p>{isExpanded ? 'Сховати' : 'Ще'}</p>
+      <div className={styles.listOffice__moreBlock}>
+        <button className={styles.listOffice__moreBtn} onClick={toggleItems}>
+          <p className={styles.listOffice__moreText}>{isExpanded ? 'Сховати' : 'Ще'}</p>
           <svg
             width='10'
             height='6'

@@ -2,18 +2,13 @@ import Image from 'next/image'
 
 import React, { FC } from 'react'
 
-import { Facebook, Instagram, Linkedin, Twiter } from '@/app/shared/images'
+import { icons } from '@/constants/socials.constants'
+
+import styles from './socials.module.scss'
 
 const SocialsComponent: FC = () => {
-  const icons = {
-    Instagram: Instagram,
-    Facebook: Facebook,
-    Twiter: Twiter,
-    Linkedin: Linkedin,
-  }
-
   return (
-    <div className='flex pt-3 gap-2'>
+    <div className={styles.socials}>
       {icons && typeof icons === 'object' && Object.keys(icons).length > 0 ? (
         Object.entries(icons).map(([icon, iconSrc]) => (
           <button key={icon}>

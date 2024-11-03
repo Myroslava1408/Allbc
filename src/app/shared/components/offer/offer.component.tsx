@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { FC } from 'react'
 
 import { CartPhoto } from '@/app/shared/images'
+import { formatNumber } from '@/constants/offer.constants'
 
 import styles from './offer.module.scss'
 
@@ -26,29 +27,19 @@ interface IOfferProps {
 }
 
 const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
-  const formatNumber = (num: number) => {
-    if (isNaN(num)) return ''
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(0) + 'm'
-    } else if (num >= 1000) {
-      return (num / 1000).toFixed(num % 1000 === 0 ? 0 : 1) + 'k'
-    }
-    return num.toString()
-  }
-
   return (
-    <div className={`${styles.cart} flex-col flex`}>
+    <div className={styles.cart}>
       <div
-        className={`${styles.photoPart} flex flex-col`}
+        className={styles.cart__photoPart}
         style={{
           backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.5)), url(${CartPhoto.src})`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
         }}
       >
-        <div className='flex items-center p-4 justify-between'>
-          <div className={styles.idBlock}>
-            <p>ID {offer.id}</p>
+        <div className={styles.cart__idNname}>
+          <div className={styles.cart__idBlock}>
+            <p className={styles.cart__id}>ID {offer.id}</p>
           </div>
           <Link href='#'>
             <svg
@@ -65,21 +56,21 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
             </svg>
           </Link>
         </div>
-        <div className='flex justify-between p-3 pt-24'>
-          <div className='flex flex-col'>
+        <div className={styles.cart__rowTitle}>
+          <div className={styles.cart__listTitle}>
             <Link href='#'>
-              <h5>{offer.title}</h5>
+              <h5 className={styles.cart__title}>{offer.title}</h5>
             </Link>
-            <h6>{offer.description}</h6>
+            <h6 className={styles.cart__description}>{offer.description}</h6>
           </div>
-          <div className={`${styles.blockNumb} flex flex-col`}>
-            <p className='text-white'>{offer.total_offices}</p>
-            <span className='text-white'>офісів</span>
+          <div className={styles.cart__blockNumb}>
+            <p className={styles.cart__totalOffices}>{offer.total_offices}</p>
+            <span className={styles.cart__offices}>офісів</span>
           </div>
         </div>
       </div>
-      <div className={`${styles.textPart} flex flex-col gap-2 p-7`}>
-        <div className='flex gap-2 items-center'>
+      <div className={styles.cart__textPart}>
+        <div className={styles.cart__addresses}>
           <svg
             width='12'
             height='15'
@@ -92,13 +83,13 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
               fill='#2A3842'
             />
           </svg>
-          <div className='flex flex-col'>
-            <p>{offer.address}</p>
-            <span className='text-xs'>{offer.street}</span>
+          <div className={styles.cart__addressesList}>
+            <p className={styles.cart__details}>{offer.address}</p>
+            <span className={styles.cart__street}>{offer.street}</span>
           </div>
         </div>
-        <div className='flex gap-2'>
-          <div className='flex gap-2'>
+        <div className={styles.cart__location}>
+          <div className={styles.cart__location}>
             <svg
               className='relative right-0.5'
               width='16'
@@ -123,7 +114,7 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
                 </clipPath>
               </defs>
             </svg>
-            <p>{offer.metro_location}</p>
+            <p className={styles.cart__details}>{offer.metro_location}</p>
           </div>
           <div className='flex gap-0.5'>
             <svg
@@ -138,20 +129,20 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
                 fill='#51B4E8'
               />
             </svg>
-            <p>≈{offer.metro_time}</p>
+            <p className={styles.cart__details}>≈{offer.metro_time}</p>
           </div>
         </div>
-        <div className={styles.line}></div>
-        <div className='flex gap-4 items-center'>
+        <div className={styles.cart__line}></div>
+        <div className={styles.cart__pricesGroup}>
           {Array.isArray(offer.prices) && offer.prices.length > 0 ? (
             Object.entries(offer.prices[0]).map(([meters, price]) => {
               const numericPrice = Number(price)
               return (
-                <div className='flex flex-col numbM' key={meters}>
-                  <span className='font-bold meters'>
+                <div className={styles.cart__metersRow} key={meters}>
+                  <span className={styles.cart__meters}>
                     {meters} м<sup>2</sup>
                   </span>
-                  <p>{formatNumber(numericPrice)} ₽</p>
+                  <p className={styles.cart__details}>{formatNumber(numericPrice)} ₽</p>
                 </div>
               )
             })
@@ -159,7 +150,7 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
             <div>No price information available</div>
           )}
         </div>
-        <div className='flex gap-2 items-center'>
+        <div className={styles.cart__rowBlocks}>
           {Array.isArray(offer.options) && offer.options.length > 0 ? (
             offer.options.map((option) =>
               typeof option === 'object' && option !== null

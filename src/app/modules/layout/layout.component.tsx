@@ -3,6 +3,7 @@ import BannerComponent from './elements/banner/banner.component'
 import { FC, ReactNode } from 'react'
 
 import { FooterComponent } from '@/app/modules/layout/elements'
+import { getOffers } from '@/repositories/offer.repository'
 import { getTypesList } from '@/repositories/offer-types.repository'
 import { getAreasList, getPricesList, getTitlesList } from '@/repositories/offers.repository'
 import {
@@ -38,6 +39,7 @@ const RootLayoutComponent: FC<Readonly<ILayoutProps>> = ({ children }) => {
         pricesList={pricesList}
         categoriesList={categoriesList}
         titlesList={titlesList}
+        offers={getOffers()}
       />
       <main>{children}</main>
       <FooterComponent

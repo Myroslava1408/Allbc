@@ -4,9 +4,11 @@ import { FC } from 'react'
 import ArticleComponent from '@/app/shared/components/article/article.component'
 import { ArticleFirst, ArticleSecond, ArticleThird } from '@/app/shared/images'
 
+import styles from './articles.module.scss'
+
 const ArticlesComponent: FC = () => {
   return (
-    <div className='flex flex-col gap-1.5'>
+    <div className={styles.articlesBlock}>
       <ArticleComponent imageSrc={ArticleFirst} />
       <ArticleComponent imageSrc={ArticleSecond} />
       <ArticleComponent imageSrc={ArticleThird} />

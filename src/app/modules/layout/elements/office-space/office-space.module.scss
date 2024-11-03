@@ -1,41 +1,27 @@
-.OfficeProperty {
+.officeSpace {
   background: rgba(247, 247, 247, 1);
   width: 100%;
   margin-top: 50px;
   padding-bottom: 72px;
-  .PropertyWrap {
+  display: flex;
+  flex-direction: column;
+  &__wrap {
     max-width: 1240px;
     width: 100%;
     margin: 0 auto;
     padding: 10px;
     margin-top: 72px;
-    h3 {
-      font-family: Inter, sans-serif;
-      font-size: 26px;
-      font-weight: 700;
-      line-height: 36.4px;
-      text-align: left;
-      padding-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include laptop {
+      align-items: center;
     }
     ul {
       li {
         a {
-          font-family: Inter, sans-serif;
-          font-size: 14px;
-          font-weight: 500 !important;
-          line-height: 19.6px;
-          text-align: left;
-          color: rgba(69, 90, 100, 1);
         }
       }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .OfficeProperty {
-    .PropertyWrap {
-      align-items: center;
     }
   }
 }

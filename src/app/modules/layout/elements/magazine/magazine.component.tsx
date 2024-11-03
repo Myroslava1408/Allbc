@@ -8,11 +8,11 @@ import styles from './magazine.module.scss'
 
 const MagazineComponent: FC = () => {
   return (
-    <section className={`${styles.sectionSixth} flex flex-col`}>
-      <h3>Журнал</h3>
-      <div className='flex w-full justify-between'>
-        <p className={`${styles.titleSixth} uppercase`}>Статті</p>
-        <button className={`${styles.blueBtn} flex items-center gap-1.5 justify-center`}>
+    <section className={styles.magazine}>
+      <h3 className={styles.magazine__title}>Журнал</h3>
+      <div className={styles.magazine__rowTitles}>
+        <p className={styles.magazine__subtitle}>Статті</p>
+        <button className={styles.magazine__blueBtn}>
           Всі статті
           <svg
             width='15'
@@ -31,11 +31,13 @@ const MagazineComponent: FC = () => {
           </svg>
         </button>
       </div>
-      <div className='flex lg:flex-row flex-col justify-center items-center gap-5'>
-        <div className={styles.magazineBlock} style={{ background: `url(${Man.src})` }}>
-          <h5 className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+      <div className={styles.magazine__inner}>
+        <div className={styles.magazine__magazineBlock} style={{ background: `url(${Man.src})` }}>
+          <h5 className={styles.magazine__name}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </h5>
         </div>
-        <div className='flex md:flex-row flex-col gap-5'>
+        <div className={styles.magazine__list}>
           <ArticlesComponent />
           <ArticlesComponent />
         </div>

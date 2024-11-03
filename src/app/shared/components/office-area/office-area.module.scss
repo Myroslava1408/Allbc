@@ -1,0 +1,17 @@
+.listArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  &__name {
+    font-size: 14px;
+    font-weight: 500 !important;
+    line-height: 19.6px;
+    text-align: left;
+    color: rgba(69, 90, 100, 1);
+    @include hover {
+      text-decoration: underline;
+      color: black;
+      text-decoration-color: rgba(69, 90, 100, 1);
+    }
+  }
+}
