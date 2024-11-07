@@ -1,4 +1,5 @@
 import { loadYamlData } from '@/libs/loadYaml'
+import {languageTag} from "@/libs/localization/paraglide/runtime";
 
 interface IOffer {
   type: number
@@ -15,5 +16,6 @@ interface IOffer {
 }
 
 export const getOffers = (): IOffer[] => {
-  return loadYamlData('offers') as IOffer[]
+  const language = languageTag();
+  return loadYamlData('offers',language) as IOffer[]
 }

@@ -3,17 +3,18 @@ import { FC } from 'react'
 
 import ArticlesComponent from '@/app/shared/components/articles/articles.component'
 import { Man } from '@/app/shared/images'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './magazine.module.scss'
 
 const MagazineComponent: FC = () => {
   return (
     <section className={styles.magazine}>
-      <h3 className={styles.magazine__title}>Журнал</h3>
+      <h3 className={styles.magazine__title}>{m.magazine()}</h3>
       <div className={styles.magazine__rowTitles}>
-        <p className={styles.magazine__subtitle}>Статті</p>
+        <p className={styles.magazine__subtitle}>{m.articles()}</p>
         <button className={styles.magazine__blueBtn}>
-          Всі статті
+          {m.all_articles()}
           <svg
             width='15'
             height='9'

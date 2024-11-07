@@ -7,6 +7,7 @@ import OffersComponent from '@/app/shared/components/offers/offers.component'
 import ParticipantsSidebarComponent from '@/app/shared/components/participants-sidebar/participants-sidebar.component'
 import { iconSrc, NewsBan } from '@/app/shared/images'
 import { imagesMap } from '@/libs/imagesMap'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './popular-offers.module.scss'
 
@@ -75,51 +76,53 @@ const PopularOffersComponent: FC<Readonly<IPopularOffersProps>> = ({
       <div className={styles.offers__inner}>
         <div className={styles.offers__block}>
           <OffersComponent
-            title={'Продаж'}
+            title={m.sale()}
             offerTypes={offerTypesForSale}
             offers={offersForSale}
             categoriesListWithOffers={categoriesListWithOffers}
+            defaultCategoryId={4}
           />
           <OffersComponent
-            title={'Оренда'}
+            title={m.rent()}
             offerTypes={offerTypesForRent}
             offers={offersForRent}
             categoriesListWithOffers={categoriesListWithOffers}
+            defaultCategoryId={1}
           />
         </div>
         <div className={styles.offers__blockParticipants}>
           <div className={styles.offers__blockRight}>
             <div className={styles.offers__paticipantsRight}>
               <ParticipantsSidebarComponent
-                nameHeader={'Брокери'}
+                nameHeader={m.brokers()}
                 classNameButton={styles.offers__greenBtn}
                 svgColor={'white'}
                 participants={brokers}
               />
-              <button className={styles.offers__orderBtn}>Замовити консультацію</button>
+              <button className={styles.offers__orderBtn}>{m.consultation()}</button>
             </div>
             <ParticipantsSidebarComponent
-              nameHeader={'Забудовники'}
+              nameHeader={m.builders()}
               classNameButton={styles.offers__blueBtn}
               svgColor={'black'}
               participants={builders}
             />
             <ParticipantsSidebarComponent
-              nameHeader={'Власники'}
+              nameHeader={m.owners()}
               classNameButton={styles.offers__pinkBtn}
               svgColor={'black'}
               participants={owners}
             />
           </div>
           <BannerRightComponent
-            title='Subscribe on news & updates'
-            subtitle='Always be in the center of events'
+            title={m.news()}
+            subtitle={m.events()}
             inputPlaceholder='Email'
-            buttonText='Підписатися'
+            buttonText={m.subscribe()}
             inputClassName={styles.offers__inputNews}
-            secondButtonText='Призначити чат-бота Telegram'
+            secondButtonText={m.telegram()}
             iconSrc={typeof iconSrc === 'string' ? iconSrc : iconSrc.src}
-            onButtonClick={() => alert('Підписатися')}
+            onButtonClick={() => alert(m.subscribe())}
             containerClassName={styles.offers__newsItem}
             titleClassName={styles.offers__titH}
             buttonClassName={styles.offers__subscribeBtn}

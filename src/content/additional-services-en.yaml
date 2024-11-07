@@ -1,0 +1,35 @@
+---
+- service:
+    type: 1
+    title: Design and seating
+    background: ItemFirst
+
+- service:
+    type: 1
+    title: Repair and decoration
+    background: ItemSecond
+
+- service:
+    type: 1
+    title: Furniture for your office
+    background: ItemThird
+
+- service:
+    type: 2
+    title: Carrier services
+    background: ItemFourth
+
+- service:
+    type: 2
+    title: Cleaning and maintenance
+    background: ItemFifth
+
+- service:
+    type: 2
+    title: Food and water
+    background: ItemSixth
+
+- service:
+    type: 2
+    title: Everything for moving
+    background: ItemSeventh

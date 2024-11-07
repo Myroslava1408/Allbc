@@ -1,0 +1,32 @@
+categories:
+  - nameCategory: Office for rent in a class A business centre
+    amount: 1234
+    category: rent
+
+  - nameCategory: Office for rent in a class B business centre
+    amount: 234
+    category: rent
+
+  - nameCategory: Office for rent in a class C business centre
+    amount: 134
+    category: rent
+
+  - nameCategory: Office for rent in administrative buildings (AZ)
+    amount: 124
+    category: rent
+
+  - nameCategory: Office for sale
+    amount: 1234
+    category: sale
+
+  - nameCategory: Office for sale in the business centre
+    amount: 234
+    category: sale
+
+  - nameCategory: Office for sale in a complex
+    amount: 134
+    category: sale
+
+  - nameCategory: Buy a room of 100 sq.m.
+    amount: 124
+    category: sale

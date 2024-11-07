@@ -1,5 +1,6 @@
 import { imagesMap } from '@/libs/imagesMap'
 import { loadYamlData } from '@/libs/loadYaml'
+import {languageTag} from "@/libs/localization/paraglide/runtime";
 
 interface IOwner {
   nameParticipant: string
@@ -30,19 +31,22 @@ interface IParticipantData {
 }
 
 export const getBuilders = (): IBuilder[] => {
-  const data: IParticipantData = loadYamlData('participants') as IParticipantData
+  const language = languageTag();
+  const data: IParticipantData = loadYamlData('participants',language) as IParticipantData
   const builders = data.participants?.builders || []
   return builders.filter((item) => item.category === 'builder')
 }
 
 export const getBrokers = (): IBroker[] => {
-  const data: IParticipantData = loadYamlData('participants') as IParticipantData
+  const language = languageTag();
+  const data: IParticipantData = loadYamlData('participants',language) as IParticipantData
   const brokers = data.participants?.brokers || []
   return brokers.filter((item) => item.category === 'broker')
 }
 
 export const getOwners = (): IOwner[] => {
-  const data: IParticipantData = loadYamlData('participants') as IParticipantData
+  const language = languageTag();
+  const data: IParticipantData = loadYamlData('participants',language) as IParticipantData
   const owners = data.participants?.owners || []
   return owners.filter((item) => item.category === 'owner')
 }

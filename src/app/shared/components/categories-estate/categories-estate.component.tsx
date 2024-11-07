@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { FC, useState } from 'react'
 
 import { imagesMap } from '@/libs/imagesMap'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './categories-estate.module.scss'
 
@@ -50,17 +51,17 @@ const CategoriesEstateComponent: FC<Readonly<ICategoriesEstateProps>> = ({ categ
               onMouseLeave={() => setIsHovered(false)}
             >
               <p
-                className={`text-white ${styles.titleBlock} ${isHovered ? styles.show : ''}`}
+                className={`${styles.itemCategory__titleBlock} ${isHovered ? styles.show : ''}`}
                 dangerouslySetInnerHTML={{ __html: estate.category.title_html }}
               />
-              <div className={`${styles.hoverContent} ${isHovered ? styles.show : ''}`}>
-                <div className='flex items-left justify-center gap-6 pt-28 max-w-44'>
-                  <div className='flex flex-col items-center justify-center'>
-                    <p className='text-white'>Оренда</p>
-                    <span className='text-white pl-2'>{estate.category.rentalPrice}</span>
+              <div className={`${styles.itemCategory__hoverContent} ${isHovered ? styles.show : ''}`}>
+                <div className={styles.itemCategory__inner}>
+                  <div className={styles.itemCategory__group}>
+                    <p className='text-white'>{m.rent()}</p>
+                    <span className={styles.itemCategory__rentalPrice}>{estate.category.rentalPrice}</span>
                   </div>
-                  <div className='flex flex-col items-center justify-center'>
-                    <p className='text-white'>Продаж</p>
+                  <div className={styles.itemCategory__group}>
+                    <p className='text-white'>{m.sale()}</p>
                     <span className='text-white'>{estate.category.salePrice}</span>
                   </div>
                 </div>

@@ -6,6 +6,7 @@ import { FC } from 'react'
 import OptionsComponent from '@/app/shared/components/options/options.component'
 import SocialsComponent from '@/app/shared/components/socials/socials.component'
 import { ImageLogo } from '@/app/shared/images'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './footer.module.scss'
 
@@ -35,13 +36,13 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({
             <Image src={ImageLogo} alt='logo' width={97} height={92} />
           </Link>
           <div className={styles.footer__listGrid}>
-            <OptionsComponent title={'About us'} options={aboutUsOptions} />
-            <OptionsComponent title={'Політика конфіденційності'} options={privacyPolicyOptions} />
-            <OptionsComponent title={'For owners'} options={forOwnersOptions} />
-            <OptionsComponent title={'Business Centers'} options={businessCentersOptions} />
+            <OptionsComponent title={m.about_us()} options={aboutUsOptions} />
+            <OptionsComponent title={m.privacy_policy()} options={privacyPolicyOptions} />
+            <OptionsComponent title={m.for_owners()} options={forOwnersOptions} />
+            <OptionsComponent title={m.business_centers()} options={businessCentersOptions} />
           </div>
           <div className={styles.footer__contacts}>
-            <span className={styles.footer__contactsTitle}>Contacts</span>
+            <span className={styles.footer__contactsTitle}>{m.contacts()}</span>
             <div className={styles.footer__group}>
               <button className={styles.footer__btnFoot}>
                 <svg
@@ -61,7 +62,7 @@ const FooterComponent: FC<Readonly<IFooterProps>> = ({
               <input
                 type='text'
                 name='text'
-                placeholder='Пошук по сайту...'
+                placeholder={m.search()}
                 className={styles.footer__inputSearch}
               />
             </div>

@@ -13,16 +13,21 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@inlang/paraglide-next": "^0.7.2",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.4",
+    "@nextui-org/react": "^2.4.8",
     "classnames": "^2.5.1",
     "fs": "^0.0.1-security",
+    "i18next": "^23.16.4",
+    "i18next-browser-languagedetector": "^8.0.0",
     "js-yaml": "^4.1.0",
     "mongoose": "^8.6.3",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
+    "react-i18next": "^15.1.0",
     "sass": "^1.79.4"
   },
   "devDependencies": {

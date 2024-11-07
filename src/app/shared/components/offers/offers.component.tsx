@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react'
 
 import FilterListComponent from '@/app/shared/components/filter-list/filter-list.component'
 import OfferComponent from '@/app/shared/components/offer/offer.component'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './offers.module.scss'
 
@@ -33,14 +34,16 @@ interface IOffersProps {
   title: string
   categoriesListWithOffers: IOffer[]
   offers: IOffer[]
+  defaultCategoryId: number
 }
 
 const OffersComponent: FC<Readonly<IOffersProps>> = ({
   offerTypes,
   title,
   categoriesListWithOffers,
+  defaultCategoryId,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(defaultCategoryId)
   const [filteredOffers, setFilteredOffers] = useState<IOffer[]>([])
 
   useEffect(() => {
@@ -75,13 +78,14 @@ const OffersComponent: FC<Readonly<IOffersProps>> = ({
   return (
     <>
       <div className={styles.titleRow}>
-        <span className={styles.titleRow__popTit}>Популярні оголошення</span>
+        <span className={styles.titleRow__popTit}>{m.popular_offers()}</span>
         <h2 className={styles.titleRow__subTitle}>{title}:</h2>
         <FilterListComponent
           list={offerTypes}
           onCategorySelect={(categoryId: number) => {
             setSelectedCategory(categoryId)
           }}
+          defaultCategoryId={defaultCategoryId}
         />
       </div>
       <div className={styles.offersWrap}>
@@ -91,7 +95,7 @@ const OffersComponent: FC<Readonly<IOffersProps>> = ({
               .slice(0, 9)
               .map((offer, index) => <OfferComponent key={index} offer={offer} />)
           ) : (
-            <p>Немає пропозицій</p>
+            <p>{m.no_offers()}</p>
           )}
         </div>
       </div>

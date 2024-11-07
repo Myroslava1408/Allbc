@@ -1,0 +1,163 @@
+participants:
+  brokers:
+    - nameParticipant: Alexander Imamov
+      proposals: 5
+      image: BrokerFirst
+      category: broker
+
+    - nameParticipant: Dmitry Kharlamov
+      proposals: 2
+      image: BrokerSecond
+      category: broker
+
+    - nameParticipant: Sergey Kazakov
+      proposals: 15
+      image: BrokerThird
+      category: broker
+
+    - nameParticipant: Marina Vidilina
+      proposals: 54
+      image: BrokerFourth
+      category: broker
+
+    - nameParticipant: Denis Potapkin
+      proposals: 5
+      image: BrokerFifth
+      category: broker
+
+    - nameParticipant: Oksana Mitrokhina
+      proposals: 1
+      image: BrokerSixth
+      category: broker
+
+    - nameParticipant: Vitaly Portnov
+      proposals: 13
+      image: BrokerSeventh
+      category: broker
+
+    - nameParticipant: Andrey Vdovin
+      proposals: 5
+      image: BrokerEighth
+      category: broker
+
+    - nameParticipant: Evgenia Baranova
+      proposals: 55
+      image: BrokerNinth
+      category: broker
+
+    - nameParticipant: Svetlana Dobra
+      proposals: 123
+      image: BrokerTenth
+      category: broker
+
+  owners:
+    - nameParticipant: IKON Development
+      flats: 586
+      housing: 2
+      image: OwnerFirst
+      category: owner
+
+    - nameParticipant: Baltic Construction Company
+      apartments: 40
+      housing: 1
+      image: OwnerSecond
+      category: owner
+
+    - nameParticipant: ProMisto (VEB Group)
+      apartments: 3
+      housing: 5
+      image: OwnerThird
+      category: owner
+
+    - nameParticipant: Flat & Co.
+      apartments: 94
+      housing: 11
+      image: OwnerFourth
+      category: owner
+
+    - nameParticipant: PPF Real Estate Ukraine
+      apartments: 193
+      housing: 1
+      image: OwnerFifth
+      category: owner
+
+    - nameParticipant: Budovcom
+      apartments: 13
+      housing: 1
+      image: OwnerSixth
+      category: owner
+
+    - nameParticipant: Capital Group
+      apartments: 270
+      housing: 37
+      image: OwnerSeventh
+      category: owner
+
+    - nameParticipant: VMS Development
+      apartments: 9
+      housing: 3
+      image: OwnerEighth
+      category: owner
+
+    - nameParticipant: Centre-East
+      apartments: 148
+      housing: 11
+      image: OwnerNinth
+      category: owner
+
+    - nameParticipant: Hutton Development
+      apartments: 11
+      housing: 4
+      image: OwnerTenth
+      category: owner
+
+  builders:
+    - nameParticipant: IKON Development
+      proposals: 586 flats in 2 complex
+      image: BuilderFirst
+      category: builder
+
+    - nameParticipant: Baltic Construction Company
+      proposals: 40 flats in 1 complex
+      image: BuilderSecond
+      category: builder
+
+    - nameParticipant: ProMisto (VEB Group)
+      proposals: 15 offers
+      image: BuilderThird
+      category: builder
+
+    - nameParticipant: Flat & Co.
+      proposals: 94 flats in 11 complex
+      image: BuilderFourth
+      category: builder
+
+    - nameParticipant: PPF Real Estate Ukraine
+      proposals: 193 flats in 1 complex
+      image: BuilderFifth
+      category: builder
+
+    - nameParticipant: Budovcom
+      proposals: 13 flats in 1 complex
+      image: BuilderSixth
+      category: builder
+
+    - nameParticipant: Capital Group
+      proposals: 270 flats in 37 complexes
+      image: BuilderSeventh
+      category: builder
+
+    - nameParticipant: VMS Development
+      proposals: 9 flats in 3 complexes
+      image: BuilderEighth
+      category: builder
+
+    - nameParticipant: Centre-East
+      proposals: 148 flats in 11 complexes
+      image: BuilderNinth
+      category: builder
+
+    - nameParticipant: Hutton Development
+      proposals: 11 flats in 4 complexes
+      image: BuilderTenth
+      category: builder

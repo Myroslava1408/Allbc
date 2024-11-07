@@ -7,6 +7,7 @@ import { FC } from 'react'
 import BannerRightComponent from '@/app/shared/components/bannerRight/bannerRight.component'
 import OfferComponent from '@/app/shared/components/offer/offer.component'
 import { BgBanRight } from '@/app/shared/images'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './recommended-centers.module.scss'
 
@@ -38,14 +39,14 @@ const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ o
       : []
 
   if (!offersArray.length) {
-    return <p>Немає пропозицій</p>
+    return <p>{m.no_offers()}</p>
   }
   return (
     <section className={styles.centers}>
       <div className={styles.centers__titleRow}>
-        <h2 className={styles.centers__title}>Рекомендовані БЦ</h2>
+        <h2 className={styles.centers__title}>{m.recommended_bbs()}</h2>
         <Link className={styles.centers__moreLink} href='#'>
-          <p className={styles.centers__moreTitle}>Подивитися ще</p>
+          <p className={styles.centers__moreTitle}>{m.see_more()}</p>
           <div className={styles.centers__numbBlue}>
             <span className={styles.centers__blueSpan}>20</span>
           </div>
@@ -62,9 +63,9 @@ const RecommendedCentersComponent: FC<Readonly<IRecommendedCentersProps>> = ({ o
           })}
         </div>
         <BannerRightComponent
-          title='Тут може бути  Ваш офіс'
-          buttonText='Додати офіс'
-          onButtonClick={() => alert('Додати офіс')}
+          title={m.banner_right_offer()}
+          buttonText={m.add()}
+          onButtonClick={() => alert(m.add())}
           containerClassName={styles.officeItem}
           titleClassName={styles.officeItem__titH}
           buttonClassName={styles.officeItem__btnOrange}

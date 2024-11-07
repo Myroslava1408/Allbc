@@ -1,0 +1,81 @@
+districts:
+  - stationName: Office for rent in Obolon district
+    category: rent
+
+  - districtName: Office for rent in Shevchenkivskyi district
+    category: rent
+
+  - districtName: Office for rent in Podil district
+    category: rent
+
+  - districtName: Office for rent in Darnytskyi district
+    category: rent
+
+  - districtName: Office for rent in Pechersk district
+    category: rent
+
+  - districtName: Office for rent in Solomensky district
+    category: rent
+
+  - districtName: Office for rent in the Shevchenko district
+    category: rent
+
+  - districtName: Office for rent in Holosiivskyi district
+    category: rent
+
+  - districtName: Office for rent in Desnianskyi district
+    category: rent
+
+  - districtName: Office for rent in Obolon district
+    category: rent
+
+  - districtName: Office for rent in Podil district
+    category: rent
+
+  - districtName: Office for rent in Darnytskyi district
+    category: rent
+
+  - districtName: Office for rent in Pechersk district
+    category: rent
+
+  - districtName: Office for rent in Solomensky district
+    category: rent
+
+  - districtName: Office for sale in Obolon district
+    category: sale
+
+  - districtName: Office for sale in the Podolsk district
+    category: sale
+
+  - districtName: Office for sale in the Darnytskyi district
+    category: sale
+
+  - districtName: Office for sale in the Pechersk district
+    category: sale
+
+  - districtName: Office for sale in Solomensky district
+    category: sale
+
+  - districtName: Office for sale in the Shevchenko district
+    category: sale
+
+  - districtName: Office for sale in Holosiivskyi district
+    category: sale
+
+  - districtName: Office for sale in Desnianskyi district
+    category: sale
+
+  - districtName: Office for sale in Obolon district
+    category: sale
+
+  - districtName: Office for sale in the Podolsk district
+    category: sale
+
+  - districtName: Office for sale in the Darnytskyi district
+    category: sale
+
+  - districtName: Office for sale in the Pechersk district
+    category: sale
+
+  - districtName: Office for sale in Solomensky district
+    category: sale

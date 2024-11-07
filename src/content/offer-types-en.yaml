@@ -1,0 +1,25 @@
+types:
+  -
+    id: 1
+    title: Business centers
+    category: rent
+  -
+    id: 2
+    title: Estates
+    category: rent
+  -
+    id: 3
+    title: Coworking spaces
+    category: rent
+
+  - id: 4
+    title: Offices
+    category: sale
+
+  - id: 5
+    title: Houses
+    category: sale
+
+  - id: 6
+    title: New buildings
+    category: sale

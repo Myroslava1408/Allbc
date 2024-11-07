@@ -6,6 +6,7 @@ import { FC } from 'react'
 
 import { CartPhoto } from '@/app/shared/images'
 import { formatNumber } from '@/constants/offer.constants'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './offer.module.scss'
 
@@ -65,7 +66,7 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
           </div>
           <div className={styles.cart__blockNumb}>
             <p className={styles.cart__totalOffices}>{offer.total_offices}</p>
-            <span className={styles.cart__offices}>офісів</span>
+            <span className={styles.cart__offices}>{m.offices()}</span>
           </div>
         </div>
       </div>
@@ -162,7 +163,7 @@ const OfferComponent: FC<Readonly<IOfferProps>> = ({ offer }) => {
                 : null,
             )
           ) : (
-            <p>Немає доступних опцій</p>
+            <p>{m.no_option()}</p>
           )}
         </div>
       </div>

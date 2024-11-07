@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+
 
 import SearchResultsComponent from '@/app/shared/components/search-results/search-results.component'
 import { searchOffers } from '@/repositories/offers.repository'
@@ -11,7 +11,6 @@ interface ISearchParams {
 }
 
 const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => {
-  const settings: ReactNode = null
 
   const categoryId = Number(searchParams.categoryId)
   const area = Number(searchParams.area)
@@ -22,7 +21,7 @@ const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => 
 
   return (
     <div>
-      <SearchResultsComponent offers={offers} settings={settings} />
+      <SearchResultsComponent offers={offers}  />
     </div>
   )
 }

@@ -10,9 +10,14 @@ interface IListItem {
 interface IFilterListProps {
   list: IListItem[]
   onCategorySelect: (categoryId: number) => void
+  defaultCategoryId: number
 }
-const FilterListComponent: FC<Readonly<IFilterListProps>> = ({ list, onCategorySelect }) => {
-  const [activeId, setActiveId] = useState<number | null>(null)
+const FilterListComponent: FC<Readonly<IFilterListProps>> = ({
+  list,
+  onCategorySelect,
+  defaultCategoryId,
+}) => {
+  const [activeId, setActiveId] = useState<number | null>(defaultCategoryId)
 
   const handleClick = (id: number) => {
     setActiveId(id)

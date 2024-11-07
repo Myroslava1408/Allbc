@@ -5,6 +5,7 @@ import CityOfficesComponent from '@/app/shared/components/city-offices/city-offi
 import DistrictOfficesComponent from '@/app/shared/components/district-offices/district-offices.component'
 import MetroOfficesComponent from '@/app/shared/components/metro-offices/metro-offices.component'
 import OfficeAreasComponent from '@/app/shared/components/office-areas/office-areas.component'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './office-space.module.scss'
 
@@ -45,11 +46,11 @@ const OfficeSpaceComponent: FC<Readonly<IOfficeSpaceProps>> = ({
   return (
     <section className={styles.officeSpace}>
       <div className={styles.officeSpace__wrap}>
-        <DistrictOfficesComponent districts={districtsForSale} title={'Продаж офісу по районаx:'} />
-        <MetroOfficesComponent title={'Оренда офісу біля метро:'} stations={stations} />
-        <CityOfficesComponent cities={cities} title={'Оренда офісу по містах:'} />
-        <DistrictOfficesComponent districts={districtsForRent} title={'Оренда офісу по районаx:'} />
-        <OfficeAreasComponent title={'Оренда офісу по площі:'} areas={areas} />
+        <DistrictOfficesComponent districts={districtsForSale} title={m.office_district_sale()} />
+        <MetroOfficesComponent title={m.office_rent_metro()} stations={stations} />
+        <CityOfficesComponent cities={cities} title={m.office_rent_city()} />
+        <DistrictOfficesComponent districts={districtsForRent} title={m.office_district_rent()} />
+        <OfficeAreasComponent title={m.office_rent_area()} areas={areas} />
       </div>
     </section>
   )

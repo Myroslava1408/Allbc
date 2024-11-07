@@ -1,3 +1,5 @@
+import { paraglide } from '@inlang/paraglide-next/plugin'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     sassOptions: {
@@ -15,4 +17,10 @@ const nextConfig = {
     },
 };
 
-export default nextConfig;
+export default paraglide({
+    paraglide: {
+        project: './src/libs/localization/project.inlang',
+        outdir: './src/libs/localization/paraglide',
+    },
+    ...nextConfig,
+})

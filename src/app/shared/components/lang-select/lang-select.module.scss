@@ -1,0 +1,89 @@
+.lang {
+  &__icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  &__popover {
+    background-color: hsl(var(--nextui-primary-200));
+    border-radius: var(--nextui-radius-small);
+  }
+
+  &__base {
+    width: fit-content;
+  }
+
+  &__value {
+    & ul {
+      gap: 3px;
+    }
+
+    & li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & span {
+        border: 2px solid transparent;
+        border-radius: 50%;
+        transition: border var(--transition);
+      }
+
+      @include hover {
+        & span {
+          border: 2px solid hsl(var(--nextui-primary));
+        }
+      }
+
+      & span:last-of-type {
+        display: none;
+      }
+
+      &[aria-selected='true'] {
+        & span {
+          border: 2px solid hsl(var(--nextui-primary));
+          border-radius: 50%;
+        }
+      }
+
+      & span {
+        flex: inherit;
+      }
+
+      &[data-selectable='true'] {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  &__trigger {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: var(--nextui-radius-small);
+    color: hsl(var(--nextui-secondary-100));
+
+    max-width: 74px;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+    &[data-open='true'] {
+      background-color: hsl(var(--nextui-primary-200));
+    }
+
+    & > svg {
+      width: 14px;
+    }
+  }
+
+  &__inner_wrapper {
+    width: inherit;
+  }
+
+  &__main_wrapper {
+    width: 74px;
+  }
+}

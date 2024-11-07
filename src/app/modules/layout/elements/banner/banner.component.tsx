@@ -10,6 +10,7 @@ import HeaderComponent from '@/app/modules/layout/elements/header/header.compone
 import StatisticsBlockComponent from '@/app/shared/components/statistics-block/statistics-block.component'
 import { Banner, Emblem } from '@/app/shared/images'
 import { CustomTextField, DefaultOption, QueryStringTemplate } from '@/constants/banner.constants'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './banner.module.scss'
 
@@ -76,9 +77,9 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
 
       <div className={styles.banner__inner}>
         <h1 className={styles.banner__title}>
-          Лише <span>актуальні</span>
+          {m.only()} <span>{m.current()}</span>
           <br />
-          офіси в твоєму місті
+          {m.offices_in_your_city()}
         </h1>
         <form onSubmit={onSubmit} className={styles.banner__containSearch}>
           <div className={styles.banner__whiteWrap}>
@@ -98,7 +99,7 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label='Категорія'
+                    label={m.category()}
                     InputLabelProps={{
                       shrink: false,
                     }}
@@ -123,7 +124,7 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label='Площа'
+                    label={m.area()}
                     InputLabelProps={{
                       shrink: false,
                     }}
@@ -148,7 +149,7 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label='Ціна'
+                    label={m.price()}
                     InputLabelProps={{
                       shrink: false,
                     }}
@@ -160,25 +161,30 @@ const BannerComponent: FC<Readonly<IBannerProps>> = ({
             </div>
           </div>
           <button className={styles.banner__btnSearch} type='submit'>
-            Шукати
+            {m.search()}
           </button>
         </form>
         <div className={styles.banner__rowParts}>
-          <StatisticsBlockComponent title='Вільних' count={75040} subtitle='офісів' color='green' />
           <StatisticsBlockComponent
-            title='Бізнес центрів'
+            title={m.free()}
+            count={75040}
+            subtitle={m.offices()}
+            color='green'
+          />
+          <StatisticsBlockComponent
+            title={m.business_centers()}
             count={2508}
-            subtitle='у Києві'
+            subtitle={m.in_kyiv()}
             color='blue'
           />
         </div>
         <div className={styles.banner__darkBlock}>
           <Image src={Emblem} alt='icon' width={106} height={84} />
           <div className={styles.banner__wrap}>
-            <h5 className={styles.banner__subtitle}>Люблінський парк</h5>
-            <h6 className={styles.banner__description}>15 хв пішки до м “Братиславська”</h6>
+            <h5 className={styles.banner__subtitle}>{m.lublin_park()}</h5>
+            <h6 className={styles.banner__description}>{m.distance()}</h6>
           </div>
-          <button className={styles.banner__darkBtn}>Дізнатися ціни</button>
+          <button className={styles.banner__darkBtn}>{m.find_out_the_prices()}</button>
         </div>
       </div>
     </section>

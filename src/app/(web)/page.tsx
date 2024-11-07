@@ -25,6 +25,7 @@ import {
 import { getBrokers, getBuilders, getOwners } from '@/repositories/participants.repository'
 import { getSettingsMain } from '@/repositories/settings.repository'
 
+
 const Page: () => Promise<JSX.Element> = async () => {
   const settings = getSettingsMain()
   const additionalServices = getAdditionalServices()

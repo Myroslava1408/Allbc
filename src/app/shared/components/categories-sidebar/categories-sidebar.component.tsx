@@ -9,6 +9,7 @@ import {
   defaultAmount,
   initialVisibleItems,
 } from '@/constants/categories-sidebar.constants'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './categories-sidebar.module.scss'
 
@@ -71,12 +72,12 @@ const CategoriesSidebarComponent: FC<Readonly<ICategoriesSidebarProps>> = ({
             </li>
           ))
         ) : (
-          <p>Немає доступних категорій</p>
+          <p>{m.no_categories()}</p>
         )}
       </ul>
       <div className={styles.listOffice__moreBlock}>
         <button className={styles.listOffice__moreBtn} onClick={toggleItems}>
-          <p className={styles.listOffice__moreText}>{isExpanded ? 'Сховати' : 'Ще'}</p>
+          <p className={styles.listOffice__moreText}>{isExpanded ? m.hide() : m.more()}</p>
           <svg
             width='10'
             height='6'

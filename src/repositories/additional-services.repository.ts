@@ -1,5 +1,6 @@
 import { imagesMap } from '@/libs/imagesMap'
 import { loadYamlData } from '@/libs/loadYaml'
+import {languageTag} from "@/libs/localization/paraglide/runtime";
 
 type BackgroundKeys = keyof typeof imagesMap
 interface IBlock {
@@ -15,5 +16,6 @@ interface IAdditionalService {
 }
 
 export const getAdditionalServices = (): IAdditionalService[] => {
-  return loadYamlData('additional-services') as IAdditionalService[]
+  const language = languageTag();
+  return loadYamlData('additional-services', language) as IAdditionalService[];
 }

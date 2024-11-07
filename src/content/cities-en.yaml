@@ -1,0 +1,37 @@
+cities:
+  - cityName: Kyiv
+  - cityName: Kharkiv
+  - cityName: Odesa
+  - cityName: Dnipro
+  - cityName: Donetsk
+  - cityName: Zaporizhzhia
+  - cityName: Lviv
+  - cityName: Kryvyi Rih
+  - cityName: Mykolaiv
+  - cityName: Mariupol
+  - cityName: Vinnytsia
+  - cityName: Kherson
+  - cityName: Chernihiv
+  - cityName: Poltava
+  - cityName: Cherkasy
+  - cityName: Khmelnytsky
+  - cityName: Chernivtsi
+  - cityName: Zhytomyr
+  - cityName: Sumy
+  - cityName: Rivne
+  - cityName: Ivano-Frankivsk
+  - cityName: Kamianske
+  - cityName: Kropyvnytskyi
+  - cityName: Ternopil
+  - cityName: Kremenchuk
+  - cityName: Lutsk
+  - cityName: Bila Tserkva
+  - cityName: Kramatorsk
+  - cityName: Melitopol
+  - cityName: Uzhhorod
+  - cityName: Berdiansk
+  - cityName: Nikopol
+  - cityName: Slaviansk
+  - cityName: Brovary
+  - cityName: Pavlohrad
+  - cityName: Severodonetsk

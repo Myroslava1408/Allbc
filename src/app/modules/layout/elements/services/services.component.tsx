@@ -4,6 +4,7 @@ import { FC } from 'react'
 
 import { AdditionalService } from '@/app/shared/components/additional-service'
 import { imagesMap } from '@/libs/imagesMap'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './services.module.scss'
 
@@ -30,7 +31,7 @@ const ServicesComponent: FC<Readonly<IServicesProps>> = ({ additionalServices })
 
   return (
     <section className={styles.services}>
-      <h3 className={styles.services__title}>Додаткові послуги</h3>
+      <h3 className={styles.services__title}>{m.additional_services()}</h3>
       <div className={styles.services__itemsGrid}>
         <div className={styles.services__servicesTable}>
           {Array.isArray(type1Services) && type1Services.length > 0 ? (
@@ -42,7 +43,7 @@ const ServicesComponent: FC<Readonly<IServicesProps>> = ({ additionalServices })
               )
             })
           ) : (
-            <p>Немає доступних послуг</p>
+            <p>{m.no_services()}</p>
           )}
         </div>
         <div className={styles.services__rowBottom}>
@@ -51,7 +52,7 @@ const ServicesComponent: FC<Readonly<IServicesProps>> = ({ additionalServices })
               <AdditionalService block={block.service} key={index} />
             ))
           ) : (
-            <p>Немає доступних послуг</p>
+            <p>{m.no_services()}</p>
           )}
         </div>
       </div>

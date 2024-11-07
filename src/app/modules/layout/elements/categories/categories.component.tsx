@@ -5,6 +5,7 @@ import React, { FC } from 'react'
 import CategoriesEstateComponent from '@/app/shared/components/categories-estate/categories-estate.component'
 import CategoriesSidebarComponent from '@/app/shared/components/categories-sidebar/categories-sidebar.component'
 import { imagesMap } from '@/libs/imagesMap'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './categories.module.scss'
 
@@ -53,8 +54,8 @@ const CategoriesComponent: FC<Readonly<ICategoriesProps>> = ({
         )}
       </div>
       <div className={styles.categories__lists}>
-        <CategoriesSidebarComponent titleHeader={'Оренда'} categories={categoriesOffersForRent} />
-        <CategoriesSidebarComponent titleHeader={'Продаж'} categories={categoriesOffersForSale} />
+        <CategoriesSidebarComponent titleHeader={m.rent()} categories={categoriesOffersForRent} />
+        <CategoriesSidebarComponent titleHeader={m.sale()} categories={categoriesOffersForSale} />
       </div>
     </section>
   )

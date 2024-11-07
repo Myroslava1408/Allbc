@@ -1,0 +1,58 @@
+options:
+  aboutUs:
+    - option: Rent
+      category: aboutUs
+
+    - option: Sale
+      category: aboutUs
+
+    - option: New buildings
+      category: aboutUs
+
+    - option: Coworking spaces
+      category: aboutUs
+
+    - option: Statistics
+      category: aboutUs
+
+    - option: Tariffs
+      category: aboutUs
+
+  privacyPolicy:
+    - option: Advertising on the site
+      category: privacy
+
+    - option: Terms of use of the site
+      category: privacy
+
+    - option: Site map
+      category: privacy
+
+    - option: Public offer
+      category: privacy
+
+    - option: FAQS
+      category: privacy
+
+  forOwners:
+    - option: Office rental
+      category: forOwners
+
+    - option: Office for sale
+      category: forOwners
+
+  businessCenters:
+    - option: Class “A”
+      category: centers
+
+    - option: Class “B”
+      category: centers
+
+    - option: Class “C”
+      category: centers
+
+    - option: Class “OSZ”
+      category: centers
+
+    - option: Class “AZ”
+      category: centers

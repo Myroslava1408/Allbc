@@ -100,7 +100,7 @@ offers:
       - + R/U - 10%: Lavender
 
   - type: 1
-    category_id: 2
+    category_id: 4
     id: 4365452633
     title: ->2<- BC “Victory Plaza”
     description: Бізнес-центр | Клас А
@@ -320,7 +320,7 @@ offers:
       - + R/U - 10%: Lavender
 
   - type: 1
-    category_id: 2
+    category_id: 4
     id: 4365452639
     title: ->2<- BC “Achievement Plaza”
     description: Бізнес-центр | Клас А

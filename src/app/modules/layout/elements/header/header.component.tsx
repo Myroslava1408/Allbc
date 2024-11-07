@@ -10,10 +10,12 @@ import classNames from 'classnames'
 import React, { FC, useEffect, useRef, useState } from 'react'
 
 import BurgerComponent from '@/app/shared/components/burger/burger.component'
+import { LangSelectComponent } from '@/app/shared/components/lang-select'
 import NavigateComponent from '@/app/shared/components/navigate/navigate.component'
 import { AddOffice, ArrDown, Like, Push, Search } from '@/app/shared/icons'
 import { ImageLogo } from '@/app/shared/images'
 import { CustomTextField } from '@/constants/banner.constants'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './header.module.scss'
 
@@ -124,7 +126,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
           <div className={styles.header__cities}>
             <ul>
               <li>
-                <p className={styles.header__citiesName}>Івано-Франківськ</p>
+                <p className={styles.header__citiesName}>{m.city()}</p>
               </li>
             </ul>
             <button>
@@ -174,7 +176,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
           <div className={styles.header__citiesSidebar}>
             <ul>
               <li>
-                <p className={styles.header__citiesName}>Івано-Франківськ</p>
+                <p className={styles.header__citiesName}>{m.city()}</p>
               </li>
             </ul>
             <button>
@@ -215,7 +217,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
                 renderInput={(params) => (
                   <CustomTextField
                     {...params}
-                    label='search by name'
+                    label={m.search_by_name()}
                     InputLabelProps={{
                       shrink: true,
                       style: { top: '20px', left: '0px' },
@@ -243,16 +245,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
             <Like alt='icon' width={20} height={19} className={styles.header__colorIcon} />
           </button>
           <div className={styles.header__citiesLaptop}>
-            <ul>
-              <li>
-                <Link href='#' className={styles.header__colorIcon}>
-                  EN
-                </Link>
-              </li>
-            </ul>
-            <button className={styles.header__BtnDown}>
-              <ArrDown alt='icon' width={10} height={6} className={styles.header__colorIcon} />
-            </button>
+            <LangSelectComponent />
           </div>
         </div>
       </div>
@@ -260,9 +253,9 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
         <div className={styles.header__btnsRow}>
           <button className={styles.header__addLaptop}>
             <AddOffice alt='icon' width={14} height={14} className={styles.header__colorIcon} />
-            Додати офіс
+            {m.add()}
           </button>
-          <button className={styles.header__login}>Вхід</button>
+          <button className={styles.header__login}>{m.login()}</button>
         </div>
       </div>
     </header>
