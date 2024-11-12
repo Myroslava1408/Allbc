@@ -1,5 +1,5 @@
 import { loadYamlData } from '@/libs/loadYaml'
-import {languageTag} from "@/libs/localization/paraglide/runtime";
+import { languageTag } from '@/libs/localization/paraglide/runtime'
 
 interface ICategory {
   id: number
@@ -23,20 +23,20 @@ interface IOfferTypesData {
 }
 
 export const getTypesForSale = () => {
-  const language = languageTag();
-  const types = (loadYamlData('offer-types',language) as { types: ICategory[] }).types
+  const language = languageTag()
+  const types = (loadYamlData('offer-types', language) as { types: ICategory[] }).types
   return types.filter((item) => item.category === 'sale')
 }
 
 export const getTypesForRent = () => {
-  const language = languageTag();
-  const types = (loadYamlData('offer-types',language) as { types: ICategory[] }).types
+  const language = languageTag()
+  const types = (loadYamlData('offer-types', language) as { types: ICategory[] }).types
   return types.filter((item) => item.category === 'rent')
 }
 
 export const getTypesList = (): IOption[] => {
-  const language = languageTag();
-  const typesData = loadYamlData('offer-types',language) as IOfferTypesData
+  const language = languageTag()
+  const typesData = loadYamlData('offer-types', language) as IOfferTypesData
 
   return typesData.types.map((type: IOfferType) => ({
     id: type.id,

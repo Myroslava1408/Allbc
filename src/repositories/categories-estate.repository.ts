@@ -1,6 +1,6 @@
 import { imagesMap } from '@/libs/imagesMap'
 import { loadYamlData } from '@/libs/loadYaml'
-import {languageTag} from "@/libs/localization/paraglide/runtime";
+import { languageTag } from '@/libs/localization/paraglide/runtime'
 
 type BackgroundKeys = keyof typeof imagesMap
 interface ICategory {
@@ -16,8 +16,7 @@ interface ICategoryEstate {
   category: ICategory
 }
 
-
 export const getCategoriesEstate = (): ICategoryEstate[] => {
-  const language = languageTag();
-  return loadYamlData('categories-estate', language) as ICategoryEstate[];
+  const language = languageTag()
+  return loadYamlData('categories-estate', language) as ICategoryEstate[]
 }

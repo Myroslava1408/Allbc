@@ -52,5 +52,15 @@
   "privacy_policy": "Privacy policy",
   "for_owners": "For owners",
   "contacts": "Contacts",
-  "site": "Search the site"
+  "site": "Search the site",
+  "list_favorite": "List of favourite offers",
+  "list_empty": "Your wishlist is empty",
+  "results": "Search results",
+  "no_offers_criteria": "No offers according to your criteria",
+  "flats_in": "flats in",
+  "residential_complex": "RC",
+  "proposals": "proposals",
+  "no_participants": "No participants",
+  "favorited": "Offer added to favourites list",
+  "deleted_favorited": "The offer has been removed from the list of favorites"
 }

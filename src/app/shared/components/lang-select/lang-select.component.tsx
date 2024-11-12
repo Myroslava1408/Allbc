@@ -5,27 +5,23 @@ import { Key } from '@react-types/shared'
 
 import { FC } from 'react'
 
-import { IconArrow, IconUk, IconUkr } from '@/app/shared/icons'
 import { usePathname, useRouter } from '@/libs/localization/i18n'
 import { languageTag } from '@/libs/localization/paraglide/runtime'
 
 import styles from './lang-select.module.scss'
 
-//interface
 interface ILangSelectProps {}
 
-const langs: { lang: string; icon: any }[] = [
-  { lang: 'uk', icon: IconUkr },
-  { lang: 'en', icon: IconUk },
+const langs: { lang: string; label: string }[] = [
+  { lang: 'uk', label: 'UK' },
+  { lang: 'en', label: 'EN' },
 ]
 
-//component
 const LangSelectComponent: FC<Readonly<ILangSelectProps>> = () => {
   const router = useRouter()
   const pathname = usePathname()
-  const selectedLang = langs.find((el) => el.lang === languageTag());
+  const selectedLang = langs.find((el) => el.lang === languageTag())
 
-  //return
   return (
     <Select
       items={langs}
@@ -45,18 +41,22 @@ const LangSelectComponent: FC<Readonly<ILangSelectProps>> = () => {
           locale: e?.target?.value === 'uk' ? 'uk' : e?.target?.value === 'en' ? 'en' : 'en',
         })
       }
-      selectorIcon={<IconArrow />}
       renderValue={(items) => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        return items?.map(({ data: { lang, icon: Icon } }) => (
-          <Icon key={lang} className={styles.lang__icon} />
-        ))
+        return items?.map(({ data }) => {
+          if (data && data.label) {
+            return (
+              <span key={data.label} className={styles.lang__label}>
+                {data.label}
+              </span>
+            )
+          }
+          return null
+        })
       }}
     >
-      {({ lang, icon: Icon }) => (
-        <SelectItem key={lang} textValue={lang}>
-          <Icon className={styles.lang__icon} />
+      {({ lang, label }) => (
+        <SelectItem key={lang} textValue={label}>
+          {label}
         </SelectItem>
       )}
     </Select>

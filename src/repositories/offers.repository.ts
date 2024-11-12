@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 
 import { loadYamlData } from '@/libs/loadYaml'
-import { languageTag } from "@/libs/localization/paraglide/runtime";
+import { languageTag } from '@/libs/localization/paraglide/runtime'
 
 interface IOffer {
   type: number
@@ -24,9 +24,9 @@ interface IOfferType {
 }
 
 export const getOffersForSale = (limit: number): IOffer[] => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const data = loadYamlData('offers',language)
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
       const offers: IOffer[] = data.offers
@@ -40,9 +40,9 @@ export const getOffersForSale = (limit: number): IOffer[] => {
 }
 
 export const getOffersForRent = (limit: number): IOffer[] => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const data = loadYamlData('offers',language)
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
       const offers: IOffer[] = data.offers
@@ -61,9 +61,9 @@ export const searchOffers = (
   price: number,
   title: string | undefined,
 ): IOffer[] => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const data = loadYamlData('offers',language)
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
       const offers: IOffer[] = data.offers
@@ -89,9 +89,9 @@ export const searchOffers = (
 }
 
 export const getTitlesList = () => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const data = loadYamlData('offers',language)
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
       const offers: IOffer[] = data.offers
@@ -118,9 +118,9 @@ export const getTitlesList = () => {
 }
 
 export const getAreasList = () => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const data = loadYamlData('offers',language)
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
       const offers: IOffer[] = data.offers
@@ -149,9 +149,9 @@ export const getAreasList = () => {
 }
 
 export const getPricesList = () => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const data = loadYamlData('offers',language)
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
       const offers: IOffer[] = data.offers
@@ -180,28 +180,28 @@ export const getPricesList = () => {
 }
 
 export const getCategoriesListWithOffers = (selectedCategory?: string) => {
-  const language = languageTag();
+  const language = languageTag()
   try {
-    const categoryData = loadYamlData('offer-types',language);
+    const categoryData = loadYamlData('offer-types', language)
     const categoriesTypes: IOfferType[] =
-        categoryData &&
-        typeof categoryData === 'object' &&
-        'types' in categoryData &&
-        Array.isArray(categoryData.types)
-            ? categoryData.types
-            : [];
+      categoryData &&
+      typeof categoryData === 'object' &&
+      'types' in categoryData &&
+      Array.isArray(categoryData.types)
+        ? categoryData.types
+        : []
 
-    const data = loadYamlData('offers',language);
+    const data = loadYamlData('offers', language)
 
     if (data && typeof data === 'object' && 'offers' in data && Array.isArray(data.offers)) {
-      const offers: IOffer[] = data.offers;
-      const categoriesWithOffers: Array<any> = [];
-      const addedCategories = new Set();
+      const offers: IOffer[] = data.offers
+      const categoriesWithOffers: Array<any> = []
+      const addedCategories = new Set()
 
       offers.forEach((offer: IOffer) => {
         const matchedCategory = categoriesTypes.find(
-            (categoryObj: IOfferType) => categoryObj.id === offer.category_id,
-        );
+          (categoryObj: IOfferType) => categoryObj.id === offer.category_id,
+        )
 
         if (matchedCategory && matchedCategory.title) {
           if (!selectedCategory || matchedCategory.title === selectedCategory) {
@@ -215,13 +215,13 @@ export const getCategoriesListWithOffers = (selectedCategory?: string) => {
             }
           }
         }
-      });
+      })
 
-      return categoriesWithOffers;
+      return categoriesWithOffers
     }
 
-    return [];
+    return []
   } catch {
-    notFound();
+    notFound()
   }
 }

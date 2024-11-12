@@ -16,6 +16,11 @@
     max-width: 100% !important;
     height: auto !important;
   }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+  }
 
   &__photoPart {
     height: 210px;

@@ -54,11 +54,15 @@ const CategoriesEstateComponent: FC<Readonly<ICategoriesEstateProps>> = ({ categ
                 className={`${styles.itemCategory__titleBlock} ${isHovered ? styles.show : ''}`}
                 dangerouslySetInnerHTML={{ __html: estate.category.title_html }}
               />
-              <div className={`${styles.itemCategory__hoverContent} ${isHovered ? styles.show : ''}`}>
+              <div
+                className={`${styles.itemCategory__hoverContent} ${isHovered ? styles.show : ''}`}
+              >
                 <div className={styles.itemCategory__inner}>
                   <div className={styles.itemCategory__group}>
                     <p className='text-white'>{m.rent()}</p>
-                    <span className={styles.itemCategory__rentalPrice}>{estate.category.rentalPrice}</span>
+                    <span className={styles.itemCategory__rentalPrice}>
+                      {estate.category.rentalPrice}
+                    </span>
                   </div>
                   <div className={styles.itemCategory__group}>
                     <p className='text-white'>{m.sale()}</p>

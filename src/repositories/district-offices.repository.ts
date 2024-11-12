@@ -1,5 +1,5 @@
 import { loadYamlData } from '@/libs/loadYaml'
-import {languageTag} from "@/libs/localization/paraglide/runtime";
+import { languageTag } from '@/libs/localization/paraglide/runtime'
 
 interface IDistrictOffice {
   districtName: string
@@ -7,15 +7,17 @@ interface IDistrictOffice {
 }
 
 export const getDistrictsForSale = () => {
-  const language = languageTag();
-  const categories = (loadYamlData('district-offices',language) as { districts: IDistrictOffice[] })
-    .districts
+  const language = languageTag()
+  const categories = (
+    loadYamlData('district-offices', language) as { districts: IDistrictOffice[] }
+  ).districts
   return categories.filter((item) => item.category === 'sale')
 }
 
 export const getDistrictsForRent = () => {
-  const language = languageTag();
-  const categories = (loadYamlData('district-offices',language) as { districts: IDistrictOffice[] })
-    .districts
+  const language = languageTag()
+  const categories = (
+    loadYamlData('district-offices', language) as { districts: IDistrictOffice[] }
+  ).districts
   return categories.filter((item) => item.category === 'rent')
 }

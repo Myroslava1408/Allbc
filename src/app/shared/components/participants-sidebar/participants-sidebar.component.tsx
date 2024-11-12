@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React, { FC } from 'react'
 
 import { imagesMap } from '@/libs/imagesMap'
+import * as m from '@/libs/localization/paraglide/messages'
 
 import styles from './participants-sidebar.module.scss'
 
@@ -47,11 +48,16 @@ const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
       case 'owner':
         return (
           <p className={styles.proposals}>
-            {participant.apartments} квартир в {participant.housing} ЖК
+            {participant.apartments} {m.flats_in()} в {participant.housing}{' '}
+            {m.residential_complex()}
           </p>
         )
       case 'broker':
-        return <p className={styles.proposals}>{participant.proposals} пропозицій</p>
+        return (
+          <p className={styles.proposals}>
+            {participant.proposals} {m.proposals()}
+          </p>
+        )
       case 'builder':
         return <p className={styles.proposals}>{participant.proposals}</p>
     }
@@ -99,7 +105,7 @@ const ParticipantsSidebarComponent: FC<Readonly<IParticipantsSidebarProps>> = ({
                 )
               })
             ) : (
-              <p>Немає учасників</p>
+              <p>{m.no_participants()}</p>
             )}
           </ul>
         </div>

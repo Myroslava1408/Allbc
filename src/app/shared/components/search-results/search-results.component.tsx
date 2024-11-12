@@ -3,6 +3,9 @@
 import React from 'react'
 
 import OfferComponent from '@/app/shared/components/offer/offer.component'
+import * as m from '@/libs/localization/paraglide/messages'
+
+import styles from './search-results.module.scss'
 
 interface Offer {
   type: number
@@ -24,19 +27,19 @@ interface SearchResultsProps {
 
 const SearchResultsComponent: React.FC<SearchResultsProps> = ({ offers }) => {
   return (
-    <div className={'flex p-8 flex-col  justify-between items-center m-auto max-w-screen-xl'}>
-      <div className={'flex justify-between items-center'}>
-        <h1 className={'text-left p-5'}>Результати пошуку</h1>
+    <div className={styles.results}>
+      <div className={styles.results__inner}>
+        <h1 className={styles.results__title}>{m.results()}</h1>
       </div>
-      <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3'}>
+      <div className={styles.results__group}>
         {offers.length > 0 ? (
           offers.map((offer, index) => (
-            <div className={'flex flex-col'} key={index}>
+            <div key={index}>
               <OfferComponent offer={offer} />
             </div>
           ))
         ) : (
-          <p>Немає пропозицій за вашими критеріями</p>
+          <p>{m.no_offers_criteria()}</p>
         )}
       </div>
     </div>

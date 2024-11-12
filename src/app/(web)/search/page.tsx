@@ -1,4 +1,4 @@
-
+import { initializeLanguage } from '@inlang/paraglide-next'
 
 import SearchResultsComponent from '@/app/shared/components/search-results/search-results.component'
 import { searchOffers } from '@/repositories/offers.repository'
@@ -11,7 +11,7 @@ interface ISearchParams {
 }
 
 const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => {
-
+  await initializeLanguage()
   const categoryId = Number(searchParams.categoryId)
   const area = Number(searchParams.area)
   const price = Number(searchParams.price)
@@ -21,7 +21,7 @@ const SearchPage = async ({ searchParams }: { searchParams: ISearchParams }) => 
 
   return (
     <div>
-      <SearchResultsComponent offers={offers}  />
+      <SearchResultsComponent offers={offers} />
     </div>
   )
 }

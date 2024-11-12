@@ -1,3 +1,5 @@
+import { initializeLanguage } from '@inlang/paraglide-next'
+
 import CategoriesComponent from '@/app/modules/layout/elements/categories/categories.component'
 import MagazineComponent from '@/app/modules/layout/elements/magazine/magazine.component'
 import OfficeSpaceComponent from '@/app/modules/layout/elements/office-space/office-space.component'
@@ -25,8 +27,9 @@ import {
 import { getBrokers, getBuilders, getOwners } from '@/repositories/participants.repository'
 import { getSettingsMain } from '@/repositories/settings.repository'
 
-
 const Page: () => Promise<JSX.Element> = async () => {
+  await initializeLanguage()
+
   const settings = getSettingsMain()
   const additionalServices = getAdditionalServices()
   const offerTypesForSale = getTypesForSale()

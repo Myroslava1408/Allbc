@@ -5,6 +5,14 @@
     flex-shrink: 0;
   }
 
+  &__label {
+    color: white;
+    @include hover {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+
   &__popover {
     background-color: hsl(var(--nextui-primary-200));
     border-radius: var(--nextui-radius-small);
@@ -27,13 +35,7 @@
       & span {
         border: 2px solid transparent;
         border-radius: 50%;
-        transition: border var(--transition);
-      }
-
-      @include hover {
-        & span {
-          border: 2px solid hsl(var(--nextui-primary));
-        }
+        color: white;
       }
 
       & span:last-of-type {
@@ -41,10 +43,8 @@
       }
 
       &[aria-selected='true'] {
-        & span {
-          border: 2px solid hsl(var(--nextui-primary));
-          border-radius: 50%;
-        }
+        cursor: pointer;
+        @include hover-link;
       }
 
       & span {
@@ -52,7 +52,8 @@
       }
 
       &[data-selectable='true'] {
-        background-color: transparent !important;
+        cursor: pointer;
+        @include hover-link;
       }
     }
   }
@@ -69,14 +70,6 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-
-    &[data-open='true'] {
-      background-color: hsl(var(--nextui-primary-200));
-    }
-
-    & > svg {
-      width: 14px;
-    }
   }
 
   &__inner_wrapper {

@@ -1,17 +1,18 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { Autocomplete, IconButton } from '@mui/material'
 
 import classNames from 'classnames'
 
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useRef, useState } from 'react'
 
 import BurgerComponent from '@/app/shared/components/burger/burger.component'
 import { LangSelectComponent } from '@/app/shared/components/lang-select'
 import NavigateComponent from '@/app/shared/components/navigate/navigate.component'
+import { useClickOutside } from '@/app/shared/hooks/useClickOutside'
+import { useSearchForm } from '@/app/shared/hooks/useSearchForm'
 import { AddOffice, ArrDown, Like, Push, Search } from '@/app/shared/icons'
 import { ImageLogo } from '@/app/shared/images'
 import { CustomTextField } from '@/constants/banner.constants'
@@ -47,41 +48,29 @@ interface IHeaderProps {
 const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }) => {
   const pathname = usePathname()
   const router = useRouter()
+  const {
+    searchInput,
+    isFormVisible,
+    onSubmitHand,
+    setIsFormVisible,
+    handleInputChange,
+    handleIconButtonClick,
+  } = useSearchForm(offers, onSearch)
   const [sidebarVisible, setSidebarVisible] = useState(false)
-  const [searchInput, setSearchInput] = useState('')
-  const [isFormVisible, setIsFormVisible] = useState(false)
+
   const formRef = useRef<HTMLFormElement>(null)
   const searchButtonRef = useRef<HTMLButtonElement>(null)
 
-  const onSubmitHand = async (event?: React.FormEvent<HTMLFormElement>) => {
-    if (event) {
-      event.preventDefault()
-    }
+  useClickOutside(formRef, () => setIsFormVisible(false))
 
-    const filteredOffers = (offers || []).filter((offer) =>
-      offer.title.toLowerCase().includes(searchInput.toLowerCase()),
-    )
-    onSearch(filteredOffers)
-
-    const queryString = `title=${encodeURIComponent(searchInput)}`
-    return router.push(`/search?${queryString}`)
-  }
-
-  const handleInputChange = (event: React.SyntheticEvent, value: string | null) => {
-    setSearchInput(value || '')
-  }
-
-  const handleIconButtonClick = () => {
-    if (isFormVisible) {
-      onSubmitHand()
-    } else {
-      setIsFormVisible(true)
-    }
+  const handleWishlistClick = () => {
+    router.push('/wishlist')
   }
 
   const toggleSidebar = () => {
     setSidebarVisible((prev) => !prev)
   }
+
   const handleLogoClick = () => {
     if (pathname === '/') {
       window.location.reload()
@@ -89,26 +78,6 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
       window.location.href = '/'
     }
   }
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const isOutside =
-        formRef.current &&
-        !formRef.current.contains(event.target as Node) &&
-        searchButtonRef.current &&
-        !searchButtonRef.current.contains(event.target as Node)
-
-      if (isOutside) {
-        setIsFormVisible(false)
-      }
-    }
-
-    window.addEventListener('mousedown', handleClickOutside)
-
-    return () => {
-      window.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
 
   return (
     <header className={styles.header}>
@@ -149,7 +118,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
             </ul>
           </nav>
           <div className={styles.header__rowIcons}>
-            <button className={styles.header__wishlist}>
+            <button className={styles.header__wishlist} onClick={handleWishlistClick}>
               <Like
                 alt='icon'
                 width={20}
@@ -161,16 +130,7 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
               <Push alt='icon' width={20} height={21} className={styles.header__colorIcon} />
             </button>
             <div className={styles.header__sidebarRow}>
-              <ul>
-                <li>
-                  <Link href='#' className={styles.header__colorIcon}>
-                    EN
-                  </Link>
-                </li>
-              </ul>
-              <button>
-                <ArrDown alt='icon' width={10} height={6} className={styles.header__colorIcon} />
-              </button>
+              <LangSelectComponent />
             </div>
           </div>
           <div className={styles.header__citiesSidebar}>
@@ -242,7 +202,13 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
             <Push alt='icon' width={20} height={21} className={styles.header__colorIcon} />
           </button>
           <button className={styles.header__wishlistLaptop}>
-            <Like alt='icon' width={20} height={19} className={styles.header__colorIcon} />
+            <Like
+              alt='icon'
+              width={20}
+              height={19}
+              className={styles.header__colorIcon}
+              onClick={handleWishlistClick}
+            />
           </button>
           <div className={styles.header__citiesLaptop}>
             <LangSelectComponent />
