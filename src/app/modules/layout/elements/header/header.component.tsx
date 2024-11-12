@@ -6,13 +6,11 @@ import { Autocomplete, IconButton } from '@mui/material'
 
 import classNames from 'classnames'
 
-import React, { FC, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 
 import BurgerComponent from '@/app/shared/components/burger/burger.component'
 import { LangSelectComponent } from '@/app/shared/components/lang-select'
 import NavigateComponent from '@/app/shared/components/navigate/navigate.component'
-import { useClickOutside } from '@/app/shared/hooks/useClickOutside'
-import { useSearchForm } from '@/app/shared/hooks/useSearchForm'
 import { AddOffice, ArrDown, Like, Push, Search } from '@/app/shared/icons'
 import { ImageLogo } from '@/app/shared/images'
 import { CustomTextField } from '@/constants/banner.constants'
@@ -48,29 +46,45 @@ interface IHeaderProps {
 const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }) => {
   const pathname = usePathname()
   const router = useRouter()
-  const {
-    searchInput,
-    isFormVisible,
-    onSubmitHand,
-    setIsFormVisible,
-    handleInputChange,
-    handleIconButtonClick,
-  } = useSearchForm(offers, onSearch)
   const [sidebarVisible, setSidebarVisible] = useState(false)
-
+  const [searchInput, setSearchInput] = useState('')
+  const [isFormVisible, setIsFormVisible] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
   const searchButtonRef = useRef<HTMLButtonElement>(null)
 
-  useClickOutside(formRef, () => setIsFormVisible(false))
+  const onSubmitHand = async (event?: React.FormEvent<HTMLFormElement>) => {
+    if (event) {
+      event.preventDefault()
+    }
+
+    const filteredOffers = Array.isArray(offers)
+      ? offers.filter((offer) => offer.title.toLowerCase().includes(searchInput.toLowerCase()))
+      : []
+    onSearch(filteredOffers)
+
+    const queryString = `title=${encodeURIComponent(searchInput)}`
+    return router.push(`/search?${queryString}`)
+  }
 
   const handleWishlistClick = () => {
     router.push('/wishlist')
   }
 
+  const handleInputChange = (event: React.SyntheticEvent, value: string | null) => {
+    setSearchInput(value || '')
+  }
+
+  const handleIconButtonClick = () => {
+    if (isFormVisible) {
+      onSubmitHand()
+    } else {
+      setIsFormVisible(true)
+    }
+  }
+
   const toggleSidebar = () => {
     setSidebarVisible((prev) => !prev)
   }
-
   const handleLogoClick = () => {
     if (pathname === '/') {
       window.location.reload()
@@ -78,6 +92,26 @@ const HeaderComponent: FC<IHeaderProps> = ({ offers = [], onSearch, titlesList }
       window.location.href = '/'
     }
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const isOutside =
+        formRef.current &&
+        !formRef.current.contains(event.target as Node) &&
+        searchButtonRef.current &&
+        !searchButtonRef.current.contains(event.target as Node)
+
+      if (isOutside) {
+        setIsFormVisible(false)
+      }
+    }
+
+    window.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   return (
     <header className={styles.header}>
