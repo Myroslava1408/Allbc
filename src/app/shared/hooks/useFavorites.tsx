@@ -29,13 +29,13 @@ const useFavorites = () => {
     setLoading(false)
   }, [])
 
-  const removeFavorite = (id: number) => {
+  const updateFavorites = (id: number) => {
     const updatedFavorites = favorites.filter((offer) => offer.id !== id)
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
     setFavorites(updatedFavorites)
   }
 
-  return { favorites, loading, removeFavorite }
+  return { favorites, loading, updateFavorites }
 }
 
 export default useFavorites

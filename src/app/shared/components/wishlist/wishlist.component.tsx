@@ -8,10 +8,10 @@ import * as m from '@/libs/localization/paraglide/messages'
 import styles from './wishlist.module.scss'
 
 const WishlistComponent = () => {
-  const { favorites, loading, removeFavorite } = useFavorites()
+  const { favorites, loading, updateFavorites } = useFavorites()
 
   const handleFavoriteClick = (id: number) => {
-    removeFavorite(id)
+    updateFavorites(id)
   }
 
   return (
